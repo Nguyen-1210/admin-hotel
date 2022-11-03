@@ -29,3 +29,5 @@ Yêu cầu người tiêu dùng:
 - Đã bán bao nhiêu
 - Hỗ trợ ( box chat)
 - Địa chỉ
+- Tài khoản
+
