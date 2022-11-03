@@ -1,2 +1,2 @@
 _Nguyện
-- Thiết kế giao diện user và admin
+- Bắt đầu tìm hiểu và thiết kế giao diện
