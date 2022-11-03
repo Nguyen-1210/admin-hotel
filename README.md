@@ -1,4 +1,4 @@
-#Nguyện
+_Nguyện
 - Tìm hiểu chức năng
-#Hòa
+_Hòa
 - Phân tích hệ thống
