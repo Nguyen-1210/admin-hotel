@@ -1,7 +1,7 @@
 
 # Nguyen
 - Tài khoản bắt đầu
--  Bat dàu
+- Bat dàu
 # Hòa
 Dự án: Nội Thất Nguyên Hòa
 Giới thiệu dự án:
