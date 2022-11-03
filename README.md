@@ -1,6 +1,6 @@
 
 # Nguyen
-Yêu cầu người tiêu dùng:
+## Yêu cầu người tiêu dùng:
 - Tìm kiếm theo tên
 - Đăng nhập đăng kí
 - Quên mật khẩu
@@ -18,8 +18,8 @@ Yêu cầu người tiêu dùng:
 - Địa chỉ
 - Tài khoản
 # Hòa
-Dự án: Nội Thất Nguyên Hòa
-Giới thiệu dự án:
+## Dự án: Nội Thất Nguyên Hòa
+### Giới thiệu dự án:
 - Nguyên Hòa là một trong những thương hiệu nội thất nổi tiếng trên khắp cả nước Việt Nam
 - Nguyên Hòa kinh doanh đa dạng các mặt hàng nội thất với thiết kế độc đáo và sang trọng. Hiện thương hiệu chưa có website để giới thiệu các sản phẩm đến người tiêu dùng. Họ cũng không thu nhận và tiếp thu được các phản hồi từ người tiêu dùng về các mặt hàng để có thể cải tiến và nâng cao chất lượng nhằm phục vụ khách hàng ngày một cách tốt nhất.
 - Nguyên Hòa mong muốn có một website nhằm giới thiệu và trình bày ra sản phẩm nội thất mới nhất của mình để thu nhận ý kiến của người tiêu dùng.
