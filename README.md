@@ -31,7 +31,10 @@ Website cũng có các chức năng cho người quản trị để họ có th�
 - Tài khoản
 
 ### Tiến hành thiết kế giao diện cho admin
+- Design favicon cho website
+- Design logo 
 - Thiết kế thanh menu nằm đứng
+
 
 
 
