@@ -30,5 +30,9 @@ Website cũng có các chức năng cho người quản trị để họ có th�
 - Địa chỉ
 - Tài khoản
 
+### Tiến hành thiết kế giao diện cho admin
+- Thiết kế thanh menu nằm đứng
+
+
 
 
