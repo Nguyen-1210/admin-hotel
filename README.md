@@ -40,6 +40,12 @@ Website cũng có các chức năng cho người quản trị để họ có th�
 - admin
 
 
+### Cơ sở dữ liệu
+- 6 bảng dữ liệu (Đã xong)
+- Sơ đồ use case (Đã xong)
+
+
+
 
 
 
