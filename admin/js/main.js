@@ -26,6 +26,7 @@ if (body.classList.contains("dark")) {
 
 sidebarToggle.addEventListener("click", () => {
     sidebar.classList.toggle("close");
+    
     dr.classList.toggle("close");
 if (sidebar.classList.contains("close")) {
     localStorage.setItem("status", "close");
