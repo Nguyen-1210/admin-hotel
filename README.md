@@ -37,7 +37,7 @@ Website cũng có các chức năng cho người quản trị để họ có th�
 - Thêm icon vào các danh mục menu
 
 ### Liên kết các trang admin
-- ghjhgfdffd
+- admin
 
 
 
