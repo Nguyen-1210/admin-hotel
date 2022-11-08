@@ -40,6 +40,8 @@ Website cũng có các chức năng cho người quản trị để họ có th�
 ### Cơ sở dữ liệu
 - 6 bảng dữ liệu (Đã xong)
 - Sơ đồ use case (Đã xong)
+- Thêm bảng lịch sử đơn hàng (0%)
+- Kiểm tra lại SQL (80%)
 
 
 
