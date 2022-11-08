@@ -1,6 +1,4 @@
 
-
-# Hòa
 ## Dự án: Nội Thất Nguyên Hòa
 ### Giới thiệu dự án:
 - Nguyên Hòa là một trong những thương hiệu nội thất nổi tiếng trên khắp cả nước Việt Nam
@@ -11,7 +9,6 @@ Website cũng có các chức năng cho người quản trị để họ có th�
 - Phân loại sản phẩm
 - Quản lý khách hàng
 - Quản lý các bình luận từ khách hàng về các sản phẩm cũng như thống kê hàng hóa theo loại. 
-# Nguyen
 ## Yêu cầu người tiêu dùng:
 - Tìm kiếm theo tên
 - Đăng nhập đăng kí
