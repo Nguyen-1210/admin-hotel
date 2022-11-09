@@ -38,7 +38,7 @@
                         <i class="fa-solid fa-list"></i>
                         <span class="link-name">Danh mục</span>
                     </a></li>
-                <li><a href="#">
+                <li><a href="index.php?act=list_products">
                         
                         <i class="fa-solid fa-cart-shopping"></i>
                         <span class="link-name">Hàng hóa</span>

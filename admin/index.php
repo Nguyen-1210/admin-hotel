@@ -17,10 +17,26 @@ if (isset($_GET['act'])) {
             //$listdanhmuc = loadall_types();
             include "./danhmuc/add.php";
             break;
-            case 'edit_types':
-                //$listdanhmuc = loadall_types();
-                include "./danhmuc/edit.php";
-                break;
+
+        case 'edit_types':
+            //$listdanhmuc = loadall_types();
+            include "./danhmuc/edit.php";
+            break;
+
+        case 'list_products':
+            //$listdanhmuc = loadall_types();
+            include "./sanpham/list.php";
+            break;
+
+        case 'add_products':
+            //$listdanhmuc = loadall_types();
+            include "./sanpham/add.php";
+            break;
+
+        case 'edit_products':
+            //$listdanhmuc = loadall_types();
+            include "./sanpham/edit.php";
+            break;
         default:
             # code...
             break;

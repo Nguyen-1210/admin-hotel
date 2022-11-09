@@ -4,7 +4,7 @@
             <div class="title"> 
                 <div style="display: flex;align-items: center;">
                 <i class="fa-sharp fa-solid fa-folder-plus"></i>
-                <h1 class="text">Thêm danh mục</h1>
+                <h1 class="text">Thêm hàng hóa</h1>
                 </div>
                 <a href="index.php?act=list_types" style="display: flex;align-items: center;">
 
