@@ -35,6 +35,7 @@ Website cũng có các chức năng cho người quản trị để họ có th�
 
 ### Liên kết các trang admin
 - admin
+- Hoàn thành danh mục sản phẩm (50%)
 
 
 ### Cơ sở dữ liệu
