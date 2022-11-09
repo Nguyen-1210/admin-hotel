@@ -1,7 +1,8 @@
 <div class="dash-content">
             <div class="overview">
                 <div class="title">
-                    <i class="fa-regular fa-chart-tree-map"></i>
+              
+                    <i class="fa-sharp fa-solid fa-money-check"></i>
                     <h1 class="text">Tổng</h1>
                   
                 </div>
