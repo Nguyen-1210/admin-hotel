@@ -1,6 +1,7 @@
 const body = document.querySelector("body"),
 modeToggle = body.querySelector(".mode-toggle");
 sidebar = body.querySelector("nav");
+menuActive = body.querySelectorAll("li")
 sidebarToggle = body.querySelector(".sidebar-toggle");
 var dr = document.getElementById("dr");
 
@@ -24,10 +25,15 @@ if (body.classList.contains("dark")) {
 }
 });
 
+let getColor = localStorage.getItem("active");
+if (getColor && getColor === "color") {
+    menuActive.classList.toggle("color");
+}
+
+
 sidebarToggle.addEventListener("click", () => {
     sidebar.classList.toggle("close");
-    
-    dr.classList.toggle("close");
+
 if (sidebar.classList.contains("close")) {
     localStorage.setItem("status", "close");
   
@@ -35,3 +41,4 @@ if (sidebar.classList.contains("close")) {
     localStorage.setItem("status", "open");
 }
 })
+

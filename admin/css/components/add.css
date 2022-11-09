@@ -1,0 +1,140 @@
+:root {
+    /* ===== Colors ===== */
+    --primary-color: #FF1E00;
+    --panel-color: #FFF;
+    --text-color: #000;
+    --black-light-color: #707070;
+    --border-color: #e6e5e5;
+    --toggle-color: #DDD;
+    --box1-color: #1de975;
+    --box2-color: #FFE6AC;
+    --box3-color: #E7D1FC;
+    --title-icon-color: #fff;
+    --btn-color: #fff;
+    /* ====== Transition ====== */
+     --tran-05: all 0.5s ease;
+    --tran-03: all 0.3s ease;
+    --tran-03: all 0.2s ease;
+    --dark-color: #FD841F;
+    --moon-color: #FFE9B1; 
+}
+
+body {
+    overflow: hidden;
+    background-color: var(--panel-color);
+    transition: var(--tran-05);
+}
+.dash-content .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 110px 0 50px 0;
+}
+
+
+body.dark {
+    --moon-color: chartreuse;
+    --primary-color: #3A3B3C;
+    --panel-color: #242526;
+    --text-color: #CCC;
+    --black-light-color: #CCC;
+    --border-color: #4D4C4C;
+    --toggle-color: #FFF;
+    --box1-color: #06283D;
+    --box2-color: #4C0033;
+    --box3-color: #100F0F;
+    --title-icon-color: #CCC;
+    --dark-color: #0e1a30;
+    --btn-color: #251B37;
+}
+                 
+.import-btn {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    margin-top: 50px;
+}
+
+.btn-list {
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+    background: var(--moon-color);
+    border-radius: 5px;
+    border: none;
+    color: #000;
+}
+
+
+.import-box {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    background: (--panel-color);
+    border-radius: 5px;
+}
+
+.form-import {
+    position: absolute;
+    inset: 5px;
+    border-radius: 5px;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.import-list {
+    position: relative;
+    width: 100%;
+    margin-top: 35px;
+}
+
+.import-list input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    z-index: 10;
+    color: #000;
+    font-size: 1em;
+    letter-spacing: .05em;
+}
+
+
+.import-list span {
+    position: absolute;
+    left: 0;
+    padding: 20px 10px 10px;
+    font-size: 1em;
+    color: var(--text-color);
+    pointer-events: none;
+    letter-spacing: .05em;
+    transition: .5s;
+}
+
+.import-list input:valid~span,
+.import-list input:focus~span {
+    color: var(--moon-color);
+    transform: translateX(-10px) translateY(-34px);
+    font-size: .75em;
+}
+
+.import-list i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--moon-color);
+    border-radius: 5px;
+    transition: .5s;
+    pointer-events: none;
+}
+
+.import-list input:valid~i,
+.import-list input:focus~i {
+    height: 44px;
+}
+
