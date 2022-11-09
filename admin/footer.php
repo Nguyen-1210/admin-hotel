@@ -1,4 +1,4 @@
-<script src="./js/main.js">
+<script src="./js/app.js">
     </script>
 </body>
 
