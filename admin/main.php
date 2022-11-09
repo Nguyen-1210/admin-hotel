@@ -17,23 +17,23 @@
 </head>
 
 <body>
-
+<!-- menu -->
     <nav>
         <div class="logo-name">
             <div class="logo-image">
-                <a href="./index.html">
+                <a href="index.php">
                     <img src="./images/logo.png" alt="">
                 </a>
             </div>
         </div>
         <div class="menu-items">
             <ul class="nav-links">
-                <li><a href="index.html">
+                <li><a href="index.php">
           
                         <i class="fa-solid fa-house-user"></i>
                         <span class="link-name">Trang chủ</span>
                     </a></li>
-                <li><a href="#">
+                <li><a href="index.php?act=list_types">
                         
                         <i class="fa-solid fa-list"></i>
                         <span class="link-name">Danh mục</span>
@@ -85,6 +85,8 @@
             </ul>
         </div>
     </nav>
+    
+<!-- main -->
     <section class="dashboard">
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>

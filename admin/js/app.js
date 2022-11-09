@@ -1,7 +1,6 @@
 const body = document.querySelector("body"),
 modeToggle = body.querySelector(".mode-toggle");
 sidebar = body.querySelector("nav");
-menuActive = body.querySelectorAll("li")
 sidebarToggle = body.querySelector(".sidebar-toggle");
 var dr = document.getElementById("dr");
 
@@ -24,11 +23,6 @@ if (body.classList.contains("dark")) {
     localStorage.setItem("mode", "light");
 }
 });
-
-let getColor = localStorage.getItem("active");
-if (getColor && getColor === "color") {
-    menuActive.classList.toggle("color");
-}
 
 
 sidebarToggle.addEventListener("click", () => {

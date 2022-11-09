@@ -3,7 +3,7 @@
     --primary-color: #FF1E00;
     --panel-color: #FFF;
     --text-color: #000;
-    --black-light-color: #707070;
+    --black-light-color: #000;
     --border-color: #e6e5e5;
     --toggle-color: #DDD;
     --box1-color: #1de975;
@@ -37,7 +37,7 @@ body.dark {
     --primary-color: #3A3B3C;
     --panel-color: #242526;
     --text-color: #CCC;
-    --black-light-color: #CCC;
+    --black-light-color: #fff;
     --border-color: #4D4C4C;
     --toggle-color: #FFF;
     --box1-color: #06283D;
