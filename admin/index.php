@@ -1,6 +1,7 @@
 <?php
 
 include "main.php";
+// include "home.php";
 
 
 if (isset($_GET['act'])) {
