@@ -86,11 +86,9 @@ strong {
     position: relative;
     transition: all 300ms;
   }
-  td:nth-child(2){
-    border: 2px var(--text-color) solid;
-
-  }
-  td:nth-child(3){
+ 
+  
+  td{
     border-right: 2px var(--text-color) solid;
   }
 

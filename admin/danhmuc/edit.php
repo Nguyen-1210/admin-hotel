@@ -9,9 +9,6 @@
                 </div>
                 <a href="index.php?act=list_types" style="display: flex;align-items: center;">
 
-                    <!-- <a href="danhsach.html"><input type="button" class="btn-list" value="Danh sách"></a> -->
-                   
-
                         <i class="fa-sharp fa-solid fa-folder-plus"></i>
                         <h1 class="text">Danh sách</h1>
                   
