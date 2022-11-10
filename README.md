@@ -46,7 +46,11 @@ Website cũng có các chức năng cho người quản trị để họ có th�
 - Kiểm tra lại SQL (80%)
 
 
-
+# deadline thứ 7
+- figma
+- báo cáo dự án
+- use case
+- erd
 
 
 
