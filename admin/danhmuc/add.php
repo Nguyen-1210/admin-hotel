@@ -18,7 +18,7 @@
                     <form method="POST" >
                         <!-- input nhập sản phẩm -->
                         <div class="import-list">
-                            <input type="text" required="required" id="maloai" name="idloai">
+                            <input type="text" required="required" id="maloai" name="maloai" disabled >
                             <span class="import-text"> Mã danh mục</span>
                             <i></i>
                         </div>
