@@ -1,6 +1,9 @@
 <?php
+ob_start ();
+
 include "../model/pdo.php";
 include "../model/products.php";
+include "../model/types.php";
 
 include "main.php";
 // include "home.php";
@@ -16,8 +19,13 @@ if (isset($_GET['act'])) {
             break;
 
         case 'add_types':
-            //$listdanhmuc = loadall_types();
+            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                $tenloai = $_POST['tenloai'];
+                insert_types($tenloai);
+                header ("location: ./index.php?act=list_types");
+            }
             include "./danhmuc/add.php";
+
             break;
 
         case 'edit_types':
