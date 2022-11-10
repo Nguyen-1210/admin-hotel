@@ -21,48 +21,47 @@
                         <th>TÊN HÀNG HÓA</th>
                         <th>GIÁ </th>
                         <th>ẢNH</th>
+                        <th>MÔ TẢ</th>
                         <th>LƯỢT XEM</th>
                         <th>GIẢM GIÁ</th>
                         <th>CHỨC NĂNG</th>
                     </tr>
                 </thead>
                 <tbody>
-                <?php
-// session_start();
-$server = new mysqli("localhost","root","","duan1_n_h");
-
-if(isset($_GET['id'])){
-     $id_sanpham  = $_GET['id'];
-}
-$product = "SELECT  * FROM products ";
-$query_product = $server -> query($product);
-
-?>
 <?php
-foreach($query_product as $row){
-?>
-                <tr>
-                        <td><strong>click button check</strong></td>
-                        <td><?php echo $row['id'] ?></td>
-                        <td><?php echo $row['id_type'] ?></td>
-                        <td><?php echo $row['name'] ?></td>
-                        <td><?php echo $row['price'] ?></td>
-                        <td><?php echo $row['img'] ?></td>
-                        <td><?php echo $row['view'] ?></td>
-                        <td><?php echo $row['discount'] ?></td>
-                        
+foreach($listproducts as $products){
+    extract($products);
+    $edit_products = "index.php?act=edit_products&id=" . $id;
+    $delete_products = "index.php?act=delete_products&id=" . $id;
+    $img_path = "../upload/" . $img;
+    if (is_file($img_path)) {
+        $img = "<img src='" . $img_path . "' height='80'>";
+    } else {
+        $img = "NO Photo";
+    }
+    echo '                <tr>
+    <td><strong>click button check</strong></td>
+    <td>'.$id.'</td>
+    <td>'.$id_type.'</td>
+    <td>'.$name.'</td>
+    <td>'.$price.'</td>
+    <td>'.$img.'</td>
+    <td>'.$description.'</td>
+    <td>'.$view.'</td>
+    <td>'.$discount.'</td>
+    
 
-                        <td>
-                            <div class="import-btn">
-                                <!-- chinh danh danh muc  -->
-                                <a href="index.php?act=edit_products">
-                                    <i class="fa-solid fa-pen-to-square btn-list"></i></a>
-                                <a href="index.php?act=delete_products"><i class="fa-sharp fa-solid fa-trash  btn-list"></i></a>
+    <td>
+        <div class="import-btn">
+            <!-- chinh danh danh muc  -->
+            <a href="'.$edit_products.'">
+                <i class="fa-solid fa-pen-to-square btn-list"></i></a>
+            <a href="'.$delete_products.'"><i class="fa-sharp fa-solid fa-trash  btn-list"></i></a>
 
-                            </div>
-                        </td>
-                    </tr>
-                    <?php  
+        </div>
+    </td>
+</tr>';
+
 }
 ?>
                     <!-- <tr> -->

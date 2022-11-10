@@ -1,4 +1,6 @@
 <?php
+include "../model/pdo.php";
+include "../model/products.php";
 
 include "main.php";
 // include "home.php";
@@ -24,7 +26,7 @@ if (isset($_GET['act'])) {
             break;
 
         case 'list_products':
-            //$listdanhmuc = loadall_types();
+            $listproducts = loadall_products();
             include "./sanpham/list.php";
             break;
 
