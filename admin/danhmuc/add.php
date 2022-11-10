@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="./css/components/add.css">
 
+    <link rel="stylesheet" href="./css/components/add.css">
 <div class="dash-content">
             <div class="title"> 
                 <div style="display: flex;align-items: center;">
@@ -15,10 +15,10 @@
             
             <div class="import-box">
                 <div class="form-import">
-                    <form action="#" method="POST">
+                    <form method="POST" >
                         <!-- input nhập sản phẩm -->
                         <div class="import-list">
-                            <input type="text" required="required" id="maloai" name="maloai">
+                            <input type="text" required="required" id="maloai" name="idloai">
                             <span class="import-text"> Mã danh mục</span>
                             <i></i>
                         </div>
