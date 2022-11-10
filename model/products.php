@@ -30,7 +30,7 @@ function loadall_products($kyw="", $id_type=0){
     if($id_type > 0){
         $sql.=" and iddm='".$id_type."'";
     }
-    $sql.=" order by id desc";
+    $sql.=" order by id asc";
     $listproducts = pdo_query($sql);
     return $listproducts;
 }
