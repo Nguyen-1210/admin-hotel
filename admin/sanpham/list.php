@@ -16,8 +16,8 @@
                 <thead>
                     <tr>
                         <th></th>
-                        <th>MÃ HÀNG HÓA</th>
-                        <th>MÃ LOẠI HÀNG HÓA</th>
+                     
+                        <th>ID HÀNG HÓA</th>
                         <th>TÊN HÀNG HÓA</th>
                         <th>GIÁ </th>
                         <th>ẢNH</th>
@@ -41,8 +41,8 @@ foreach($listproducts as $products){
     }
     echo '                <tr>
     <td><strong>click button check</strong></td>
+  
     <td>'.$id.'</td>
-    <td>'.$id_type.'</td>
     <td>'.$name.'</td>
     <td>'.$price.'</td>
     <td>'.$img.'</td>
