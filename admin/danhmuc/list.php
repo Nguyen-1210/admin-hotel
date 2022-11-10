@@ -22,68 +22,37 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php
-// session_start();
-$server = new mysqli("localhost","root","","duan1_n_h");
+  
+                 <tr>
+                     <td><strong>click button check</strong></td>
+                     <td>15</td>
+                     <td>Uoan ao</td>
 
-if(isset($_GET['id'])){
-     $id_sanpham  = $_GET['id'];
-}
-$product_cart = "SELECT  * FROM types ";
-$query_product = $server -> query($product_cart);
+                     <td>
+                         <div class="import-btn">
+                             chinh danh danh muc 
+                             <a href="index.php?act=edit_types">
+                                 <i class="fa-solid fa-pen-to-square btn-list"></i></a>
+                             <a href="index.php?act=delete_types"><i class="fa-sharp fa-solid fa-trash  btn-list"></i></a>
 
-?>
-<?php
-foreach($query_product as $row){
-?>
-                <tr>
-                        <td><strong>click button check</strong></td>
-                        <td><?php echo $row['id'] ?></td>
-                        <td><?php echo $row['name'] ?></td>
+                         </div>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td><strong>click button check</strong></td>
+                     <td>15</td>
+                     <td>Uoan ao</td>
 
-                        <td>
-                            <div class="import-btn">
-                                <!-- chinh danh danh muc  -->
-                                <a href="index.php?act=edit_types">
-                                    <i class="fa-solid fa-pen-to-square btn-list"></i></a>
-                                <a href="index.php?act=delete_types"><i class="fa-sharp fa-solid fa-trash  btn-list"></i></a>
+                     <td>
+                         <div class="import-btn">
+                             chinh danh danh muc 
+                             <a href="index.php?act=edit_types">
+                                 <i class="fa-solid fa-pen-to-square btn-list"></i></a>
+                             <a href="index.php?act=delete_types"><i class="fa-sharp fa-solid fa-trash  btn-list"></i></a>
 
-                            </div>
-                        </td>
-                    </tr>
-                    <?php  
-}
-?>
-                    <!-- <tr> -->
-                        <!-- <td><strong>click button check</strong></td> -->
-                        <!-- <td>15</td> -->
-                        <!-- <td>Uoan ao</td> -->
-
-                        <!-- <td> -->
-                            <!-- <div class="import-btn"> -->
-                                <!-- chinh danh danh muc  -->
-                                <!-- <a href="index.php?act=edit_types"> -->
-                                    <!-- <i class="fa-solid fa-pen-to-square btn-list"></i></a> -->
-                                <!-- <a href="index.php?act=delete_types"><i class="fa-sharp fa-solid fa-trash  btn-list"></i></a> -->
-
-                            <!-- </div> -->
-                        <!-- </td> -->
-                    <!-- </tr> -->
-                    <!-- <tr> -->
-                        <!-- <td><strong>click button check</strong></td> -->
-                        <!-- <td>15</td> -->
-                        <!-- <td>Uoan ao</td> -->
-
-                        <!-- <td> -->
-                            <!-- <div class="import-btn"> -->
-                                <!-- chinh danh danh muc  -->
-                                <!-- <a href="index.php?act=edit_types"> -->
-                                    <!-- <i class="fa-solid fa-pen-to-square btn-list"></i></a> -->
-                                <!-- <a href="index.php?act=delete_types"><i class="fa-sharp fa-solid fa-trash  btn-list"></i></a> -->
-
-                            <!-- </div> -->
-                        <!-- </td> -->
-                    <!-- </tr> -->
+                         </div>
+                     </td>
+                 </tr>
                 </tbody>
             </table>
         </div>
