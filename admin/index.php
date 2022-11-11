@@ -14,7 +14,7 @@ if (isset($_GET['act'])) {
     switch ($act) {
         // list
         case 'list_types':
-            //$listdanhmuc = loadall_types();
+            $listdanhmuc = loadall_types();
             include "./danhmuc/list.php";
             break;
 

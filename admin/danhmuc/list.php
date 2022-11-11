@@ -22,7 +22,24 @@
                     </tr>
                 </thead>
                 <tbody>
-  
+                <?php
+                            foreach ($listdanhmuc as $danhmuc) {
+                                extract($danhmuc);
+                                $suadm = "index.php?act=suadm&id=".$id;
+                                $xoadm = "index.php?act=xoadm&id=".$id;
+                                echo '                            
+                                <tr>
+                                <td><strong><input type="checkbox" name="" id=""></strong></td>
+                                <td>'.$id.'</td>
+                                <td>'.$name.'</td>
+                                <td> <a href="'.$suadm.'"> <i class="fa-solid fa-pen-to-square btn-list"></i></a>
+                                 <a href="'.$xoadm.'"><i class="fa-sharp fa-solid fa-trash  btn-list"></i></a>
+                                 </td>
+                                </tr>';
+                            }
+                            
+                            ?>
+                            
                  <tr>
                      <td><strong>click button check</strong></td>
                      <td>15</td>
@@ -30,7 +47,7 @@
 
                      <td>
                          <div class="import-btn">
-                             chinh danh danh muc 
+                          
                              <a href="index.php?act=edit_types">
                                  <i class="fa-solid fa-pen-to-square btn-list"></i></a>
                              <a href="index.php?act=delete_types"><i class="fa-sharp fa-solid fa-trash  btn-list"></i></a>
@@ -45,7 +62,7 @@
 
                      <td>
                          <div class="import-btn">
-                             chinh danh danh muc 
+                            
                              <a href="index.php?act=edit_types">
                                  <i class="fa-solid fa-pen-to-square btn-list"></i></a>
                              <a href="index.php?act=delete_types"><i class="fa-sharp fa-solid fa-trash  btn-list"></i></a>

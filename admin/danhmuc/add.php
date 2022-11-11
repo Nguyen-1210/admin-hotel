@@ -36,7 +36,7 @@
                         <!-- button thêm danh mục, danh sách -->
                         <div class="import-btn">
                             <input type="submit" name="themmoi" class="btn-list" value="Thêm mới">
-                            <!-- <a href="danhsach.html"><input type="button" class="btn-list" value="Danh sách"></a> -->
+                            
                         </div>
                     </form>
                 </div>
