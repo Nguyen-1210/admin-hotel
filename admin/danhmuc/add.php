@@ -35,6 +35,7 @@
 
                         <!-- button thêm danh mục, danh sách -->
                         <div class="import-btn">
+                        <input type="hidden" name="id" value="<?php if(isset($id) && ($id > 0)) echo $id ?>">
                             <input type="submit" name="themmoi" class="btn-list" value="Thêm mới">
                             
                         </div>

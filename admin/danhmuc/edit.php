@@ -3,7 +3,11 @@
         overflow: hidden;
     }
 </style>
-
+<?php
+if(is_array($dm)){
+    extract($dm);
+}
+?>
 <link rel="stylesheet" href="./css/components/add.css">
 
 <div class="dash-content">
@@ -22,22 +26,23 @@
             </div>
             <div class="import-box">
                 <div class="form-import">
-                    <form action="#" method="POST">
+                    <form action="./index.php?act=update_types" method="POST">
                         <!-- input nhập sản phẩm -->
                         <div class="import-list">
-                            <input type="text" required="required" id="maloai" name="maloai">
+                            <input type="text" required="required" id="maloai" name="maloai"  disabled >
                             <span class="import-text"> Mã danh mục</span>
                             <i></i>
                         </div>
                         <div class="import-list">
-                            <input type="text" required="required" name="tenloai" id="tenloai">
+                            <input type="text" required="required" name="tenloai" id="tenloai" value="<?php if(isset($name) && ($name != "")) echo $name ?>">
                             <span class="import-text"> Tên danh mục</span>
                             <i></i>
                         </div>
 
                         <!-- button thêm danh mục, danh sách -->
                         <div class="import-btn">
-                            <input type="submit" name="themmoi" class="btn-list" value="Cập nhật">
+                        <input type="hidden" name="id" value="<?php if(isset($id) && ($id > 0)) echo $id ?>">
+                            <input type="submit" name="capnhat" class="btn-list" value="Cập nhật">
                         </div>
                     </form>
                 </div>
