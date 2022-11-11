@@ -12,18 +12,18 @@
     --title-icon-color: #fff;
     --btn-color: #fff;
     /* ====== Transition ====== */
-     --tran-05: all 0.5s ease;
+    --tran-05: all 0.5s ease;
     --tran-03: all 0.3s ease;
     --tran-03: all 0.2s ease;
     --dark-color: #FD841F;
-    --moon-color: #FFE9B1; 
+    --moon-color: #FFE9B1;
 }
 
 body {
-    overflow: hidden;
     background-color: var(--panel-color);
     transition: var(--tran-05);
 }
+
 .dash-content .title {
     display: flex;
     align-items: center;
@@ -47,12 +47,13 @@ body.dark {
     --dark-color: #0e1a30;
     --btn-color: #251B37;
 }
-                 
+
 .import-btn {
     display: flex;
     justify-content: space-between;
     width: 30%;
     margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 .btn-list {
@@ -91,7 +92,7 @@ body.dark {
 
 .import-list input {
     position: relative;
-    width: 100%;
+    width: 30%;
     padding: 20px 10px 10px;
     background-color: transparent;
     border: none;
@@ -138,3 +139,19 @@ body.dark {
     height: 44px;
 }
 
+textarea {
+    border: none;
+    padding: 10px;
+    background-color: var(--panel-color);
+    outline: none;
+    transition: var(--tran-05);
+    color: var(--text-color);
+}
+legend {
+    color: var(--text-color);
+}
+
+fieldset {
+    border: 2px solid var(--moon-color);
+    border-radius: 5px;
+}

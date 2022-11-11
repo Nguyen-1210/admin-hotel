@@ -46,7 +46,7 @@ foreach($listproducts as $products){
     <td>'.$name.'</td>
     <td>'.$price.'</td>
     <td>'.$img.'</td>
-    <td>'.$description.'</td>
+    <td><span class="description">'.$description.'</span></td>
     <td>'.$view.'</td>
     <td>'.$discount.'</td>
     

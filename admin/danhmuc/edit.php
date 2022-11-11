@@ -1,3 +1,9 @@
+<style>
+    body {
+        overflow: hidden;
+    }
+</style>
+
 <link rel="stylesheet" href="./css/components/add.css">
 
 <div class="dash-content">
