@@ -18,9 +18,16 @@
             <form action="#" method="POST">
                 <!-- input nhập sản phẩm -->
                 <div class="import-list">
-                    <input type="text" required="required" id="madm" name="madm">
                     <span class="import-text"> Mã danh mục</span>
-                    <i></i>
+                    <select name="iddm">
+                            <?php
+                            foreach ($listdanhmuc as $danhmuc) {
+                                extract($danhmuc);
+                                echo '<option value="'.$id.'">'.$name.'</option>';
+                            }
+                            ?>
+
+                        </select>
                 </div>
 
                 <div class="import-list">

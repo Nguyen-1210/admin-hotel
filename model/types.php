@@ -5,25 +5,25 @@ function insert_types($tenloai){
     pdo_execute($sql);
 }
 
-function delete_danhmuc($id){
-    $sql = "delete from danhmuc where id=".$id;
+function delete_types($id){
+    $sql = "delete from types where id=".$id;
     pdo_execute($sql);
 }
 
-function loadall_danhmuc(){
-    $sql = "select * from danhmuc order by id desc";
+function loadall_types(){
+    $sql = "select * from types order by id desc";
     $listdanhmuc = pdo_query($sql);
     return $listdanhmuc;
 }
 
-function loadone_danhmuc($id){
-    $sql = "select * from danhmuc where id=".$id;
+function loadone_types($id){
+    $sql = "select * from types where id=".$id;
     $dm = pdo_query_one($sql);
     return $dm;
 }
 
-function update_danhmuc($id, $tenloai){
-    $sql = "update danhmuc set name='".$tenloai."' where id=".$id;
+function update_types($id, $name){
+    $sql = "update types set name='".$name."' where id=".$id;
     pdo_execute($sql);
 }
 
