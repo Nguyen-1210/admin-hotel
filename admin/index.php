@@ -81,10 +81,47 @@ if (isset($_GET['act'])) {
             include "./sanpham/add.php";
             break;
 
+        case 'delete_products':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                delete_products($_GET['id']);
+            }
+            $listproducts = loadall_products();
+            include "./sanpham/list.php";
+            break;
+        
         case 'edit_products':
-            //$listdanhmuc = loadall_types();
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $products = loadone_product($_GET['id']);
+            }
+            $listdanhmuc = loadall_types();
             include "./sanpham/edit.php";
             break;
+
+        case 'update_products':
+            if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                $id = $_POST['id'];
+                $id_type = $_POST['id_type'];
+                $name = $_POST['name_product'];
+                $price = $_POST['price_product'];
+                $description = $_POST['des_product'];
+                $discount = $_POST['dis_product'];
+                $img = $_FILES['img']['name'];
+                $target_dir = "../upload/";
+                $target_file = $target_dir . basename($_FILES["img"]["name"]);
+                if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
+                    // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
+
+                update_product($id, $id_type, $name, $price, $description, $discount, $img);
+                $thongbao = "Cập nhật Thành Công";
+            }
+            $listdanhmuc = loadall_types();
+            $listproducts = loadall_products();
+            include "./sanpham/list.php";
+            break;
+
         default:
             # code...
             break;

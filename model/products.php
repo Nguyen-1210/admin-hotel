@@ -12,14 +12,14 @@ function delete_products($id){
 
 function loadall_product_top10(){
     $sql = "select * from products where 1 order by luotxem desc limit 0,10";
-    $listproduct = pdo_query($sql);
-    return $listproduct;
+    $listproducts = pdo_query($sql);
+    return $listproducts;
 }
 
 function loadall_product_home(){
     $sql = "select * from products where 1 order by id desc limit 0,12";
-    $listproduct = pdo_query($sql);
-    return $listproduct;
+    $listproducts = pdo_query($sql);
+    return $listproducts;
 }
 
 function loadall_products($kyw="", $id_type=0){
@@ -60,13 +60,13 @@ function load_product_cungloai($id, $id_type){
     return $listproducts;
 }
 
-function update_product($id, $id_type, $name, $price, $description, $img){
+function update_product($id, $id_type, $name, $price, $description, $discount, $img){
     if($img!=""){
-        $sql = "update sanpham set id_type='".$id_type."', name='".$name."', price='".$price."', description='".$description."',img='".$img."' where id=".$id;
+        $sql = "update products set id_type='".$id_type."', name='".$name."', price='".$price."', description='".$description."', discount='".$discount."', img='".$img."' where id=".$id;
     }
     else
     {
-        $sql = "update sanpham set id_type='".$id_type."', name='".$name."', price='".$price."', description='".$description."' where id=".$id;
+        $sql = "update products set id_type='".$id_type."', name='".$name."', price='".$price."', description='".$description."', discount='".$discount."' where id=".$id;
     }
     pdo_execute($sql);
 }

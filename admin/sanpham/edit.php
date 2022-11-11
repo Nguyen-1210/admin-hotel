@@ -1,4 +1,15 @@
 <link rel="stylesheet" href="./css/components/add.css">
+<?php
+if (is_array($products)) {
+    extract($products);
+}
+$img_path = "../upload/" . $img;
+if (is_file($img_path)) {
+    $img = "<img src='" . $img_path . "' height='80'>";
+} else {
+    $img = "NO Photo";
+}
+?>
 
 <div class="dash-content">
     <div class="title">
@@ -15,27 +26,46 @@
 
     <div class="import-box">
         <div class="form-import">
-            <form action="#" method="POST">
+            <form action="./index.php?act=update_products" method="POST" enctype="multipart/form-data">
                 <!-- input nhập sản phẩm -->
                 <div class="import-list">
-                    <input type="text" required="required" id="madm" name="madm">
-                    <span class="import-text"> Mã danh mục</span>
-                    <i></i>
+                <select name="id_type">
+                    <?php
+                    // foreach ($listdanhmuc as $danhmuc) {
+                    //     extract($danhmuc);
+                    //     if($iddm==$id) $s="selected"; else $s="";
+                    //         echo '<option value="'.$id.'" '.$s.'>'.$name.'</option>';
+                    // }
+
+                    // print_r($listdanhmuc);
+                    ?>
+
+                    <?php
+                    foreach ($listdanhmuc as $danhmuc) :
+
+                    ?>
+                        <option value="<?= $danhmuc['id'] ?>" <?= ($id_type == $danhmuc['id']) ? 'selected' : '' ?>><?= $danhmuc['name'] ?></option>
+                    <?php
+                    endforeach;
+                    ?>
+
+                </select>
                 </div>
 
                 <div class="import-list">
-                    <input type="text" required="required" name="tenhh" id="tenhh">
+                    <input type="text" required="required" name="name_product" id="tenhh" value="<?= $name ?>">
                     <span class="import-text"> Tên hàng hóa</span>
                     <i></i>
                 </div>
                 <div class="import-list">
-                    <input type="text" required="required" name="giahh" id="giahh">
+                    <input type="text" required="required" name="price_product" id="giahh" value="<?= $price ?>">
                     <span class="import-text"> Giá</span>
                     <i></i>
                 </div>
                 <div class="import-list">
                     <label for="files" class="import-text btn-list">Lấy ảnh</label>
-                    <input id="files" name="hinh" style="visibility:hidden;" type="file">
+                    <input id="files" name="img" style="visibility:hidden;" type="file">
+                    <?= $img ?>
                     <!-- <input type="file" name="hinh" required name="anhhh" id="anhhh" width="30%" data-input="false" data-classIcon="icon-plus" data-buttonText="Your label here.">
                     <span class="import-text"> Ảnh</span> -->
                     <!-- <i></i> -->
@@ -46,18 +76,19 @@
                         <legend style="
                 margin-left: 10px;
                                 ">Mô tả</legend>
-                        <textarea name="mota" cols="132" rows="5" required="required" name="motahh" id="motahh"></textarea>
+                        <textarea cols="132" rows="5" required="required" name="des_product" id="motahh"><?= $description ?></textarea>
                     </fieldset>
                     <!-- <i></i> -->
                 </div>
                 <div class="import-list">
-                    <input type="text" required="required" name="giamgiahh" id="giamgiahh">
+                    <input type="text" required="required" name="dis_product" id="giamgiahh" value="<?= $discount?>">
                     <span class="import-text"> Giảm giá</span>
                     <i></i>
                 </div>
 
                 <!-- button thêm danh mục, danh sách -->
                 <div class="import-btn">
+                    <input type="hidden" name="id" value="<?= $id ?>">
                     <input type="submit" name="capnhat" class="btn-list" value="Cập nhật">
                     <!-- <a href="danhsach.html"><input type="button" class="btn-list" value="Danh sách"></a> -->
                 </div>
