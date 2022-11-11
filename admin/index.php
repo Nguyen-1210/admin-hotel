@@ -39,7 +39,25 @@ if (isset($_GET['act'])) {
             break;
 
         case 'add_products':
-            //$listdanhmuc = loadall_types();
+            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                $id_type = $_POST['id_type'];
+                $name = $_POST['name_product'];
+                $price = $_POST['price_product'];
+                $description = $_POST['des_product'];
+                $discount = $_POST['dis_product'];
+                $img = $_FILES['img']['name'];
+                $target_dir = "../upload/";
+                $target_file = $target_dir . basename($_FILES["img"]["name"]);
+                if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
+                    // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
+
+                insert_products($name, $price, $img, $description, $discount, $id_type);
+                $thongbao = "Thêm Thành Công";
+            }
+            $listdanhmuc = loadall_types();
             include "./sanpham/add.php";
             break;
 

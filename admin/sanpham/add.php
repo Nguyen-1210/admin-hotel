@@ -19,7 +19,7 @@
                 <!-- input nhập sản phẩm -->
                 <div class="import-list">
                     <span class="import-text"> Mã danh mục</span>
-                    <select name="iddm">
+                    <select name="id_type">
                             <?php
                             foreach ($listdanhmuc as $danhmuc) {
                                 extract($danhmuc);
@@ -31,21 +31,18 @@
                 </div>
 
                 <div class="import-list">
-                    <input type="text" required="required" name="tenhh" id="tenhh">
+                    <input type="text" required="required" name="name_product" id="tenhh">
                     <span class="import-text"> Tên hàng hóa</span>
                     <i></i>
                 </div>
                 <div class="import-list">
-                    <input type="text" required="required" name="giahh" id="giahh">
+                    <input type="text" required="required" name="price_product" id="giahh">
                     <span class="import-text"> Giá</span>
                     <i></i>
                 </div>
                 <div class="import-list">
                     <label for="files" class="import-text btn-list">Lấy ảnh</label>
-                    <input id="files" name="hinh" style="visibility:hidden;" type="file">
-                    <!-- <input type="file" name="hinh" required name="anhhh" id="anhhh" width="30%" data-input="false" data-classIcon="icon-plus" data-buttonText="Your label here.">
-                    <span class="import-text"> Ảnh</span> -->
-                    <!-- <i></i> -->
+                    <input id="files" name="img" type="file">
                 </div>
                 <div class="import-list">
 
@@ -53,12 +50,12 @@
                         <legend style="
                 margin-left: 10px;
                                 ">Mô tả</legend>
-                        <textarea name="mota" cols="132" rows="5" required="required" name="motahh" id="motahh"></textarea>
+                        <textarea cols="132" rows="5" required="required" name="des_product" id="motahh"></textarea>
                     </fieldset>
                     <!-- <i></i> -->
                 </div>
                 <div class="import-list">
-                    <input type="text" required="required" name="giamgiahh" id="giamgiahh">
+                    <input type="text" required="required" name="dis_product" id="giamgiahh">
                     <span class="import-text"> Giảm giá</span>
                     <i></i>
                 </div>
