@@ -29,9 +29,29 @@ if (isset($_GET['act'])) {
             break;
 
         case 'edit_types':
-            //$listdanhmuc = loadall_types();
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $dm = loadone_types($_GET['id']);
+            }
             include "./danhmuc/edit.php";
             break;
+            case 'delete_types':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    delete_types($_GET['id']);
+                }
+                $listdanhmuc = loadall_types();
+                include "./danhmuc/list.php";
+    
+                break;
+                case 'update_types':
+                    if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                        $name = $_POST['tenloai'];
+                        $id = $_POST['id'];
+                        update_types($id, $name);
+                       
+                    }
+                    $listdanhmuc = loadall_types();
+                    include "./danhmuc/list.php";
+                    break;
 
         case 'list_products':
             $listproducts = loadall_products();
