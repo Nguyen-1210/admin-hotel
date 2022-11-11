@@ -15,7 +15,7 @@
 
     <div class="import-box">
         <div class="form-import">
-            <form action="#" method="POST">
+            <form action="#" method="POST" enctype="multipart/form-data">
                 <!-- input nhập sản phẩm -->
                 <div class="import-list">
                     <span class="import-text"> Mã danh mục</span>
