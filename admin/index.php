@@ -5,6 +5,7 @@ include "../model/pdo.php";
 include "../model/products.php";
 include "../model/types.php";
 include "../model/users.php";
+include "../model/comments.php";
 
 include "main.php";
 // include "home.php";
@@ -155,8 +156,19 @@ if (isset($_GET['act'])) {
                 include "./taikhoan/list.php";
                 break;
 
+        case 'list_comments':
+            $listcomments = loadall_comments(0);
+            include "./binhluan/list.php";
+            break;
 
-
+        case 'delete_comments':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                delete_comments($_GET['id']);
+            }
+            $listcomments = loadall_comments(0);
+            include "./binhluan/list.php";
+            break;
+        
         default:
             # code...
             break;

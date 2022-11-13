@@ -47,7 +47,7 @@
                     <i class="fa-solid fa-users"></i>
                         <span class="link-name">khách hàng</span>
                     </a></li>
-                <li><a href="#">
+                <li><a href="index.php?act=list_comments">
                     <i class="fa-solid fa-comments"></i>
                         <span class="link-name">Bình luận</span>
                     </a></li>
