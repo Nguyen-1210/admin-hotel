@@ -11,7 +11,7 @@ function delete_types($id){
 }
 
 function loadall_types(){
-    $sql = "select * from types order by id desc";
+    $sql = "select * from types order by id asc";
     $listdanhmuc = pdo_query($sql);
     return $listdanhmuc;
 }

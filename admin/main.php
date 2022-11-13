@@ -43,7 +43,7 @@
                         <i class="fa-solid fa-cart-shopping"></i>
                         <span class="link-name">Hàng hóa</span>
                     </a></li>
-                <li><a href="#">
+                <li><a href="index.php?act=users">
                     <i class="fa-solid fa-users"></i>
                         <span class="link-name">khách hàng</span>
                     </a></li>

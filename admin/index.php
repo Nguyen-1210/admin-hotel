@@ -4,6 +4,7 @@ ob_start ();
 include "../model/pdo.php";
 include "../model/products.php";
 include "../model/types.php";
+include "../model/users.php";
 
 include "main.php";
 // include "home.php";
@@ -66,9 +67,21 @@ if (isset($_GET['act'])) {
                 $description = $_POST['des_product'];
                 $discount = $_POST['dis_product'];
                 $img = $_FILES['img']['name'];
+                var_dump($img);
+                // die();
+                $allowUpload   = true;
+                
                 $target_dir = "../upload/";
+                var_dump($target_dir);
                 $target_file = $target_dir . basename($_FILES["img"]["name"]);
-                if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
+                var_dump($target_file);
+                if(file_exists($target_file)){
+                    $file_name = date("dmYHis").str_replace(" ", "", $img);
+                }else {
+                    $file_name = basename($_FILES["img"]["name"]);
+                }
+                
+                if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_dir . $file_name)) {
                     // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
                 } else {
                     // echo "Sorry, there was an error uploading your file.";
@@ -107,7 +120,8 @@ if (isset($_GET['act'])) {
                 $discount = $_POST['dis_product'];
                 $img = $_FILES['img']['name'];
                 $target_dir = "../upload/";
-                $target_file = $target_dir . basename($_FILES["img"]["name"]);
+                $rename = time();
+                $target_file = $target_dir . $rename . basename($_FILES["img"]["name"]);
                 if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
                     // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
                 } else {
@@ -121,6 +135,12 @@ if (isset($_GET['act'])) {
             $listproducts = loadall_products();
             include "./sanpham/list.php";
             break;
+            case 'users':
+                    $listtaikhoan = loadall_accounts();
+                    include "./taikhoan/list.php";
+                    break;
+        
+
 
         default:
             # code...

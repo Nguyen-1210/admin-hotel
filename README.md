@@ -32,10 +32,19 @@ Website cũng có các chức năng cho người quản trị để họ có th�
 - Design logo  (hoàn thành)
 - Thiết kế thanh menu nằm đứng (hoàn thành)
 - Thêm icon vào các danh mục menu
+- Giao diện các trang con admin đã hoàn thành, kiểm thử giao diện sẽ vào ngày 15/11
+
 
 ### Liên kết các trang admin
 - admin
 - Hoàn thành danh mục sản phẩm (50%)
+- Đã hoàn thành danh mục sản phẩm
+- image update failed error (đang sử lý)
+- Can't add an image with the same name (đang sử lý)
+- Tiến hành show list accounts user (Hoàn thành)
+- Xử lý edit và remote tài khoản ( đang thực hiện)
+
+
 
 
 ### Cơ sở dữ liệu
@@ -51,6 +60,10 @@ Website cũng có các chức năng cho người quản trị để họ có th�
 - báo cáo dự án
 - use case
 - erd
+
+
+# Những chức năng update mới
+
 
 
 
