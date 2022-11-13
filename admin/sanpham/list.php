@@ -9,7 +9,6 @@
                 <a href="index.php?act=add_products" style="display: flex;align-items: center;">
                         <i class="fa-sharp fa-solid fa-folder-plus"></i>
                         <h1 class="text">Thêm hàng hóa</h1>
-                  
                 </a>
             </div>
             <table>

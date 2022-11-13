@@ -66,6 +66,7 @@ body.dark {
 }
 
 
+
 .import-box {
     position: relative;
     width: 100%;
@@ -98,7 +99,7 @@ body.dark {
     border: none;
     outline: none;
     z-index: 10;
-    color: #000;
+    color: var(--text-color);
     font-size: 1em;
     letter-spacing: .05em;
 }
@@ -155,3 +156,85 @@ fieldset {
     border: 2px solid var(--moon-color);
     border-radius: 5px;
 }
+
+
+   
+.import-list select {
+    display: none; /*hide original SELECT element:*/
+  }
+  
+  .select-selected {
+    background-color: var(--panel-color);
+  }
+  
+  /*style the arrow inside the select element:*/
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 16px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid var(--moon-color);
+    border-color: var(--moon-color) transparent transparent transparent;
+  }
+  
+  /*point the arrow upwards when the select box is open (active):*/
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent var(--moon-color) transparent;
+    top: 7px;
+  }
+  
+  /*style the items (options), including the selected item:*/
+  .select-selected {
+    color: var(--text-color);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    padding:5px;
+    border: 2px solid var(--moon-color);
+    cursor: pointer;
+    user-select: none;
+  }
+  .select-items div:nth-child(odd) {
+    border:2px transparent;
+  }
+  .select-items div:first-child{
+    border-top: 2px solid var(--text-color);
+  }
+  .select-items div:last-child{
+border-bottom: 2px solid var(--text-color);
+  }
+  .select-items div{
+    color: var(--text-color);
+   border-top: 2px solid var(--text-color);
+   border-bottom:2px solid var(--text-color);
+
+    padding:5px;
+    /* border: 2px solid var(--moon-color); */
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  /*style items (options):*/
+  .select-items {
+    position: absolute;
+    background-color: var(--moon-color);
+    top: 100%;
+    left: 0;
+    border-left: 2px solid var(--text-color);
+    border-right: 2px solid var(--text-color);
+
+    right: 0;
+    z-index: 99;
+  }
+  
+  /*hide the items when the select box is closed:*/
+  .select-hide {
+    display: none;
+  }
+  
+  .select-items div:hover, .same-as-selected {
+    background-color: var(--panel-color);
+  }
+  

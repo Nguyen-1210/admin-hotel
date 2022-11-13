@@ -15,8 +15,8 @@ function loadall_accounts(){
     return $listtaikhoan;
 }
 
-function loadone_taikhoan($id){
-    $sql = "select * from taikhoan where id=".$id;
+function loadone_accounts($id){
+    $sql = "select * from accounts where id=".$id;
     $tk = pdo_query_one($sql);
     return $tk;
 }
@@ -38,8 +38,8 @@ function checkemail($email){
     return $tk;
 }
 
-function update_taikhoan($id, $user, $pass, $email, $name, $address, $tel, $role){
-    $sql = "update taikhoan set user='".$user."', pass='".$pass."', email='".$email."', name='".$name."', address='".$address."', tel='".$tel."', role='".$role."' where id=".$id;
+function update_accounts($id, $password){
+    $sql = "update accounts set  password='".$password."' where id=".$id;
     pdo_execute($sql);
 }
 

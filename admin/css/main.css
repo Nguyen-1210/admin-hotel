@@ -9,7 +9,6 @@
        list-style: none;
        text-decoration: none;
    }
-
    :root {
        /* ===== Colors ===== */
        --primary-color: #FF1E00;
@@ -507,7 +506,7 @@
        border: none;
        outline: none;
        z-index: 10;
-       color: #000;
+       color: var(--text-color);
        font-size: 1em;
        letter-spacing: .05em;
    }
