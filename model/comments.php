@@ -6,11 +6,11 @@ function insert_comment($id_user, $id_product, $comment, $day)
     $sql = "INSERT INTO comments(id_user, id_product, comment, day) VALUES ('$id_user','$id_product','$comment','$day')";
     pdo_execute($sql);
 }
-function loadall_comments($id_products)
+function loadall_comments($product_id)
 {
     $sql = "select * from comments where 1";
-    if ($id_products > 0) {
-        $sql .= "AND id_products='" . $id_products . "'";
+    if ($product_id > 0) {
+        $sql .= "AND product_id='" . $product_id . "'";
     } else {
         $sql .= " order by id desc";
     }

@@ -23,7 +23,6 @@
     <?php
 foreach($listcomments as $comments){
     extract($comments);
-    $edit_comments = "index.php?act=edit_comments&id=" . $id;
     $delete_comments = "index.php?act=delete_comments&id=" . $id;
    echo '<tr>
    <td>
@@ -33,11 +32,11 @@ foreach($listcomments as $comments){
    '.$comment.'
    </td> 
    <td>
-    '.$id_user.'
+    '.$user_id.'
    </td> 
    <td>
    <span class="discription">
-   '.$id_product.'
+   '.$product_id.'
    </span>
    </td> 
    <td>
@@ -47,8 +46,6 @@ foreach($listcomments as $comments){
    
    <div class="import-btn">
    <!-- chinh danh danh muc  -->
-   <a href="'.$edit_comments.'">
-     <i class="fa-solid fa-pen-to-square btn-list"></i></a>
    <a href="'.$delete_comments.'"><i class="fa-sharp fa-solid fa-trash  btn-list"></i></a>
 
  </div>
