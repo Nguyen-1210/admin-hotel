@@ -62,25 +62,12 @@ if (isset($_GET['act'])) {
                 $description = $_POST['des_product'];
                 $discount = $_POST['dis_product'];
                 $img = $_FILES['img']['name'];
-             
-                // die();
-                // $allowUpload   = true;
                 $extension = pathinfo($hinhanh,PATHINFO_ALL);
                 $randomo = rand(0,1000000);
                 $rename = 'Upload'.date('Ymd').$randomo;
-          
                 $img = $rename.'.'.$extension;
                 $target_dir = "../upload/";
-                // var_dump($target_dir);
-                // $target_file = $target_dir . basename($_FILES["img"]["name"]);
-           
-          
-              move_uploaded_file($_FILES["img"]["tmp_name"],$target_dir.$img);
-                    // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-                // } else {
-                //     // echo "Sorry, there was an error uploading your file.";
-                // }
-                
+                move_uploaded_file($_FILES["img"]["tmp_name"],$target_dir.$img);
                 insert_products($name, $price, $img, $description, $discount, $id_type);
                 header("location: ./index.php?act=list_products");
                 
