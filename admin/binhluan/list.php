@@ -32,11 +32,11 @@ foreach($listcomments as $comments){
    '.$comment.'
    </td> 
    <td>
-    '.$user_id.'
+    '.$id_user.'
    </td> 
    <td>
    <span class="discription">
-   '.$product_id.'
+   '.$id_product.'
    </span>
    </td> 
    <td>
