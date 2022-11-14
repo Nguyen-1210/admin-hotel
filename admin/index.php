@@ -6,6 +6,7 @@ include "../model/products.php";
 include "../model/types.php";
 include "../model/users.php";
 include "../model/comments.php";
+include "../model/bills.php";
 
 include "main.php";
 // include "home.php";
@@ -152,6 +153,28 @@ if (isset($_GET['act'])) {
             }
             $listcomments = loadall_comments(0);
             include "./binhluan/list.php";
+            break;
+        
+
+        case 'list_bills':
+            if(isset($_POST['kyw']) && ($_POST['kyw']!="")){
+                $kyw = $_POST['kyw'];
+            }
+            else{
+                $kyw = "";
+            }
+            
+            $listbills = loadall_bill($kyw,0);
+            include "./donhang/list.php";
+            break;
+        
+
+        case 'delete_bills':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                delete_bills($_GET['id']);
+            }
+            $listbills = loadall_bill($kyw,0);
+            include "./donhang/list.php";
             break;
         
         default:
