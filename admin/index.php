@@ -176,6 +176,27 @@ if (isset($_GET['act'])) {
             $listbills = loadall_bill($kyw,0);
             include "./donhang/list.php";
             break;
+
+        case 'edit_bills':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $listbills = loadone_bill($_GET['id']);
+            }
+            include "./donhang/edit.php";
+            break;
+        
+        case 'update_bills':
+            if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                $id = $_POST['id'];
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $address = $_POST['address'];
+                $tell = $_POST['tell'];
+                $status = $_POST['status'];
+                update_bills($id, $name, $email, $address, $tell, $status);
+            }
+            $listbills = loadall_bill();
+            include "./donhang/list.php";
+            break;
         
         default:
             # code...

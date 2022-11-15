@@ -53,7 +53,7 @@ if(is_array($tk)){
 
                         <!-- button thêm danh mục, danh sách -->
                         <div class="import-btn">
-                        <input type="hidden" name="id" value="<?php if(isset($id) && ($id > 0)) echo $id ?>">
+                            <input type="hidden" name="id" value="<?php if(isset($id) && ($id > 0)) echo $id ?>">
                             <input type="submit" name="capnhat" class="btn-list" value="Cập nhật">
                         </div>
                     </form>

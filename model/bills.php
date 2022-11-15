@@ -53,5 +53,10 @@ function get_ttdh($n){
     return $tt;
 }
 
+function update_bills($id, $name, $email, $address, $tell, $status){
+    $sql = "update bills set name='".$name."', email='".$email."', address='".$address."', tell='".$tell."', status='".$status."' where id=".$id;
+    pdo_execute($sql);
+}
+
 
 ?>
