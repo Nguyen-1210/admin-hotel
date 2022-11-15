@@ -139,6 +139,7 @@
    nav .menu-items {
        height: calc(100% - 90px);
        display: flex;
+       transition: var(--tran-05);
        flex-direction: column;
        justify-content: space-between;
    }
@@ -161,6 +162,19 @@
        clip-path: polygon(99% 50%, 0 0, 0 100%);
        background-color: var(--primary-color);
    }
+   /* .chart_list{
+   display: none;
+}
+.chart_down:active .chart_list,
+.chart_down:hover .chart_list{
+display: block;
+transition: var(--tran-03);
+}
+.chart_down a:active .fa-chevron-down{
+    transform: rotate(-180deg);
+    transition: var(--tran-05);
+
+} */
 
    body.dark li a:hover:before {
        background-color: var(--text-color);
