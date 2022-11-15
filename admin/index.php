@@ -141,6 +141,13 @@ if (isset($_GET['act'])) {
             $listtaikhoan = loadall_accounts();
             include "./taikhoan/list.php";
             break;
+            case 'delete_accounts':
+                    if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                        delete_accounts($_GET['id']);
+                    }
+                    $listtaikhoan = loadall_accounts();
+                    include "./taikhoan/list.php";
+                    break;
 
         case 'list_comments':
             $listcomments = loadall_comments(0);

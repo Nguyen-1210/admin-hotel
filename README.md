@@ -43,7 +43,7 @@ Website cũng có các chức năng cho người quản trị để họ có th�
 - Can't add an image with the same name (đang sử lý)
 - Tiến hành show list accounts user (Hoàn thành)
 - Xử lý edit và remote tài khoản ( đang thực hiện)
-
+- Edit và r
 
 
 

@@ -4,8 +4,8 @@ function insert_taikhoanmoi($user, $pass, $name, $email, $address, $tel ,$role){
     $sql = "insert into taikhoan(user,pass, name, email,address,tel,role) values ('$user','$pass', '$name', '$email','$address','$tel','$role')";
     pdo_execute($sql);
 }
-function delete_taikhoan($id){
-    $sql = "delete from taikhoan where id=".$id;
+function delete_accounts($id){
+    $sql = "delete from accounts where id=".$id;
     pdo_execute($sql);
 }
 
