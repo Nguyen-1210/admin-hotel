@@ -1,5 +1,11 @@
 <?php
 ob_start();
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: ./login.php");
+}
+
+$server = new mysqli("localhost","root","","max");
 
 include "../model/pdo.php";
 include "../model/products.php";
@@ -8,7 +14,7 @@ include "../model/users.php";
 include "../model/comments.php";
 include "../model/bills.php";
 
-include "main.php";
+include "menu.php";
 // include "home.php";
 
 

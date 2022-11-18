@@ -11,73 +11,71 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="./css/components/add.css">
+
     <link rel="stylesheet" href="./css/main.css">
     <title>TRANG CHỦ</title>
 </head>
 
 <body>
-<fieldset>
-    <legend>ề</legend>
-</fieldset>
+<!-- menu -->
     <nav>
-        <script></script>
         <div class="logo-name">
             <div class="logo-image">
-                <a href="./index.html">
+                <a href="index.php">
                     <img src="./images/logo.png" alt="">
                 </a>
             </div>
         </div>
         <div class="menu-items">
             <ul class="nav-links">
-                <li><a href="index.html">
-
+                <li><a href="index.php">
+          
                         <i class="fa-solid fa-house-user"></i>
                         <span class="link-name">Trang chủ</span>
                     </a></li>
-                <li><a href="list.html">
+                <li><a href="index.php?act=list_types">
+                        
                         <i class="fa-solid fa-list"></i>
                         <span class="link-name">Danh mục</span>
                     </a></li>
-                <li><a href="#">
-
+                <li><a href="index.php?act=list_products">
+                        
                         <i class="fa-solid fa-cart-shopping"></i>
                         <span class="link-name">Hàng hóa</span>
                     </a></li>
-                <li><a href="#">
-                        <i class="fa-solid fa-address-card"></i>
+                <li><a href="index.php?act=users_accounts">
+                    <i class="fa-solid fa-users"></i>
                         <span class="link-name">khách hàng</span>
                     </a></li>
-                <li><a href="#">
-                        <i class="fa-solid fa-comments"></i>
+                <li><a href="index.php?act=list_comments">
+                    <i class="fa-solid fa-comments"></i>
                         <span class="link-name">Bình luận</span>
                     </a></li>
                 <li><a href="#">
-                        <i class="fa-solid fa-file-signature"></i>
+                    <i class="fa-solid fa-file-signature"></i>
                         <span class="link-name">Đánh giá</span>
                     </a></li>
-                <li><a href="#">
-                        <i class="fa-solid fa-receipt"></i>
+                <li><a href="index.php?act=list_bills">
+                    <i class="fa-solid fa-receipt"></i>
                         <span class="link-name">Đơn hàng</span>
                     </a></li>
                 <li><a href="#">
-                        <i class="fa-solid fa-chart-simple"></i>
+                    <i class="fa-solid fa-chart-simple"></i>
                         <span class="link-name">Thống kê</span>
                     </a></li>
             </ul>
 
             <ul class="logout-mode">
-                <li><a href="#">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                        <span class="link-name">Đăng xuất</span>
+                <li><a href="./logout.php">
+                      <i class="fa-solid fa-right-from-bracket"></i>
+                        <span class="link-name">Logout</span>
                     </a></li>
 
                 <li class="mode">
                     <a href="#">
-
-                        <i class="fa-solid fa-moon" id="dr"></i>
-                        <span class="link-name">Tối / Sáng</span>
+       
+                        <i class="fa-solid fa-moon"  id="dr"></i>
+                        <span class="link-name">Dark Mode</span>
                     </a>
 
                     <div class="mode-toggle">
@@ -87,6 +85,8 @@
             </ul>
         </div>
     </nav>
+    
+<!-- main -->
     <section class="dashboard">
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
@@ -104,50 +104,3 @@
                 </div>
             </div>
         </div>
-        <div class="dash-content">
-            <div class="title"> 
-                <div style="display: flex;align-items: center;">
-
-                    <i class="fa-solid fa-file-pen"></i>
-                    <h1 class="text">Sửa danh mục</h1>
-                </div>
-                <a href="danhsach.html" style="display: flex;align-items: center;">
-
-                    <!-- <a href="danhsach.html"><input type="button" class="btn-list" value="Danh sách"></a> -->
-                   
-
-                        <i class="fa-sharp fa-solid fa-folder-plus"></i>
-                        <h1 class="text">Danh sách</h1>
-                  
-                </a>
-            </div>
-            <div class="import-box">
-                <div class="form-import">
-                    <form action="#" method="POST">
-                        <!-- input nhập sản phẩm -->
-                        <div class="import-list">
-                            <input type="text" required="required" disabled id="maloai" name="maloai">
-                            <span class="import-text"> Mã danh mục</span>
-                            <i></i>
-                        </div>
-                        <div class="import-list">
-                            <input type="text" required="required" name="tenloai" id="tenloai">
-                            <span class="import-text"> Tên danh mục</span>
-                            <i></i>
-                        </div>
-
-                        <!-- button thêm danh mục, danh sách -->
-                        <div class="import-btn">
-                            <input type="submit" name="themmoi" class="btn-list" value="Sửa">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script src="./js/app.js">
-    </script>
-</body>
-
-</html>

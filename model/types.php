@@ -26,5 +26,15 @@ function update_types($id, $name){
     $sql = "update types set name='".$name."' where id=".$id;
     pdo_execute($sql);
 }
-
+function can_delete($id) {
+    $sql = "select products.id_type from products where id_type ='".$id."' ";
+ $sql_qr =  pdo_execute($sql);
+//  var_dump($sql_qr);
+   if($sql_qr <1 ) {
+       return true;
+    }
+    else {
+        return false;
+    }
+}
 ?>

@@ -23,19 +23,28 @@
                 </thead>
                 <tbody>
                 <?php
+              
+
                             foreach ($listdanhmuc as $danhmuc) {
                                 extract($danhmuc);
                                 $suadm = "index.php?act=edit_types&id=".$id;
                                 $xoadm = "index.php?act=delete_types&id=".$id;
-                                echo '                            
+                            $show = '  
+
                                 <tr>
                                 <td><strong><input type="checkbox" name="" id=""></strong></td>
                                 <td>'.$id.'</td>
                                 <td>'.$name.'</td>
                                 <td> <a href="'.$suadm.'"> <i class="fa-solid fa-pen-to-square btn-list"></i></a>
-                                 <a href="'.$xoadm.'"><i class="fa-sharp fa-solid fa-trash  btn-list"></i></a>
-                                 </td>
-                                </tr>';
+                                 ';
+                                
+                                    if(can_delete($id)){
+                                        $show .= '<a href="'.$xoadm.'"><i class="fa-sharp fa-solid fa-trash  btn-list"></i></a> ';
+                                    }
+                                
+                                             
+                                     $show .=   '  </td> </tr>';
+                                     echo $show;
                             }
                             
                             ?>
