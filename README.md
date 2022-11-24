@@ -62,6 +62,5 @@ Website cũng có các chức năng cho người quản trị để họ có th�
 - erd
 
 
-## Những chức năng update mới
 
 
