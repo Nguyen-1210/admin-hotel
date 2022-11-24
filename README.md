@@ -64,6 +64,6 @@ Website cũng có các chức năng cho người quản trị để họ có th�
 
 ## Những chức năng update mới
 - Xóa dánh mục khi không có sản phẩm và không xóa danh mục khi có sản phẩm
-
+- Merge lên github
 
 
