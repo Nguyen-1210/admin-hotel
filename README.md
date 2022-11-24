@@ -66,4 +66,5 @@ Website cũng có các chức năng cho người quản trị để họ có th�
 - Xóa dánh mục khi không có sản phẩm và không xóa danh mục khi có sản phẩm
 - Merge lên github
 - Github 
+- merge vào nhánh chính
 
