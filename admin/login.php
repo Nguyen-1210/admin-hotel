@@ -1,8 +1,6 @@
 <?php 
 
-$server = new mysqli("localhost","root","","max");
-
-
+$server = new mysqli("localhost","root","","duan1_n_h");
 session_start();
 error_reporting(0);
 if (isset($_SESSION['username'])) {
@@ -13,7 +11,7 @@ if (isset($_POST['submit'])) {
 	$email = $_POST['email'];
 	$password = ($_POST['password']);
 
-	$sql = "SELECT * FROM user_form WHERE email='$email' AND password='$password'";
+	$sql = "SELECT * FROM account_admin WHERE email='$email' AND password='$password'";
 	$result = mysqli_query($server, $sql);
 	if ($result->num_rows > 0) {
 		$row = mysqli_fetch_assoc($result);

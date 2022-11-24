@@ -5,8 +5,7 @@ if (!isset($_SESSION['username'])) {
     header("Location: ./login.php");
 }
 
-$server = new mysqli("localhost","root","","max");
-
+// $server = new mysqli("localhost","root","","max");
 include "../model/pdo.php";
 include "../model/products.php";
 include "../model/types.php";
@@ -60,7 +59,6 @@ if (isset($_GET['act'])) {
             $listdanhmuc = loadall_types();
             include "./danhmuc/list.php";
             break;
-
             case 'add_products':
                 if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                     $id_type = $_POST['id_type'];
@@ -69,7 +67,7 @@ if (isset($_GET['act'])) {
                 $description = $_POST['des_product'];
                 $discount = $_POST['dis_product'];
                 $img = $_FILES['img']['name'];
-                $extension = pathinfo($hinhanh,PATHINFO_ALL);
+                $extension = pathinfo($img,PATHINFO_ALL);
                 $randomo = rand(0,1000000);
                 $rename = 'Upload'.date('Ymd').$randomo;
                 $img = $rename.'.'.$extension;

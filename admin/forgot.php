@@ -4,7 +4,7 @@ ob_start();
 session_start();
 $error = array();
 
-$server = new mysqli("localhost","root","","max");
+$server = new mysqli("localhost","root","","duan1_n_h");
 include_once ("email.php");
 	$mode = "enter_email";
 	if(isset($_GET['mode'])){
@@ -94,13 +94,13 @@ Hãy nhập mã xác nhận để cập nhật lại mật khẩu.
 		global $server;
 		
 		$email = addslashes($_SESSION['forgot']['email']);
-		$query = "update user_form set password = '$password' where email = '$email' limit 1";
+		$query = "update account_admin set password = '$password' where email = '$email' limit 1";
 		mysqli_query($server,$query);
 	}
 	function valid_email($email){
 		global $server;
 		$email = addslashes($email);
-		$query = "select * from user_form where email = '$email' limit 1";		
+		$query = "select * from account_admin where email = '$email' limit 1";		
 		$result = mysqli_query($server,$query);
 		if($result){
 			if(mysqli_num_rows($result) > 0)
