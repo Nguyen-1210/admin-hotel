@@ -198,6 +198,9 @@ if (isset($_GET['act'])) {
         
         case 'update_bills':
             if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                $araybill = [
+
+                ];
                 $id = $_POST['id'];
                 $name = $_POST['name'];
                 $email = $_POST['email'];
