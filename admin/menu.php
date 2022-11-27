@@ -59,7 +59,7 @@
                     <i class="fa-solid fa-receipt"></i>
                         <span class="link-name">Đơn hàng</span>
                     </a></li>
-                <li><a href="#">
+                <li><a href="index.php?act=list_charts">
                     <i class="fa-solid fa-chart-simple"></i>
                         <span class="link-name">Thống kê</span>
                     </a></li>

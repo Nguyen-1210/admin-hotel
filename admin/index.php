@@ -12,6 +12,7 @@ include "../model/types.php";
 include "../model/users.php";
 include "../model/comments.php";
 include "../model/bills.php";
+include "../model/chart.php";
 
 include "menu.php";
 // include "home.php";
@@ -211,7 +212,19 @@ if (isset($_GET['act'])) {
             $listbills = loadall_bill();
             include "./donhang/list.php";
             break;
+
+        case 'list_charts':
+            $listthongke = chart();
+            include "./thongke/list.php";
+            break;
         
+
+        case 'chart':
+            $listthongke = chart();
+            include "./thongke/chart.php";
+            break;
+
+
         default:
             # code...
             break;
