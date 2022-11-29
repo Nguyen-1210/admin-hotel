@@ -10,6 +10,7 @@ include "../model/pdo.php";
 include "../model/products.php";
 include "../model/types.php";
 include "../model/users.php";
+include "../model/chart.php";
 include "../model/comments.php";
 include "../model/bills.php";
 
@@ -211,6 +212,10 @@ if (isset($_GET['act'])) {
             $listbills = loadall_bill();
             include "./donhang/list.php";
             break;
+            case 'chart':
+                $listthongke = chart();
+                include './thongke/chart.php';
+                break;
         
         default:
             # code...
