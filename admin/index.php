@@ -213,7 +213,6 @@ if (isset($_GET['act'])) {
             include "./donhang/list.php";
             break;
 
-
         case 'chart':
             $listthongke = chart();
             include "./thongke/chart.php";
