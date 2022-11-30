@@ -30,10 +30,10 @@
                                 <a class="nav-link" href="index.php">Trang chủ</a>
                             </li>
                             <li class="nav-item nav-item-foot-line">
-                                <a class="nav-link " href="#product">Sản phẩm</a>
+                                <a class="nav-link " href="produtc.php=act-list">Sản phẩm</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#service">Dịch vụ</a>
+                                <a class="nav-link" href="server.php=act-list">Dịch vụ</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#about">Giới thiệu</a>
