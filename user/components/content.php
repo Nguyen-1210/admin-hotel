@@ -6,7 +6,15 @@
     <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="./css/content.css">
     <script async="" src="../../gtag/js?id=UA-97489509-8"></script>
-   
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/owl-carousel/owl.carousel.min.js"></script>
+    <script src="vendor/nouislider/nouislider.min.js"></script>
+    <script src="vendor/photoswipe/photoswipe.min.js"></script>
+    <script src="vendor/photoswipe/photoswipe-ui-default.min.js"></script>
+    <script src="vendor/svg4everybody/svg4everybody.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>svg4everybody();</script>
+
 
 
   
@@ -41,7 +49,7 @@
                         <div class="block block-products-carousel">
                             <div class="container container--max--xl">
                                 <div class="block__title">
-                                    <h2 class="decor-header decor-header--align--center">Sản phẩm được mua nhiều nhất</h2>
+                                    <h2 class="decor-header decor-header--align--center text-center">Sản phẩm được mua nhiều nhất</h2>
                                 </div>
                                 <div class="block-products-carousel__slider slider slider--with-arrows">
                                     <div class="owl-carousel">
@@ -100,7 +108,7 @@
                         <div class="block block-collections">
                             <div class="container container--max--xl">
                                 <div class="block__title">
-                                    <h2 class="decor-header decor-header--align--center">Bộ sưu tập mới nhất</h2>
+                                    <h2 class="decor-header decor-header--align--center text-center">Bộ sưu tập mới nhất</h2>
                                 </div>
                                 <div class="row g-custom-30">
                                     <div class="col-12 col-md-6 col-lg-5">
@@ -139,7 +147,7 @@
                         <div class="block block-shop-categories">
                             <div class="container container--max--xl">
                                 <div class="block__title">
-                                    <h2 class="decor-header decor-header--align--center">Các danh mục hiện có</h2>
+                                    <h2 class="decor-header decor-header--align--center text-center">Các danh mục hiện có</h2>
                                 </div>
                                 <div class="categories-list">
                                     <div class="card category-card"><a href="">
@@ -158,7 +166,7 @@
                         <div class="block block-posts-carousel">
                             <div class="container container--max--xl">
                                 <div class="block__title">
-                                    <h2 class="decor-header decor-header--align--center">Bài viết mới nhất</h2>
+                                    <h2 class="decor-header decor-header--align--center text-center">Bài viết mới nhất</h2>
                                 </div>
                                 <div class="block-posts-carousel__slider slider slider--with-arrows">
                                     <div class="owl-carousel">
@@ -185,14 +193,4 @@
             
        
 
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/owl-carousel/owl.carousel.min.js"></script>
-    <script src="vendor/nouislider/nouislider.min.js"></script>
-    <script src="vendor/photoswipe/photoswipe.min.js"></script>
-    <script src="vendor/photoswipe/photoswipe-ui-default.min.js"></script>
-    <script src="vendor/svg4everybody/svg4everybody.min.js"></script>
-    <script src="js/main.js"></script>
-    <script>svg4everybody();</script>
-</body>
-
-</html>
+   

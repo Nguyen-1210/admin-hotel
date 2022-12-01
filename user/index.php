@@ -19,6 +19,7 @@
 
     <!-- link boxicon -->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    
 </head>
 
 <body>
@@ -30,10 +31,13 @@ if (isset($_GET['act'])) {
     $act = ($_GET['act']);
     switch ($act) {
             // list
-        case 'list_types':
-            $listdanhmuc = loadall_types();
-            include "./danhmuc/list.php";
+        case '_product':
+            include "./product.php";
             break;
+            case '_detalis':
+                include './components/_detalis.php';
+
+                break;
 
    
         default:
