@@ -38,7 +38,7 @@
                                 <a class="nav-link" href="index.php?act=about-us">Giới thiệu</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#contact">Liên hệ</a>
+                                <a class="nav-link" href="index.php?act=contact-us">Liên hệ</a>
                             </li>
                         </ul>
                         <!-- search -->

@@ -34,9 +34,13 @@ if (isset($_GET['act'])) {
             include "./service.php";
             break;
 
-            case 'about-us':
-                include "./about-us.php";
-                break;
+        case 'about-us':
+            include "./about-us.php";
+            break;
+
+        case 'contact-us':
+            include "./contact-us.php";
+            break;
         
         default:
             # code...
