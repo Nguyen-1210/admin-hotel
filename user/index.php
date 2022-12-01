@@ -24,10 +24,30 @@
 <body>
     <?php
     include './components/header.php';
-    include './components/content.php';
     ?>
+    <?php
+if (isset($_GET['act'])) {
+    $act = ($_GET['act']);
+    switch ($act) {
+            // list
+        case 'list_types':
+            $listdanhmuc = loadall_types();
+            include "./danhmuc/list.php";
+            break;
+
    
-    <script>svg4everybody();</script>
+        default:
+            # code...
+            break;
+    }
+} else {
+    // content
+    include './components/content.php';
+
+}
+
+
+?>
 </body>
 </html>
     
