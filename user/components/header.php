@@ -1,10 +1,10 @@
+<link rel="stylesheet" href="./css/header.css">
 
- 
     <div class="banner-custom" id="home">
-        <header class="py-3">
+        <header class="p-0">
             <div class="container-fluid px-5 header-custom">
                 <!--header top -->
-                <div class="row row-top py-3">
+                <div class="row row-top pt-3">
                     <div class="col-10">
                         <!-- social media -->
                         <a href="#" style="--clr: #129af6;" class="facebook mx-3"><i
@@ -20,7 +20,8 @@
                 <div class="row row-bottom py-3 ">
                     <!-- logo -->
                     <div class="col-2 d-flex align-items-center">
-                        <a href="#" class="logo "><img src="../admin/images/logo.png" style="width: 70px;">
+                        <a href="#" class="logo "><img src="../admin/images/logo.png" style="width: 40px;
+    object-fit: cover;">
                    </a>
                     </div>
                     <!-- menu -->
