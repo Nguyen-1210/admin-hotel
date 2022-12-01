@@ -29,13 +29,15 @@
 if (isset($_GET['act'])) {
     $act = ($_GET['act']);
     switch ($act) {
-            // list
-        case 'list_types':
-            $listdanhmuc = loadall_types();
-            include "./danhmuc/list.php";
+            // Trang chủ
+        case 'service':
+            include "./service.php";
             break;
 
-   
+            case 'about-us':
+                include "./about-us.php";
+                break;
+        
         default:
             # code...
             break;

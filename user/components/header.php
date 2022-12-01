@@ -1,5 +1,4 @@
-
- 
+<link rel="stylesheet" href="./css/header.css">
     <div class="banner-custom" id="home">
         <header class="py-3">
             <div class="container-fluid px-5 header-custom">
@@ -33,10 +32,10 @@
                                 <a class="nav-link " href="produtc.php=act-product">Sản phẩm</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="server.php=act-list">Dịch vụ</a>
+                                <a class="nav-link" href="index.php?act=service">Dịch vụ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#about">Giới thiệu</a>
+                                <a class="nav-link" href="index.php?act=about-us">Giới thiệu</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#contact">Liên hệ</a>
