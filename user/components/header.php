@@ -72,7 +72,7 @@
                         </div>
                         <!-- cart -->
                         <div class="px-4">
-                            <a href="" class="cart position-relative"><i class="fa-solid fa-bag-shopping">
+                            <a href="index.php?act=addCard" class="cart position-relative"><i class="fa-solid fa-bag-shopping">
                             </i><span class="position-absolute title_price"></span></a>
                         </div>
                     </div>

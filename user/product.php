@@ -63,28 +63,42 @@
                                         extract($product);
                                         $linksp = "index.php?act=_detalis&idsp=" . $id_pro;
                                         $imga = $img_path . $img;
-                                        echo '<div class="products-list__item">
-                                        <div class="product-card product-card--layout--grid">
-
-                                            <div class="product-card__image"><a href="' . $linksp . '"><img src="' . $imga . '" alt=""></a>
-                                            </div>
-                                            <div class="product-card__info">
-                                                <div class="product-card__category"><a href="">' . $namehh . '</a></div>
-                                                <div class="product-card__name"><a href="index.php?act=_detalis">' . $namepro . '</a></div>
-
-                                                <div class="product-card__prices-list">
-                                                    <div class="product-card__price">' . $price . '</div>
-                                                </div>
-                                                <div class="product-card__buttons">
-                                                    <a href="">
-                                                        <div class="product-card__buttons-list">
-                                                        <button class="btn btn-primary product-card__addtocart" type="button" name="addtocart">Thêm vào Giỏ Hàng</button> 
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
+                                        if ($discount == 0) {
+                                            $dis = "";
+                                            $price_new = "";
+                                            $style = 'style="text-decoration: none;"';
+                                        } else {
+                                            // $dis =$discount;
+                                            $style = "";
+                                            $dis = "Giảm giá";
+                                            $price_new = $price - $discount;
+                                        }
+                                    echo ' <div class="products-list__item">
+                                    <div class="product-card product-card--layout--grid">
+                                        <div class="product-card__badges-list">
+                                            <div class="product-card__badge product-card__badge--style--sale">'.$dis.'</div>
                                         </div>
-                                    </div>';
+
+                                        <div class="product-card__image"><a href="'.$linksp.'"><img src="'.$imga.'" alt=""></a>
+                                        </div>
+                                        <div class="product-card__info">
+                                            <div class="product-card__category"><a href="">' . $namehh . '</a>
+                                            </div>
+                                            <div class="product-card__name"><a href="product.html">' . $namepro . '</a></div>
+
+                                            <div class="product-card__prices-list">
+                                                <div class="product-card__price"><span class="product-card__price-new" '.$style.'>' . $price_new . '</span>
+                                                    <span class="product-card__price-old">' . $price . '</span>
+                                                </div>
+                                            </div>
+                                            <form class="product-card__buttons" action="index.php?act=addCard" method="POST" >
+                                                <div class="product-card__buttons-list">
+                                                    <input class="btn btn-primary product-card__addtocart" type="button" name="addCard" value="Add To Cart"></input>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>';
                                     }
 
                                     ?>
@@ -103,8 +117,7 @@
                                                 <form class="product-card__buttons" >
                                                     <a href="">
                                                         <div class="product-card__buttons-list">
-                                                            in
-                                                            <button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button>
+                                                            <input class="btn btn-primary product-card__addtocart" type="button" value="Add To Cart"></input>
                                                         </div>
                                                     </a>
                                                 </form>

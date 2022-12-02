@@ -35,8 +35,7 @@ extract($onspd);
                         </div>
                     </div>
                     <div class="product-gallery__featured" style="width: 75%;">
-                        <div class="" id="product-image"><a href="#"><img style="width: 342px;
-    height: 342px;" src="<?= $imga = $img_path . $img; ?>" alt=""> </a></div>
+                        <div class="" id="product-image"><a href="#"><img style="width: 342px;height: 342px;" src="<?= $imga = $img_path . $img; ?>" alt=""> </a></div>
                     </div>
                 </div>
             </div>
