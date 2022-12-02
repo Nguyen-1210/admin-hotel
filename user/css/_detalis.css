@@ -2,6 +2,17 @@
     margin-bottom: 100px
 }
 
+a:hover {
+color: #fff;
+    text-decoration: none;
+}
+
+a {
+    color: #fff;
+        text-decoration: none;
+    }
+
+
 .card {
     background-color: #fff;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, .02), 0 1px 4px #cfdee5;
@@ -326,7 +337,6 @@ h2.decor-header:after {
     margin: 60px 80px
 }
 
-
 .form-control-number__input {
     -moz-appearance: textfield;
     display: block;
@@ -380,17 +390,14 @@ h2.decor-header:after {
     opacity: 1
 }
 
-[dir=ltr] .form-control-number__sub {
+ .form-control-number__sub {
     left: 1px
 }
 
-[dir=ltr] .form-control-number__add,
-[dir=rtl] .form-control-number__sub {
-    right: 1px
-}
 
-[dir=rtl] .form-control-number__add {
-    left: 1px
+
+.form-control-number__add {
+    right:  1px
 }
 
 .form-control-number__add:after {
@@ -455,4 +462,7 @@ color: inherit;
     font-size: 15px;
     min-height: 42px;
     line-height: 1.4;
+}
+body {
+    background-color: #e6eef2;
 }

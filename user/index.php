@@ -36,10 +36,11 @@ if (isset($_GET['act'])) {
             break;
             case '_detalis':
                 include './components/_detalis.php';
-
                 break;
-
-   
+            case '_card':
+                include './components/_card.php';
+                    break;
+                    
         default:
             # code...
             break;

@@ -1,20 +1,26 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Meblya</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/_detalis.css">
+    <link rel="stylesheet" href="css/content.css">
 
-</head>
 
-<body>
 
-    <div class="block">
+    <div class="block mt-5">
+    <div class="page__header">
+                        <div class="container container--max--xl">
+                            <div class="row g-custom-30">
+                                <div class="col">
+                                    <ol class="page__header-breadcrumbs breadcrumb">
+                                        <li class="breadcrumb-item"><a href="">Tên website</a></li>
+                                        <li class="breadcrumb-item"><a href="">Tên danh mục</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Tên sản phẩm</li>
+                                    </ol>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
         <div class="product container container--max--xl">
             <div class="card product__info">
                 <div class="product__gallery">
@@ -46,31 +52,6 @@
                     <div class="product__price"><span class="product__price-new">Giá sản phẩm</span>
                         <span class="product__price-old">Giảm giá</span></div>
                     <form class="product__options">
-                        <div class="mb-3 product__option"><label class="form-label product__option-label">Color</label>
-                            <div class="radio-color">
-                                <div class="radio-color__list"><label class="radio-color__item radio-color__item--white"
-                                        style="color: #fff;"><input type="radio" name="color">
-                                        <span></span></label> <label class="radio-color__item"
-                                        style="color: #ffd599;"><input type="radio" name="color">
-                                        <span></span></label> <label class="radio-color__item"
-                                        style="color: #ff6b6b;"><input type="radio" name="color">
-                                        <span></span></label> <label
-                                        class="radio-color__item radio-color__item--disabled"
-                                        style="color: #5398ff;"><input type="radio" name="color" disabled="disabled">
-                                        <span></span></label></div>
-                            </div>
-                        </div>
-                        <div class="mb-3"><label class="form-label product__option-label">Chất
-                                liệu</label>
-                            <div class="radio-select">
-                                <div class="radio-select__list"><label><input type="radio" name="material">
-                                        <span>Gỗ</span></label>
-                                    <label><input type="radio" name="material">
-                                        <span>Nhựa</span></label> <label><input type="radio" name="material"
-                                            disabled="disabled">
-                                        <span>Kim loại</span></label></div>
-                            </div>
-                        </div>
                         <div class="mb-3"><label class="form-label product__option-label">Số
                                 Lượng</label>
                             <div class="product__actions">
@@ -82,8 +63,12 @@
                                         <div class="form-control-number__sub"></div>
                                     </div>
                                 </div>
-                                <div class="product__actions-item"><button class="btn btn-primary btn-lg">Thêm vào giỏ
-                                        hàng</button>
+                                <div class="product__actions-item">
+                                    <a href="index.php?act=_card">
+                                    <span class="btn btn-primary btn-lg">
+                                        Thêm vào giỏ hàng
+                                    </span>
+                                </a>
                                 </div>
                             </div>
                         </div>
@@ -93,6 +78,3 @@
         </div>
     </div>
 
-</body>
-
-</html>
