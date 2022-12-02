@@ -43,7 +43,7 @@ extract($onspd);
             <div class="product__details">
                 <div class="product__categories-sku">
                     <div class="product__categories"><a href=""><?= $namehh ?></a></div>
-                    <div class="product__sku">Mã sản phẩm: <?= $id ?></div>
+                    <div class="product__sku">Mã sản phẩm: <?= $id_pro ?></div>
                 </div>
                 <div class="product__name">
                     <h2 class="decor-header"><?= $namepro ?></h2>
@@ -136,7 +136,7 @@ extract($onspd);
                                             </div>
                                         </div>
                                     </div>
-                                    <input type="hidden" name="id" value="<?= $id ?>">
+                                    <input type="hidden" name="id" value="<?= $id_pro ?>">
                                     <input type="hidden" name="name" value="<?= $namepro ?>">
                                     <input type="hidden" name="img" value="<?= $imga ?>">
                                     <input type="hidden" name="price" value="<?= $price_new ?>">

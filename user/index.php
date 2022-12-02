@@ -33,6 +33,7 @@
     if (!isset($_SESSION['myCard'])) {
         $_SESSION['myCard'] = null;
     }
+    // session_destroy();
     $show_types = show_types();
     $list_pro_top8 = loadall_product_top8();
     if (isset($_GET['act'])) {
@@ -76,11 +77,17 @@
                         'number' => $number,
                         'total_money' => $total_money,
                     ];
+                    
+                    $count  = 0;
                     if($_SESSION['myCard'] != null){
                         foreach($_SESSION['myCard'] as $key => $card){
                             if($card['id'] == $id){
-                                $_SESSION['myCard'][$key]['number'] = $number+1;
+                                $_SESSION['myCard'][$key]['number'] += $number;
+                                $count ++;
                             }
+                        }
+                        if($count == 0){
+                            $_SESSION['myCard'][] = $array;    
                         }
                     }else{
                         $_SESSION['myCard'][] = $array;
