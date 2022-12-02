@@ -10,14 +10,14 @@ function delete_products($id){
     pdo_execute($sql);
 }
 
-function loadall_product_top10(){
-    $sql = "select * from products where 1 order by luotxem desc limit 0,10";
+function loadall_product_top8(){
+    $sql = "SELECT *,types.name AS 'namehh', products.name AS 'namepro' FROM products INNER JOIN types ON products.id_type = types.id WHERE products.view>0 order by products.view desc LIMIT 0,04";
     $listproducts = pdo_query($sql);
     return $listproducts;
 }
 
 function loadall_product_home(){
-    $sql = "select * from products where 1 order by id desc limit 0,12";
+    $sql = "SELECT *,types.name AS 'namehh', products.name AS 'namepro' FROM products INNER JOIN types ON products.id_type = types.id ";
     $listproducts = pdo_query($sql);
     return $listproducts;
 }

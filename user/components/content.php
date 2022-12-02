@@ -49,12 +49,40 @@
                         <div class="block block-products-carousel">
                             <div class="container container--max--xl">
                                 <div class="block__title">
-                                    <h2 class="decor-header decor-header--align--center text-center">Sản phẩm được mua nhiều nhất</h2>
+                                    <h2 class="decor-header decor-header--align--center text-center">Sản phẩm có lượt xem nhiều nhất</h2>
                                 </div>
                                 <div class="block-products-carousel__slider slider slider--with-arrows">
                                     <div class="owl-carousel">
+                                        <?php
+                                        foreach ($list_pro_top8 as $product) {
+                                            extract($product);
+                                            $linksp = "index.php?act=productct&idsp=" . $id;
+                                            $imga = $img_path . $img;
+                                            echo '<div class="product-card product-card--layout--grid">
+                                            <div class="product-card__image"><a href="product.html">                                               
+                                                 <img src="images/product2-1.jpg" alt=""></a></div>
+                                            <div class="product-card__info">
+                                                <div class="product-card__category"><a href="">'.$namehh.'</a></div>
+                                                <div class="product-card__name"><a href="">'.$namepro.'</a></div>
+                                               
+                                                <div class="product-card__prices-list">
+                                                    <div class="product-card__price">'.$price.'</div>
+                                                </div>
+                                                <div class="product-card__prices-list">
+                                                <div class="product-card__price">'.$view.' View</div>
+                                            </div>
+                                                <div class="product-card__buttons">
+                                                    <div class="product-card__buttons-list">
+                                                        <a href="_detalis.php"><button
+                                                            class="btn btn-primary product-card__addtocart"
+                                                            type="button">Thêm vào giỏ hàng</button></a> </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                        }
+                                        
+                                        ?>
                                         <div class="product-card product-card--layout--grid">
-                                           
                                             <div class="product-card__image"><a href="product.html">                                               
                                                  <img src="images/product2-1.jpg" alt=""></a></div>
                                             <div class="product-card__info">
