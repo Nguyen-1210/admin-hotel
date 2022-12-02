@@ -186,7 +186,7 @@
                                         echo '<div class="card category-card"><a href="">
                                         <div class="category-card__image"><img
                                                 src="images/product2-1.jpg" alt=""></div>
-                                        <div class="category-card__name">'.$name.'</div>
+                                        <div class="category-card__name">'.$namhh.'</div>
                                         <div class="category-card__products">'.$tonghh.' Sản Phẩm</div>
                                     </a>
                                      </div>';
@@ -194,30 +194,7 @@
                                     }
                                     
                                     ?>
-
-                                    <div class="card category-card"><a href="">
-                                            <div class="category-card__image"><img
-                                                    src="images/product2-1.jpg" alt=""></div>
-                                            <div class="category-card__name">Tên danh mục</div>
-                                            <div class="category-card__products">Số lượng sản phẩm</div>
-                                        </a>
-                                    </div>
-                                    
-                                    <div class="card category-card"><a href="">
-                                            <div class="category-card__image"><img
-                                                    src="images/product2-1.jpg" alt=""></div>
-                                            <div class="category-card__name">Tên danh mục</div>
-                                            <div class="category-card__products">Số lượng sản phẩm</div>
-                                        </a>
-                                    </div>
-
-                                    <div class="card category-card"><a href="">
-                                            <div class="category-card__image"><img
-                                                    src="images/product2-1.jpg" alt=""></div>
-                                            <div class="category-card__name">Tên danh mục</div>
-                                            <div class="category-card__products">Số lượng sản phẩm</div>
-                                        </a>
-                                    </div>
+<!-- danh mục hiện có  -->
 
                                     <div class="card category-card"><a href="">
                                             <div class="category-card__image"><img
