@@ -17,7 +17,7 @@ function loadall_product_top8(){
 }
 
 function loadall_product_home(){
-    $sql = "SELECT *,types.name AS 'namehh', products.name AS 'namepro' FROM products INNER JOIN types ON products.id_type = types.id ";
+    $sql = "SELECT *,types.name AS 'namehh', products.name AS 'namepro', products.id AS 'id_pro' FROM products INNER JOIN types ON products.id_type = types.id ";
     $listproducts = pdo_query($sql);
     return $listproducts;
 }
@@ -36,7 +36,7 @@ function loadall_products($kyw="", $id_type=0){
 }
 
 function loadone_product($id){
-    $sql = "select * from products where id=".$id;
+    $sql = "SELECT *,types.name AS 'namehh', products.name AS 'namepro', products.id AS 'id_pro' FROM products INNER JOIN types ON products.id_type = types.id WHERE products.id =".$id;
     $products = pdo_query_one($sql);
     return $products;
 }

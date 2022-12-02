@@ -59,15 +59,14 @@
                                 <div class="products-view__list products-list products-list--layout--full-grid-5">
                                     <!-- prodcut -->
                                     <?php
-                                    
                                     foreach ($listproducts as $product) {
                                         extract($product);
-                                        $linksp = "index.php?act=sanphamct&idsp=" . $id;
+                                        $linksp = "index.php?act=_detalis&idsp=" . $id_pro;
                                         $imga = $img_path . $img;
                                         echo '<div class="products-list__item">
                                         <div class="product-card product-card--layout--grid">
 
-                                            <div class="product-card__image"><a href="index.php?act=_detalis"><img src="'.$imga.'" alt=""></a>
+                                            <div class="product-card__image"><a href="'.$linksp.'"><img src="'.$imga.'" alt=""></a>
                                             </div>
                                             <div class="product-card__info">
                                                 <div class="product-card__category"><a href="">'.$namehh.'</a></div>

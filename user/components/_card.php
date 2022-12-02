@@ -49,7 +49,11 @@
                                             <form>
                                                 <table class="cart__table">
                                                     <thead class="cart__header">
+<?php
 
+$tong = 0 ;
+$i = 0;
+?>
 
 
                                                         <tr>
@@ -62,11 +66,17 @@
                                                             <td class="cart__column cart__column--remove"></td>
                                                         </tr>
                                                     </thead>
-                                                    <tbody class="cart__body">
+                                                    <?php 
+                                                    foreach($_SESSION['myCard'] as $card){
+$hinh = $img_path . $card[2];
+$total_money = $card[3] * $card[4];
+$tong =+ $total_money;
+
+                                                  echo '  <tbody class="cart__body">
                                                         <tr>
                                                             <td class="cart__column cart__column--image"><a
                                                                     href=""><img
-                                                                        src="images/product2-1.jpg" alt=""></a>
+                                                                        src="'.$hinh.'" alt=""></a>
                                                             </td>
                                                             <td class="cart__column cart__column--info">
                                                                 <div class="cart__product-name"><a
@@ -88,6 +98,10 @@
                                                                 data-title="Total">$249.00</td>
                                                         </tr>
                                                     </tbody>
+                                                    
+                                                ';}
+
+                                                ?>
                                                     <tfoot class="cart__footer">
                                                         <tr>
                                                             <td colspan="3" class="cart__column"><a

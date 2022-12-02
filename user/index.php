@@ -28,7 +28,10 @@
     require './global.php';
     ?>
     <?php
-
+    
+    
+    
+if(!isset($_SESSION['myCard'])) $_SESSION['myCard']=[];
 $show_types = show_types();
 $list_pro_top8 = loadall_product_top8();
     if (isset($_GET['act'])) {
@@ -46,13 +49,29 @@ $list_pro_top8 = loadall_product_top8();
                 $listproducts = loadall_product_home();
                 include "./product.php";
                 break;
-
-
-            case 'detalis':
-                include './components/_detalis.php';
-
+            case '_detalis':
+                if (isset($_GET['idsp']) && ($_GET['idsp'] > 0)) {
+                    $id = $_GET['idsp'];
+                    $onspd = loadone_product($id);
+                    extract($onspd);
+                  
+                    include './components/_detalis.php';
+                }
                 break;
+                case 'addCard':
+                    if(isset($_POST['addCard']) && ($_POST['addCard'])) {
+                        $id = $_POST['id'];
+                        $name = $_POST['name'];
+                        $img = $_POST['img'];
+                        $price = $_POST['price'];
+                        $number = 1;
+                        $total_money = $number * $price;
+                        $spadd = [$id, $name, $img , $price,$number, $total_money];
+                        array_push($_SESSION['myCard'], $spadd);
 
+                    }
+                    include "./components/_card.php";
+                    break;
    
         default:
             # code...
