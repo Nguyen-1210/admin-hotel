@@ -1,10 +1,9 @@
 <link rel="stylesheet" href="./css/header.css">
-
     <div class="banner-custom" id="home">
-        <header class="p-0">
+        <header class="py-3">
             <div class="container-fluid px-5 header-custom">
                 <!--header top -->
-                <div class="row row-top pt-3">
+                <div class="row row-top py-3">
                     <div class="col-10">
                         <!-- social media -->
                         <a href="#" style="--clr: #129af6;" class="facebook mx-3"><i
@@ -20,8 +19,7 @@
                 <div class="row row-bottom py-3 ">
                     <!-- logo -->
                     <div class="col-2 d-flex align-items-center">
-                        <a href="#" class="logo "><img src="../admin/images/logo.png" style="width: 40px;
-    object-fit: cover;">
+                        <a href="#" class="logo "><img src="../admin/images/logo.png" style="width: 70px;">
                    </a>
                     </div>
                     <!-- menu -->
@@ -34,13 +32,13 @@
                                 <a class="nav-link " href="index.php?act=_product">Sản phẩm</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="server.php=act-list">Dịch vụ</a>
+                                <a class="nav-link" href="index.php?act=service">Dịch vụ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#about">Giới thiệu</a>
+                                <a class="nav-link" href="index.php?act=about-us">Giới thiệu</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#contact">Liên hệ</a>
+                                <a class="nav-link" href="index.php?act=contact-us">Liên hệ</a>
                             </li>
                         </ul>
                         <!-- search -->
