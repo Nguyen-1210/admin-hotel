@@ -66,25 +66,27 @@
                                         echo '<div class="products-list__item">
                                         <div class="product-card product-card--layout--grid">
 
-                                            <div class="product-card__image"><a href="'.$linksp.'"><img src="'.$imga.'" alt=""></a>
+                                            <div class="product-card__image"><a href="' . $linksp . '"><img src="' . $imga . '" alt=""></a>
                                             </div>
                                             <div class="product-card__info">
-                                                <div class="product-card__category"><a href="">'.$namehh.'</a></div>
-                                                <div class="product-card__name"><a href="index.php?act=_detalis">'.$namepro.'</a></div>
+                                                <div class="product-card__category"><a href="">' . $namehh . '</a></div>
+                                                <div class="product-card__name"><a href="index.php?act=_detalis">' . $namepro . '</a></div>
 
                                                 <div class="product-card__prices-list">
-                                                    <div class="product-card__price">'.$price.'</div>
+                                                    <div class="product-card__price">' . $price . '</div>
                                                 </div>
                                                 <div class="product-card__buttons">
                                                     <a href="">
-                                                        <div class="product-card__buttons-list"><button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button> </div>
+                                                        <div class="product-card__buttons-list">
+                                                        <button class="btn btn-primary product-card__addtocart" type="button" name="addtocart">Thêm vào Giỏ Hàng</button> 
+                                                        </div>
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>';
                                     }
-                                    
+
                                     ?>
                                     <div class="products-list__item">
                                         <div class="product-card product-card--layout--grid">
@@ -98,11 +100,14 @@
                                                 <div class="product-card__prices-list">
                                                     <div class="product-card__price">$249.00</div>
                                                 </div>
-                                                <div class="product-card__buttons">
+                                                <form class="product-card__buttons" >
                                                     <a href="">
-                                                        <div class="product-card__buttons-list"><button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button> </div>
+                                                        <div class="product-card__buttons-list">
+                                                            in
+                                                            <button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button>
+                                                        </div>
                                                     </a>
-                                                </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>

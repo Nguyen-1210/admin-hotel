@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="./css/header.css">
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <div class="banner-custom" id="home">
         <header class="py-3">
             <div class="container-fluid px-5 header-custom">

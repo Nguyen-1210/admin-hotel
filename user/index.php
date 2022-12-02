@@ -21,6 +21,7 @@
 
 <body>
     <?php
+    session_start();
     include '../model/pdo.php';
     include './components/header.php';
     include '../model/products.php';
@@ -28,12 +29,12 @@
     require './global.php';
     ?>
     <?php
-    
-    
-    
-if(!isset($_SESSION['myCard'])) $_SESSION['myCard']=[];
-$show_types = show_types();
-$list_pro_top8 = loadall_product_top8();
+
+    if (!isset($_SESSION['myCard'])) {
+        $_SESSION['myCard'] = null;
+    }
+    $show_types = show_types();
+    $list_pro_top8 = loadall_product_top8();
     if (isset($_GET['act'])) {
         $act = ($_GET['act']);
         switch ($act) {
@@ -41,9 +42,9 @@ $list_pro_top8 = loadall_product_top8();
             case 'service':
                 include "./service.php";
                 break;
-                case 'about-us':
-                    include "./about-us.php";
-                    break;
+            case 'about-us':
+                include "./about-us.php";
+                break;
                 // list
             case '_product':
                 $listproducts = loadall_product_home();
@@ -54,34 +55,49 @@ $list_pro_top8 = loadall_product_top8();
                     $id = $_GET['idsp'];
                     $onspd = loadone_product($id);
                     extract($onspd);
-                  
                     include './components/_detalis.php';
                 }
                 break;
-                case 'addCard':
-                    if(isset($_POST['addCard']) && ($_POST['addCard'])) {
-                        $id = $_POST['id'];
-                        $name = $_POST['name'];
-                        $img = $_POST['img'];
-                        $price = $_POST['price'];
-                        $number = 1;
-                        $total_money = $number * $price;
-                        $spadd = [$id, $name, $img , $price,$number, $total_money];
-                        array_push($_SESSION['myCard'], $spadd);
+            case 'addCard':
+                if (isset($_POST['addCard']) && ($_POST['addCard'])) {
+                    $id = $_POST['id'];
+                    $name = $_POST['name'];
+                    $img = $_POST['img'];
+                    $price = $_POST['price'];
+                    $number = $_POST['number'];
+                    $total_money = $number * $price;
 
+
+                    $array = [
+                        'id' => $id,
+                        'name' => $name,
+                        'img' => $img,
+                        'price' =>  $price,
+                        'number' => $number,
+                        'total_money' => $total_money,
+                    ];
+                    if($_SESSION['myCard'] != null){
+                        foreach($_SESSION['myCard'] as $key => $card){
+                            if($card['id'] == $id){
+                                $_SESSION['myCard'][$key]['number'] = $number+1;
+                            }
+                        }
+                    }else{
+                        $_SESSION['myCard'][] = $array;
                     }
-                    include "./components/_card.php";
-                    break;
-   
-        default:
-            # code...
-            break;
-    }
-} else {
-    // content
-    include './components/content.php';
+                    
+                }
+                include "./components/_card.php";
+                // break;
 
-}
+            default:
+                # code...
+                break;
+        }
+    } else {
+        // content
+        include './components/content.php';
+    }
 
 
     ?>
