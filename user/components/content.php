@@ -17,7 +17,7 @@
 
 
 
-  
+
             <div class="site__body">
                 <!-- page -->
                 <div class="page">
@@ -31,21 +31,21 @@
                                     <div class="owl-carousel">
                                         <!-- bắt đầu một slide -->
                                         <a href="index.php">
-                                           
+
                                                 <img src="images/slide1.jpg" alt="">
-                                            
+
                                         </a>
                                         <a href="index.html">
-                                           
+
                                                 <img src="images/slide1.jpg" alt="">
-                                            
+
                                         </a>
                                         <!-- kết thúc một slide -->
-                                    </div> 
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="block block-products-carousel">
                             <div class="container container--max--xl">
                                 <div class="block__title">
@@ -54,70 +54,37 @@
                                 <div class="block-products-carousel__slider slider slider--with-arrows">
                                     <div class="owl-carousel">
                                         <?php
-                                        foreach ($list_pro_top8 as $product) {
-                                            extract($product);
-                                            $linksp = "index.php?act=productct&idsp=" . $id;
-                                            $imga = $img_path . $img;
-                                            echo '<div class="product-card product-card--layout--grid">
-                                            <div class="product-card__image"><a href="product.html">                                               
-                                                 <img src="images/product2-1.jpg" alt=""></a></div>
-                                            <div class="product-card__info">
-                                                <div class="product-card__category"><a href="">'.$namehh.'</a></div>
-                                                <div class="product-card__name"><a href="">'.$namepro.'</a></div>
-                                               
-                                                <div class="product-card__prices-list">
-                                                    <div class="product-card__price">'.$price.'</div>
-                                                </div>
-                                                <div class="product-card__prices-list">
-                                                <div class="product-card__price">'.$view.' View</div>
-                                            </div>
-                                                <div class="product-card__buttons">
-                                                    <div class="product-card__buttons-list">
-                                                        <a href="_detalis.php"><button
-                                                            class="btn btn-primary product-card__addtocart"
-                                                            type="button">Thêm vào giỏ hàng</button></a> </div>
-                                                </div>
-                                            </div>
-                                        </div>';
-                                        }
-                                        
-                                        ?>
-                                        <div class="product-card product-card--layout--grid">
-                                            <div class="product-card__image"><a href="product.html">                                               
-                                                 <img src="images/product2-1.jpg" alt=""></a></div>
-                                            <div class="product-card__info">
-                                                <div class="product-card__category"><a href="">Danh mục</a></div>
-                                                <div class="product-card__name"><a href="">Tên sản phẩm</a></div>
-                                               
-                                                <div class="product-card__prices-list">
-                                                    <div class="product-card__price">Giá tiền</div>
-                                                </div>
-                                                <div class="product-card__buttons">
-                                                    <div class="product-card__buttons-list">
-                                                        <a href="_detalis.php"><button
-                                                            class="btn btn-primary product-card__addtocart"
-                                                            type="button">Thêm vào giỏ hàng</button></a> </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-card product-card--layout--grid">
+foreach ($list_pro_top8 as $product) {
+    extract($product);
+    $linksp = "index.php?act=productct&idsp=" . $id;
+    $imga = $img_path . $img;
+    if ($discount == 0) {
+        $dis = "";
+        $price_new = "" ;
+    }
+    else {
+        // $dis =$discount;
+        $dis = "Giảm giá";
+        $price_new = $price - $discount;
+    }
+
+    echo '<div class="product-card product-card--layout--grid">
                                             <div class="product-card__badges-list">
-                                                <div class="product-card__badge product-card__badge--style--sale">Giảm giá
+                                                <div class="product-card__badge product-card__badge--style--sale">'.$dis.'
                                                 </div>
                                             </div>
-                                           
-                                            <div class="product-card__image"><a href="product.html">                                                                                          
-                                                <img src="images/product2-1.jpg" alt=""></a></div>
+
+                                            <div class="product-card__image"><a href="' . $linksp . '">
+                                                <img src="' . $imga . '" alt=""></a></div>
                                             <div class="product-card__info">
-                                                <div class="product-card__category"><a href="">Danh mục</a></div>
-                                                <div class="product-card__name"><a href="product.html">Tên sản phẩm</a>
+                                                <div class="product-card__category"><a href="">' . $namehh . '</a></div>
+                                                <div class="product-card__name"><a href="product.html">' . $namepro . '</a>
                                                 </div>
                                                 <div class="product-card__rating">
-                                                
                                                 <div class="product-card__prices-list">
                                                     <div class="product-card__price"><span
-                                                            class="product-card__price-new">Giá sản phẩm</span> <span
-                                                            class="product-card__price-old">Giảm giá</span></div>
+                                                            class="product-card__price-new">'.$price_new.'</span> <span
+                                                            class="product-card__price-old">' . $price . '</span></div>
                                                 </div>
                                                 <div class="product-card__buttons">
                                                     <div class="product-card__buttons-list"><button
@@ -126,9 +93,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                       
-                                    </div>
-                                    
+
+                                    </div>';
+}
+
+?>
+
+
+
                                 </div>
                             </div>
                         </div>
@@ -180,20 +152,20 @@
                                 <div class="categories-list">
 
                                     <?php
-                                    
-                                    foreach ($show_types as $show) {
-                                        extract($show);
-                                        echo '<div class="card category-card"><a href="">
+
+foreach ($show_types as $show) {
+    extract($show);
+    echo '<div class="card category-card"><a href="">
                                         <div class="category-card__image"><img
                                                 src="images/product2-1.jpg" alt=""></div>
-                                        <div class="category-card__name">'.$namhh.'</div>
-                                        <div class="category-card__products">'.$tonghh.' Sản Phẩm</div>
+                                        <div class="category-card__name">' . $namhh . '</div>
+                                        <div class="category-card__products">' . $tonghh . ' Sản Phẩm</div>
                                     </a>
                                      </div>';
 
-                                    }
-                                    
-                                    ?>
+}
+
+?>
 <!-- danh mục hiện có  -->
 
                                     <div class="card category-card"><a href="">
@@ -205,8 +177,8 @@
                                     </div>
                                 </div>
 
-                                
-                               
+
+
                             </div>
                         </div>
                         <div class="block block-posts-carousel">
@@ -227,8 +199,8 @@
                                                     class="btn btn-primary btn-xs post-card__read-more">Đọc bài viêt</a>
                                             </div>
                                         </div>
-                                        
-                                     
+
+
                                     </div>
                                 </div>
                             </div>
@@ -236,7 +208,6 @@
                     </div>
                 </div>
             </div>
-            
-       
 
-   
+
+
