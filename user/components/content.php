@@ -178,6 +178,23 @@
                                     <h2 class="decor-header decor-header--align--center text-center">Các danh mục hiện có</h2>
                                 </div>
                                 <div class="categories-list">
+
+                                    <?php
+                                    
+                                    foreach ($show_types as $show) {
+                                        extract($show);
+                                        echo '<div class="card category-card"><a href="">
+                                        <div class="category-card__image"><img
+                                                src="images/product2-1.jpg" alt=""></div>
+                                        <div class="category-card__name">'.$name.'</div>
+                                        <div class="category-card__products">'.$tonghh.' Sản Phẩm</div>
+                                    </a>
+                                     </div>';
+
+                                    }
+                                    
+                                    ?>
+
                                     <div class="card category-card"><a href="">
                                             <div class="category-card__image"><img
                                                     src="images/product2-1.jpg" alt=""></div>
@@ -186,8 +203,32 @@
                                         </a>
                                     </div>
                                     
-                                   
+                                    <div class="card category-card"><a href="">
+                                            <div class="category-card__image"><img
+                                                    src="images/product2-1.jpg" alt=""></div>
+                                            <div class="category-card__name">Tên danh mục</div>
+                                            <div class="category-card__products">Số lượng sản phẩm</div>
+                                        </a>
+                                    </div>
+
+                                    <div class="card category-card"><a href="">
+                                            <div class="category-card__image"><img
+                                                    src="images/product2-1.jpg" alt=""></div>
+                                            <div class="category-card__name">Tên danh mục</div>
+                                            <div class="category-card__products">Số lượng sản phẩm</div>
+                                        </a>
+                                    </div>
+
+                                    <div class="card category-card"><a href="">
+                                            <div class="category-card__image"><img
+                                                    src="images/product2-1.jpg" alt=""></div>
+                                            <div class="category-card__name">Tên danh mục</div>
+                                            <div class="category-card__products">Số lượng sản phẩm</div>
+                                        </a>
+                                    </div>
                                 </div>
+
+                                
                                
                             </div>
                         </div>

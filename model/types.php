@@ -43,3 +43,10 @@ function can_delete($id)
         return false;
     }
 }
+
+function show_types()
+{
+    $sql = " SELECT *,COUNT(products.id) AS 'tonghh' FROM types LEFT JOIN products ON types.id = products.id_type GROUP BY products.id_type";
+    $listdanhmuc = pdo_query($sql);
+    return $listdanhmuc;
+}

@@ -24,11 +24,13 @@
     include '../model/pdo.php';
     include './components/header.php';
     include '../model/products.php';
+    include '../model/types.php';
     require './global.php';
     ?>
     <?php
 
     $list_pro_top8 = loadall_product_top8();
+    $show_types = show_types();
     if (isset($_GET['act'])) {
         $act = ($_GET['act']);
         switch ($act) {
