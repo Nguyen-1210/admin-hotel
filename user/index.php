@@ -19,6 +19,7 @@
 
     <!-- link boxicon -->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    
 </head>
 
 <body>
@@ -29,10 +30,20 @@
 if (isset($_GET['act'])) {
     $act = ($_GET['act']);
     switch ($act) {
+<<<<<<< HEAD
             // Trang chủ
         case 'service':
             include "./service.php";
+=======
+            // list
+        case '_product':
+            include "./product.php";
+>>>>>>> dev/nguyen
             break;
+            case '_detalis':
+                include './components/_detalis.php';
+
+                break;
 
         case 'about-us':
             include "./about-us.php";
