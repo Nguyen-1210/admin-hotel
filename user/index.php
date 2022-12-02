@@ -38,11 +38,15 @@ $list_pro_top8 = loadall_product_top8();
             case 'service':
                 include "./service.php";
                 break;
+                case 'about-us':
+                    include "./about-us.php";
+                    break;
                 // list
             case '_product':
                 $listproducts = loadall_product_home();
                 include "./product.php";
                 break;
+
 
             case 'detalis':
                 include './components/_detalis.php';
