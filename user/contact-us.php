@@ -41,7 +41,7 @@
                                                         Địa Chỉ Email: noithatnguyenhoa@gmail.com<br>Số Điện Thoại: 0328487011</p>
                                                         <p><strong>Giờ Mở Cửa</strong><br>Thứ 2 đến thứ 6:
                                                             8am-8pm<br>Thứ 7: 8am-6pm<br>Chủ Nhật: 10am-4pm</p>
-                                                        <p><strong>Phương Châm</strong><br><b>Tầm Nhìn, Sứ Mệnh, Giá Trị Cốt Lõi.</b></p>
+                                                        <p><strong>Phương Châm Làm Việc</strong><br><b style="font-weight: 500;">Tầm Nhìn - Sứ Mệnh - Giá Trị Cốt Lõi.</b></p>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6">

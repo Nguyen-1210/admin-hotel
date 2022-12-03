@@ -102,6 +102,10 @@
                 include "./components/_card.php";
                 // break;
 
+            case 'addBill':
+                include "./checkout-us.php";
+                break;
+
             default:
                 # code...
                 break;
