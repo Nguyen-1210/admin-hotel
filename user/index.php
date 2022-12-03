@@ -43,6 +43,11 @@
             case 'service':
                 include "./service.php";
                 break;
+            
+            case 'contact-us':
+                include "./contact-us.php";
+                break;
+
             case 'about-us':
                 include "./about-us.php";
                 break;
