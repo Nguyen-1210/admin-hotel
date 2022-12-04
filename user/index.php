@@ -100,11 +100,14 @@
                     
                 }
                 include "./components/_card.php";
-                // break;
+                break;
 
             case 'addBill':
-                include "./checkout-us.php";
+                include "./checkout.php";
                 break;
+                case 'comfirm_bill':
+                 
+                    break;
 
             default:
                 # code...

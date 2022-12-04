@@ -46,9 +46,8 @@
                             <div class="row g-custom-30">
                                 <div class="col-12">
                                     <div class="shopping-cart">
-                                        <form>
-                                            <table class="cart__table">
-                                                <thead class="cart__header">
+                                        <table class="cart__table">
+                                            <thead class="cart__header">
                                                     <?php
                                                     $tong = 0;
                                                     $i = 0;
@@ -112,7 +111,8 @@
                                                 <tfoot class="cart__footer">
                                                     <tr>
                                                         <td colspan="3" class="cart__column"><a href="index.php?act=_product" class="btn btn-secondary">Trở về mua hàng</a></td>
-                                                        <td colspan="3" class="cart__column text-end"><button type="submit" class="btn btn-primary">Đặt hàng</button></td>
+                                                        <form action="index.php?act=addBill" method="POST">
+                                                        <td colspan="3" class="cart__column text-end"><input type="submit" name="addBill" value="Đặt hàng" class="btn btn-primary"></td>
                                                     </tr>
                                                 </tfoot>
                                             </table>

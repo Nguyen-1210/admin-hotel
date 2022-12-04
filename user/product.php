@@ -91,11 +91,20 @@
                                                     <span class="product-card__price-old">' . $price . '</span>
                                                 </div>
                                             </div>
+                                        
                                             <form class="product-card__buttons" action="index.php?act=addCard" method="POST" >
                                                 <div class="product-card__buttons-list">
-                                                    <input class="btn btn-primary product-card__addtocart" type="button" name="addCard" value="Add To Cart"></input>
+                                                <input type="submit" class="btn btn-primary btn-lg" name="addCard" value="Thêm vào giỏ hàng">
                                                 </div>
+                                                <input type="hidden" name="number" value="1">
+                                                <input type="hidden" name="id" value="'.$id_pro.'">
+                                                <input type="hidden" name="name" value="'.$namepro.'">
+                                                <input type="hidden" name="img" value="'.$imga.'">
+                                                <input type="hidden" name="price" value="'.$price_new.'">
+                                               
                                             </form>
+                                          
+                                            
                                         </div>
                                     </div>
                                 </div>';
@@ -119,8 +128,10 @@
                                                         <div class="product-card__buttons-list">
                                                             <input class="btn btn-primary product-card__addtocart" type="button" value="Add To Cart"></input>
                                                         </div>
+                                                       
                                                     </a>
                                                 </form>
+                                       
                                             </div>
                                         </div>
                                     </div>

@@ -5,6 +5,10 @@ function loadone_bill($id){
     $bills = pdo_query_one($sql);
     return $bills;
 }
+function insert_bill($iduser, $name, $email, $address, $tel, $pay, $day ,$total){
+    $sql = "insert into billd(user_id,name, email, address, tell, pay, day, total) values ('$iduser', '$name', '$email', '$address', '$tel', '$pay', '$day' , '$total')";
+    return pdo_execute_return_lastInsertId($sql); 
+}
 
 function loadall_bill($kyw="", $id_user=0){
 
