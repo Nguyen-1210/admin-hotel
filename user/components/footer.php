@@ -2,15 +2,15 @@
       <footer class="site-footer">
           <div class="container">
               <div class="row">
-                  <div class="col-6">
+                  <div class="col-5">
                       <h6>N-FURNITURE-H</h6>
                       <p class="text-justify"> Nội Thất N-FURNITURE-H là thương hiệu đến từ Việt Nam với hơn 1 năm kinh nghiệm trong việc sản xuất và xuất khẩu nội thất đạt chuẩn quốc tế. <br> 
 <img src="images/zyro-image.png" style="width: 150px; margin-top: 10px;"></p>
                   </div>
-                  <div class="col-3 ">
-                      <h6>Categories</h6>
+                  <div class="col-4 ">
+                      <h6>Thông tin liên hệ</h6>
                       <ul class="footer-links">
-                          <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+                          <li><a href="http://scanfcode.com/category/c-language/">288 Nguyễn Văn Linh, Phường An Khánh, Quận Ninh Kiều, TP.Cần Thơ, Việt Nam </a></li>
                           <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
                           <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
                           <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
