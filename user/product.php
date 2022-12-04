@@ -57,7 +57,7 @@
                                     </div>
                                 </div>
                                 <div class="products-view__list products-list products-list--layout--full-grid-5">
-                                    <!-- prodcut -->
+                                <!-- prodcut -->
                                     <?php
                                     foreach ($listproducts as $product) {
                                         extract($product);
