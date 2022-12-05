@@ -4,37 +4,31 @@ session_start();
 if (!isset($_SESSION['username'])) {
     header("Location: ./login.php");
 }
-
-// $server = new mysqli("localhost","root","","max");
-include "../model/pdo.php";
+include '../model/pdo.php';
 include "../model/products.php";
 include "../model/types.php";
 include "../model/users.php";
 include "../model/chart.php";
 include "../model/comments.php";
 include "../model/bills.php";
-
 include "menu.php";
-// include "home.php";
-
 
 if (isset($_GET['act'])) {
     $act = ($_GET['act']);
     switch ($act) {
             // list
-        case 'list_types':
-            $listdanhmuc = loadall_types();
-            include "./danhmuc/list.php";
-            break;
-
         case 'add_types':
             if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                 $tenloai = $_POST['tenloai'];
+
                 insert_types($tenloai);
                 header("location: ./index.php?act=list_types");
             }
             include "./danhmuc/add.php";
-
+            break;
+        case 'list_types':
+            $listdanhmuc = loadall_types();
+            include "./danhmuc/list.php";
             break;
 
         case 'edit_types':
@@ -60,31 +54,30 @@ if (isset($_GET['act'])) {
             $listdanhmuc = loadall_types();
             include "./danhmuc/list.php";
             break;
-            case 'add_products':
-                if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
-                    $id_type = $_POST['id_type'];
+        case 'add_products':
+            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                $id_type = $_POST['id_type'];
                 $name = $_POST['name_product'];
                 $price = $_POST['price_product'];
                 $description = $_POST['des_product'];
                 $discount = $_POST['dis_product'];
                 $img = $_FILES['img']['name'];
-                $extension = pathinfo($img,PATHINFO_ALL);
-                $randomo = rand(0,1000000);
-                $rename = 'Upload'.date('Ymd').$randomo;
-                $img = $rename.'.'.$extension;
+                $extension = pathinfo($img, PATHINFO_ALL);
+                $randomo = rand(0, 1000000);
+                $rename = 'Upload' . date('Ymd') . $randomo;
+                $img = $rename . '.' . $extension;
                 $target_dir = "../upload/";
-                move_uploaded_file($_FILES["img"]["tmp_name"],$target_dir.$img);
+                move_uploaded_file($_FILES["img"]["tmp_name"], $target_dir . $img);
                 insert_products($name, $price, $img, $description, $discount, $id_type);
                 header("location: ./index.php?act=list_products");
-                
             }
             $listdanhmuc = loadall_types();
             include "./sanpham/add.php";
             break;
-            case 'list_products':
-                $listproducts = loadall_products();
-                include "./sanpham/list.php";
-                break;
+        case 'list_products':
+            $listproducts = loadall_products();
+            include "./sanpham/list.php";
+            break;
 
         case 'delete_products':
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
@@ -146,13 +139,13 @@ if (isset($_GET['act'])) {
             $listtaikhoan = loadall_accounts();
             include "./taikhoan/list.php";
             break;
-            case 'delete_accounts':
-                    if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                        delete_accounts($_GET['id']);
-                    }
-                    $listtaikhoan = loadall_accounts();
-                    include "./taikhoan/list.php";
-                    break;
+        case 'delete_accounts':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                delete_accounts($_GET['id']);
+            }
+            $listtaikhoan = loadall_accounts();
+            include "./taikhoan/list.php";
+            break;
 
         case 'list_comments':
             $listcomments = loadall_comments(0);
@@ -166,41 +159,42 @@ if (isset($_GET['act'])) {
             $listcomments = loadall_comments(0);
             include "./binhluan/list.php";
             break;
-        
 
         case 'list_bills':
-            if(isset($_POST['kyw']) && ($_POST['kyw']!="")){
+            if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
                 $kyw = $_POST['kyw'];
-            }
-            else{
+            } else {
                 $kyw = "";
             }
-            
-            $listbills = loadall_bill($kyw,0);
+
+            $listbills = loadall_bill($kyw, 0);
             include "./donhang/list.php";
             break;
-        
 
         case 'delete_bills':
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 delete_bills($_GET['id']);
             }
-            $listbills = loadall_bill($kyw,0);
+            $listbills = loadall_bill($kyw, 0);
             include "./donhang/list.php";
             break;
 
         case 'edit_bills':
+
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                $listbills = loadone_bill($_GET['id']);
+
+                $id = $_GET['id'];
+                $listbills = loadone_bill($id);
+                var_dump($listbills);
+                $bill_detail = load_bill_detail_by_bill_id($id);
+                var_dump($bill_detail);
             }
             include "./donhang/edit.php";
             break;
-        
+
         case 'update_bills':
             if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
-                $araybill = [
-
-                ];
+                $araybill = [];
                 $id = $_POST['id'];
                 $name = $_POST['name'];
                 $email = $_POST['email'];
@@ -212,11 +206,11 @@ if (isset($_GET['act'])) {
             $listbills = loadall_bill();
             include "./donhang/list.php";
             break;
-            case 'chart':
-                $listthongke = chart();
-                include './thongke/chart.php';
-                break;
-        
+        case 'chart':
+            $listthongke = chart();
+            include './thongke/chart.php';
+            break;
+
         default:
             # code...
             break;

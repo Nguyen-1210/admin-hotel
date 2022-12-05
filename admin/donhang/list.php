@@ -13,7 +13,7 @@
       <tr>
         <th>MÃ ĐƠN HÀNG</th>
         <th>KHÁCH HÀNG</th>
-        <th>SỐ LƯỢNG HÀNG</th>
+      
         <th>GIÁ TRỊ ĐƠN HÀNG</th>
         <th>TÌNH TRẠNG ĐƠN HÀNG</th>
         <th>NGÀY ĐẶT HÀNG</th>
@@ -43,9 +43,7 @@ foreach($listbills as $bills){
    <td>
    '.$kh.'
    </td> 
-   <td>
-    '.$bills['number'].'
-   </td> 
+  
    <td>
    <span class="discription">
    '.$bills['total'].'
