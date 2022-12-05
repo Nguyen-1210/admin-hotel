@@ -35,7 +35,7 @@
                                                 <img src="images/slide1.jpg" alt="">
 
                                         </a>
-                                        <a href="index.html">
+                                        <a href="index.php">
 
                                                 <img src="images/slide1.jpg" alt="">
 

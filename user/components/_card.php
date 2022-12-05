@@ -48,79 +48,66 @@
                                     <div class="shopping-cart">
                                         <table class="cart__table">
                                             <thead class="cart__header">
-                                                    <?php
-                                                    $tong = 0;
-                                                    $i = 0;
-                                                    ?>
-
-
-                                                    <tr>
-                                                        <td class="cart__column cart__column--image">Hình ảnh</td>
-                                                        <td class="cart__column cart__column--info">Sản phẩm</td>
-                                                        <td class="cart__column cart__column--price">Giá</td>
-                                                        <td class="cart__column cart__column--quantity">Số lượng
-                                                        </td>
-                                                        <td class="cart__column cart__column--total">Tổng</td>
-                                                        <td class="cart__column cart__column--remove">Thao tác</td>
-                                                    </tr>
-                                                </thead>
-                                                <tbody class="cart__body">
                                                 <?php
-
+                                                $tong = 0;
+                                                $i = 0;
+                                                ?>
+                                                <tr>
+                                                    <td class="cart__column cart__column--image">Hình ảnh</td>
+                                                    <td class="cart__column cart__column--info">Sản phẩm</td>
+                                                    <td class="cart__column cart__column--price">Giá</td>
+                                                    <td class="cart__column cart__column--quantity">Số lượng
+                                                    </td>
+                                                    <td class="cart__column cart__column--total">Tổng</td>
+                                                    <td class="cart__column cart__column--remove">Thao tác</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="cart__body">
+                                                <?php
                                                 if (!empty($_SESSION['myCard'])) :
                                                     $i = 0;
                                                     foreach ($_SESSION['myCard'] as $card) {
                                                         if (!empty($card)) {
-                                                            $hinh = $img_path . $card['img']??'';
-                                                            $total_money = $card['total_money']??'';
+                                                            $hinh = $img_path . $card['img'] ?? '';
+                                                            $total_money = $card['total_money'] ?? '';
                                                             $tong += $card['price'] * $card['number'];
                                                             $price = $card['price'];
                                                         }
-?>
-
-                                                        
+                                                ?>
                                                         <tr>
-                                                            <td class="cart__column cart__column--image"><a
-                                                                    href=""><img
-                                                                        src="<?= $hinh ?>" alt=""></a>
+                                                            <td class="cart__column cart__column--image"><a href=""><img src="<?= $hinh ?>" alt=""></a>
                                                             </td>
                                                             <td class="cart__column cart__column--info">
-                                                                <span class="cart__product-name"><a
-                                                                        href=""><?= $card['name'] ?></a>
-                                                    </span>
+                                                                <span class="cart__product-name"><a href=""><?= $card['name'] ?></a>
+                                                                </span>
                                                             </td>
-                                                            <td class="cart__column cart__column--price"
-                                                                data-title="Price"><?= number_format( $price) ?></td>
-                                                            <td class="cart__column cart__column--quantity"
-                                                                data-title="Quantity">
-                                                                <div class="form-control-number"><input id="quantity0"
-                                                                        class="form-control form-control-number__input"
-                                                                        type="number" min="1" value="<?= $card['number']??0 ?>">
+                                                            <td class="cart__column cart__column--price" data-title="Price"><?= number_format($price) ?></td>
+                                                            <td class="cart__column cart__column--quantity" data-title="Quantity">
+                                                                <div class="form-control-number"><input id="quantity0" class="form-control form-control-number__input" type="number" min="1" value="<?= $card['number'] ?? 0 ?>">
                                                                     <div class="form-control-number__add"></div>
                                                                     <div class="form-control-number__sub"></div>
                                                                 </div>
                                                             </td>
-                                                            <td class="cart__column cart__column--total"
-                                                                data-title="Total"><?= number_format( $card['number']*$total_money)?></td>
-                                                                <td class="cart__column"><a href="index.php?act=delete&idcart=<?=$i?>"><i class="fa-solid fa-trash"></i></a></td>
+                                                            <td class="cart__column cart__column--total" data-title="Total"><?= number_format($card['number'] * $total_money) ?></td>
+                                                            <td class="cart__column"><a href="index.php?act=delete&idcart=<?= $i ?>"><i class="fa-solid fa-trash"></i></a></td>
                                                         </tr>
-                                                    
-                                               <?php 
-                                                    $i +=1;
+
+                                                <?php
+                                                        $i += 1;
                                                     }
                                                 endif;
                                                 ?>
-                                                
-                                                </tbody>
-                                                <tfoot class="cart__footer">
-                                                    <tr>
-                                                        <td colspan="3" class="cart__column"><a href="index.php?act=_product" class="btn btn-secondary">Trở về mua hàng</a></td>
-                                                        <form action="index.php?act=addBill" method="POST">
+
+                                            </tbody>
+                                            <tfoot class="cart__footer">
+                                                <tr>
+                                                    <td colspan="3" class="cart__column"><a href="index.php?act=_product" class="btn btn-secondary">Trở về mua hàng</a></td>
+                                                    <form action="index.php?act=addBill" method="POST">
                                                         <td colspan="3" class="cart__column text-end"><input type="submit" name="addBill" value="Đặt hàng" class="btn btn-primary"></td>
-                                                    </tr>
-                                                </tfoot>
-                                            </table>
-                                            <p class="p-3">Tổng tiền: <strong><?= number_format( $tong??0) ?> VND</strong></p>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                        <p class="p-3">Tổng tiền: <strong><?= number_format($tong ?? 0) ?> VND</strong></p>
                                         </form>
                                     </div>
                                 </div>
