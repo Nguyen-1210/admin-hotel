@@ -39,8 +39,8 @@
                                     <h4 class="decor-header">Chi Tiết Thanh Toán</h4>
                                 </div>
                                 <div class="card__content">
-                                    <form action="index.php?act=comfirm_bill">
-                                      
+                                    <form action="index.php?act=comfirm_bill" method="post">
+
                                         <div class="mb-3 row g-3">
                                             <div class="mb-3"><label for="name" class="from-label">Họ và Tên</label> <input type="text" class="form-control" name="name" id="name" placeholder="Họ và tên"></div>
                                         </div>
@@ -57,10 +57,10 @@
                                             <div class="form-check"><input class="form-check-input" type="checkbox" value="" id="checkout-create-account">
                                                 <label class="form-check-label" for="checkout-create-account">Đăng ký để mua hàng?</label>
                                             </div>
-                                         
+
                                         </div>
-                                       
-                                    
+
+
                                 </div>
                             </div>
                         </div>
@@ -80,53 +80,50 @@
                                         </thead>
                                         <tbody class="checkout__totals-products">
                                             <?php
- foreach ($_SESSION['myCard'] as $bill) {
-    // $bill += $bill['price'] * $bill['number'];
-    $total_money = $bill['total_money']??'';
-    $price = $bill['price'];
-    $tong += $bill['price'] * $bill['number'];
-    $ship = 25000;
-   
-   
-?>
-                                      
-                                            <tr>
-                                                <td><?= $bill['name'] ?></td>
-                                                <td><?= $bill['number']?></td>
-                                              
-                                                <td><?=  number_format( $bill['number']*$total_money)?> VND</td>
-                                            </tr>
-                                            <?php
- 
-
- }
- ?>
+                                            $tong  =  25000;
                                           
+                                            foreach ($_SESSION['myCard'] as $bill) {
+                                                // $bill += $bill['price'] * $bill['number'];
+
+                                                $total_money = $bill['total_money'] ?? '';
+                                                $price = $bill['price'];
+                                                $tong += $bill['price'] * $bill['number'];
+                                            ?>
+                                                <tr>
+                                                    <td><?= $bill['name'] ?></td>
+                                                    <td><?= $bill['number'] ?></td>
+
+                                                    <td><?= number_format($bill['number'] * $total_money) ?> VND</td>
+                                                </tr>
+                                            <?php
+                                            }
+                                            ?>
                                         </tbody>
                                         <tbody class="checkout__totals-subtotals">
                                             <tr>
                                                 <th>Tổng Tiền</th>
                                                 <td></td>
-                                                <td><?= number_format( $tong??0)?> VND</td>
+                                                <td><?= number_format($tong ?? 0) ?> VND</td>
                                             </tr>
                                             <tr>
                                                 <th>Phí Vận Chuyển</th>
                                                 <td></td>
-                                                <td><?= number_format( $ship??0)?> VND</td>
+                                                <td>25,000 VND</td>
                                             </tr>
                                         </tbody>
                                         <tfoot class="checkout__totals-footer">
                                             <tr>
                                                 <th>Tổng Cộng</th>
                                                 <td></td>
-                                                <td><?= number_format( $tong = $tong - $ship)??0 ?>VND</td>
+                                                <td><?= number_format($tong ) ?? 0 ?>VND</td>
                                             </tr>
+                                            <input type="hidden" name="total" value="<?= ($tong ) ?? 0 ?>">
                                         </tfoot>
                                     </table>
                                     <div class="payment-methods">
                                         <ul class="payment-methods__list">
                                             <li class="payment-methods__item payment-methods__item--active">
-                                                <label class="payment-methods__item-header"><input class="payment-methods__item-radio" type="radio" name="checkout_payment_method"> <span class="payment-methods__item-title">Chuyển Khoản Trực tiếp</span></label>
+                                                <label class="payment-methods__item-header"><input class="payment-methods__item-radio" type="radio" name="checkout_payment_method" value="3"> <span class="payment-methods__item-title">Chuyển Khoản Trực tiếp</span></label>
                                                 <div class="payment-methods__item-container">
                                                     <div class="payment-methods__item-description text-muted">
                                                         Thực hiện thanh toán của bạn trực tiếp vào tài khoản ngân hàng của chúng tôi.
@@ -134,13 +131,15 @@
                                                         Đơn đặt hàng của bạn sẽ không được giao cho đến khi số tiền trong tài khoản của chúng tôi được thanh toán.</div>
                                                 </div>
                                             </li>
-                                            <li class="payment-methods__item"><label class="payment-methods__item-header"><input class="payment-methods__item-radio" type="radio" name="checkout_payment_method"> <span class="payment-methods__item-title">Thanh Toán Khi Nhận Hàng</span></label>
+                                            <li class="payment-methods__item"><label class="payment-methods__item-header">
+                                                    <input class="payment-methods__item-radio" type="radio" checked name="checkout_payment_method" value="1"> <span class="payment-methods__item-title">Thanh Toán Khi Nhận Hàng</span></label>
                                                 <div class="payment-methods__item-container">
                                                     <div class="payment-methods__item-description text-muted">
                                                         Thanh toán bằng tiền mặt khi giao hàng.</div>
                                                 </div>
                                             </li>
-                                            <li class="payment-methods__item"><label class="payment-methods__item-header"><input class="payment-methods__item-radio" type="radio" name="checkout_payment_method"> <span class="payment-methods__item-title">VN-PAY</span></label>
+                                            <li class="payment-methods__item"><label class="payment-methods__item-header">
+                                                    <input class="payment-methods__item-radio" type="radio"  name="checkout_payment_method" value="2"> <span class="payment-methods__item-title">VN-PAY</span></label>
                                                 <div class="payment-methods__item-container">
                                                     <div class="payment-methods__item-description text-muted">
                                                         Thanh toán qua VnPay; bạn có thể thanh toán bằng thẻ tín dụng nếu bạn không có tài khoản VnPay.</div>

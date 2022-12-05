@@ -36,6 +36,8 @@
     include '../model/products.php';
     include '../model/types.php';
     include '../model/users.php';
+    include '../model/bills.php';
+
     require './global.php';
     ?>
     <?php
@@ -126,21 +128,53 @@
                 }
                 include "./components/_card.php";
                 break;
-//                 case 'delete':
-// if(isset($_GET['idcart'])){
-//     array_splice($_SESSION['myCard'], $_GET['idcart'],1);
-// }
-// else {
-//     $_SESSION['myCard'] = [];
-// }
-// header('Location: index.php?act=addCard');
-//                     break;
-
-            case 'addBill':
-                include "./checkout.php";
+            case 'delete':
+                if (isset($_GET['idcart'])) {
+                    array_splice($_SESSION['myCard'], $_GET['idcart'], 1);
+                } else {
+                    $_SESSION['myCard'] = [];
+                }
+                header('Location: index.php?act=addCard');
                 break;
+            case 'addBill':
+                if (!empty($_SESSION['username'])) {
+                    include "./checkout.php";
+                } else {
+                    header('Location: index.php?act=addCard');
+                }break;
 
             case 'comfirm_bill':
+                if (isset($_POST['comfirm_bill']) && ($_POST['comfirm_bill'])) {
+                    $name = $_POST['name'] ?? '';
+                    $address = $_POST['address'];
+                    $email = $_POST['email'];
+                    $tell = $_POST['tell'];
+                    $pay = $_POST['checkout_payment_method'];
+                    $day = date('Y-m-d');
+                    $total = $_POST['total'];
+
+                    $bill_id = insert_bill(
+                        $_SESSION['username']['id'],
+                        $name,
+                        $address,
+                        $email,
+                        $tell,
+                        $pay,
+                        $day,
+                        $total
+                    );
+                    if (!empty($_SESSION['myCard'])) {
+                        foreach ($_SESSION['myCard'] as $key => $card) {
+
+                            insert_bill_detail(
+                                $bill_id,
+                                $_SESSION['myCard'][$key]['id'],
+                                $_SESSION['myCard'][$key]['number'],
+                                $_SESSION['myCard'][$key]['price']
+                            );
+                        }
+                    }
+                }
                 break;
 
             case 'register':
@@ -193,9 +227,10 @@
                 session_unset();
                 header('Location: index.php');
                 break;
-                case 'edit_account':
-                    if(isset($_POST['edit_account']))
+            case 'edit_account':
+                if (isset($_POST['edit_account'])) {
                     break;
+                }
 
             default:
                 # code...

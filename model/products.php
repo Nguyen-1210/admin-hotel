@@ -71,4 +71,12 @@ function update_product($id, $id_type, $name, $price, $description, $discount, $
     pdo_execute($sql);
 }
 
-?>
+/**
+ * @param $id
+ * @return string
+*/
+function get_product_name_by_id($id){
+    $sql  = "select name from products where id = ".$id;
+    $data =pdo_query_one($sql); 
+    return $data['name']??'';
+}

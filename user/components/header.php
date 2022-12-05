@@ -64,7 +64,6 @@
                         extract($_SESSION['username']);
 
                     ?>
-
                         <div class="px-4 user">
                             <a href="#" class="account"><i class="fa-solid fa-user"></i>
                                 <div class="px4 nav-user">
@@ -75,17 +74,13 @@
                                         <li class="nav-item p-2">
                                             <a class="nav-link" href="index.php?act=logout">Đăng xuất</a>
                                         </li>
-
                                     </ul>
                                 </div>
                             </a>
                         </div>
-
                     <?php
-
                     } else {
                     ?>
-
                         <div class="px-4 user">
                             <a href="#" class="account"><i class="fa-solid fa-user"></i>
                                 <div class="px4 nav-user">

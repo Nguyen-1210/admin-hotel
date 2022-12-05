@@ -61,14 +61,14 @@
                                                         <td class="cart__column cart__column--quantity">Số lượng
                                                         </td>
                                                         <td class="cart__column cart__column--total">Tổng</td>
-                                                        <!-- <td class="cart__column cart__column--remove">Thao tác</td> -->
+                                                        <td class="cart__column cart__column--remove">Thao tác</td>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="cart__body">
                                                 <?php
 
                                                 if (!empty($_SESSION['myCard'])) :
-                                                    // $i = 0;
+                                                    $i = 0;
                                                     foreach ($_SESSION['myCard'] as $card) {
                                                         if (!empty($card)) {
                                                             $hinh = $img_path . $card['img']??'';
@@ -102,11 +102,11 @@
                                                             </td>
                                                             <td class="cart__column cart__column--total"
                                                                 data-title="Total"><?= number_format( $card['number']*$total_money)?></td>
-                                                                <!-- <td class="cart__column"><a href="index.php?act=delete$idcart=<?=$i?>"><i class="fa-solid fa-trash"></i></a></td> -->
+                                                                <td class="cart__column"><a href="index.php?act=delete&idcart=<?=$i?>"><i class="fa-solid fa-trash"></i></a></td>
                                                         </tr>
                                                     
                                                <?php 
-                                                    // $i +=1;
+                                                    $i +=1;
                                                     }
                                                 endif;
                                                 ?>
