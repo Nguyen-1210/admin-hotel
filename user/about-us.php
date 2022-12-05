@@ -15,7 +15,7 @@
                                 <div class="col">
                                     <ol class="page__header-breadcrumbs breadcrumb">
                                     </ol>
-                                    <h1 class="page__header-title decor-header decor-header--align--center">Về chúng tôi</h1>
+                                    <h2 class="   decor-header decor-header--align--center text-center" >Về chúng tôi</h2>
                                 </div>
                             </div>
                         </div>
@@ -54,109 +54,38 @@
                         <div class="block block-teammates">
                             <div class="container container--max--xl">
                                 <div class="block__title">
-                                    <h2 class="decor-header decor-header--align--center">Đội Ngũ Của Chúng Tôi</h2>
+                                    <h2 class="decor-header decor-header--align--center text-center">Đội Ngũ Của Chúng Tôi</h2>
                                 </div>
                                 <div class="block-teammates__list">
-                                    <div class="block-teammates__item card"><a href=""><img
+                                    <?php
+                                    foreach($show_admin as $admin) {
+                                        extract($admin);
+                                        $imga = $img_path . $img;
+
+?>
+                                    <div class="block-teammates__item card"><img style=" height: 300px;"
                                                 class="block-teammates__image"
-                                                srcset="images/teammates/teammate1.jpg, images/teammates/teammate1%402x.jpg 2x"
-                                                src="images/teammates/teammate1.jpg" alt=""></a>
+                                                
+                                                src="<?= $imga ?>" alt="">
                                         <div class="block-teammates__info">
-                                            <div class="block-teammates__name">Michael Russo</div>
-                                            <div class="block-teammates__position">Chief Executive Officer</div>
+                                            <div class="block-teammates__name"><?=  $username ?></div>
+                                            <div class="block-teammates__position"><?= $role  ?></div>
                                             <ul class="block-teammates__social">
-                                                <li><a href="https://themeforest.net/user/kos9/portfolio"
+                                                <li><a href="<?= $facebook ?>"
                                                         class="block-teammates__social-link" target="_blank"><i
                                                             class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="https://themeforest.net/user/kos9/portfolio"
-                                                        class="block-teammates__social-link" target="_blank"><i
-                                                            class="fab fa-twitter"></i></a></li>
-                                                <li><a href="https://themeforest.net/user/kos9/portfolio"
+                                                
+                                                <li><a href="<?= $instagram ?>"
                                                         class="block-teammates__social-link" target="_blank"><i
                                                             class="fab fa-instagram"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="block-teammates__item card"><a href=""><img
-                                                class="block-teammates__image"
-                                                srcset="images/teammates/teammate2.jpg, images/teammates/teammate2%402x.jpg 2x"
-                                                src="images/teammates/teammate2.jpg" alt=""></a>
-                                        <div class="block-teammates__info">
-                                            <div class="block-teammates__name">Samantha Smith</div>
-                                            <div class="block-teammates__position">Account Manager</div>
-                                            <ul class="block-teammates__social">
-                                                <li><a href="https://themeforest.net/user/kos9/portfolio"
-                                                        class="block-teammates__social-link" target="_blank"><i
-                                                            class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="https://themeforest.net/user/kos9/portfolio"
-                                                        class="block-teammates__social-link" target="_blank"><i
-                                                            class="fab fa-twitter"></i></a></li>
-                                                <li><a href="https://themeforest.net/user/kos9/portfolio"
-                                                        class="block-teammates__social-link" target="_blank"><i
-                                                            class="fab fa-instagram"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="block-teammates__item card"><a href=""><img
-                                                class="block-teammates__image"
-                                                srcset="images/teammates/teammate3.jpg, images/teammates/teammate3%402x.jpg 2x"
-                                                src="images/teammates/teammate3.jpg" alt=""></a>
-                                        <div class="block-teammates__info">
-                                            <div class="block-teammates__name">Anthony Harris</div>
-                                            <div class="block-teammates__position">Finance Director</div>
-                                            <ul class="block-teammates__social">
-                                                <li><a href="https://themeforest.net/user/kos9/portfolio"
-                                                        class="block-teammates__social-link" target="_blank"><i
-                                                            class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="https://themeforest.net/user/kos9/portfolio"
-                                                        class="block-teammates__social-link" target="_blank"><i
-                                                            class="fab fa-twitter"></i></a></li>
-                                                <li><a href="https://themeforest.net/user/kos9/portfolio"
-                                                        class="block-teammates__social-link" target="_blank"><i
-                                                            class="fab fa-instagram"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="block-teammates__item card"><a href=""><img
-                                                class="block-teammates__image"
-                                                srcset="images/teammates/teammate4.jpg, images/teammates/teammate4%402x.jpg 2x"
-                                                src="images/teammates/teammate4.jpg" alt=""></a>
-                                        <div class="block-teammates__info">
-                                            <div class="block-teammates__name">Katherine Miller</div>
-                                            <div class="block-teammates__position">Marketing Officer</div>
-                                            <ul class="block-teammates__social">
-                                                <li><a href="https://themeforest.net/user/kos9/portfolio"
-                                                        class="block-teammates__social-link" target="_blank"><i
-                                                            class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="https://themeforest.net/user/kos9/portfolio"
-                                                        class="block-teammates__social-link" target="_blank"><i
-                                                            class="fab fa-twitter"></i></a></li>
-                                                <li><a href="https://themeforest.net/user/kos9/portfolio"
-                                                        class="block-teammates__social-link" target="_blank"><i
-                                                            class="fab fa-instagram"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="block-teammates__item card"><a href=""><img
-                                                class="block-teammates__image"
-                                                srcset="images/teammates/teammate5.jpg, images/teammates/teammate5%402x.jpg 2x"
-                                                src="images/teammates/teammate5.jpg" alt=""></a>
-                                        <div class="block-teammates__info">
-                                            <div class="block-teammates__name">Boris Gilmore</div>
-                                            <div class="block-teammates__position">Engineer</div>
-                                            <ul class="block-teammates__social">
-                                                <li><a href="https://themeforest.net/user/kos9/portfolio"
-                                                        class="block-teammates__social-link" target="_blank"><i
-                                                            class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="https://themeforest.net/user/kos9/portfolio"
-                                                        class="block-teammates__social-link" target="_blank"><i
-                                                            class="fab fa-twitter"></i></a></li>
-                                                <li><a href="https://themeforest.net/user/kos9/portfolio"
-                                                        class="block-teammates__social-link" target="_blank"><i
-                                                            class="fab fa-instagram"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                 <?php
+
+}
+?>
+                                 
                                 </div>
                                 <div class="typography text-center mt-5">
                                     <h4 class="mb-3">Hướng Đến Giá Trị Bền Vững</h4>
@@ -168,7 +97,7 @@
                                         <br> Sử dụng 100% nguồn nguyên liệu gỗ đạt chứng nhận chứng nhận FSC® - Forest Stewardship Council®.
                                         <br> Bảo trì trọn đời sản phẩm nhằm kéo dài tuổi thọ và tính hữu dụng của sản phẩm trong thời gian dài. 
                                     </p>
-                                    <p><a href="" class="btn btn-primary">Contact Us</a></p>
+                                  
                                 </div>
                             </div>
                         </div><!-- block-teammates / end -->
@@ -176,7 +105,7 @@
                         <div class="block block-testimonials block--dark block-testimonials--dark">
                             <div class="block__container container container--max--xl">
                                 <div class="block__title">
-                                    <h2 class="decor-header decor-header--align--center">Các Tiêu Chí</h2>
+                                    <h2 class="decor-header decor-header--align--center text-center">Các Tiêu Chí</h2>
                                 </div>
                                 <div class="slider slider--dark slider--with-dots">
                                     <div class="owl-carousel">

@@ -155,7 +155,8 @@ foreach ($list_pro_top8 as $product) {
 
 foreach ($show_types as $show) {
     extract($show);
-    echo '<div class="card category-card"><a href="">
+    $linkdm = "index.php?act=product&idtypes=".$id_type;
+    echo '<div class="card category-card"><a href="'.$linkdm.'">
                                         <div class="category-card__image"><img
                                                 src="images/product2-1.jpg" alt=""></div>
                                         <div class="category-card__name">' . $namhh . '</div>
@@ -166,19 +167,8 @@ foreach ($show_types as $show) {
 }
 
 ?>
-<!-- danh mục hiện có  -->
 
-                                    <div class="card category-card"><a href="">
-                                            <div class="category-card__image"><img
-                                                    src="images/product2-1.jpg" alt=""></div>
-                                            <div class="category-card__name">Tên danh mục</div>
-                                            <div class="category-card__products">Số lượng sản phẩm</div>
-                                        </a>
-                                    </div>
                                 </div>
-
-
-
                             </div>
                         </div>
                         <div class="block block-posts-carousel">
@@ -196,7 +186,7 @@ foreach ($show_types as $show) {
                                                 <div class="post-card__name"><a class="post-card__name-link"
                                                         href="">Tên bài viết</a></div>
                                                 <div class="post-card__description">Mô tả bài viết</div><a href="post.html"
-                                                    class="btn btn-primary btn-xs post-card__read-more">Đọc bài viêt</a>
+                                                    class="btn btn-primary post-card__read-more">Đọc bài viêt</a>
                                             </div>
                                         </div>
 

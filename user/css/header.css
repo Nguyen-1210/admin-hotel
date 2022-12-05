@@ -13,7 +13,8 @@ input {
 
 .banner-custom {
     width: 100%;
-    height: 94px;
+   
+    height: 114px;
 }
 a {
     text-decoration: none;
@@ -44,6 +45,40 @@ a {
     display: grid;
     grid-template-columns: 1fr;
     z-index: 5;
+}
+.nav-down {
+    display: none;
+    position: absolute;
+    top: 40px;
+    box-shadow:  1px 1px 1px 1px rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    padding: 5px;
+    width: 170px;
+    right: -20px;
+    background-color: #fff;
+}
+.nav-item-foot-line:hover .fa-caret-down {
+    transform: rotate(180deg);
+    transition: .5s ease-in-out;
+}
+.nav-item-foot-line:hover .nav-down {
+    display: block;
+    transition: .5s ease-in-out;
+}
+.fa-caret-down {
+    position: absolute;
+    top: 11px;
+    right: 2px;
+}
+.nav-item-down {
+    list-style: none;
+    padding: 5px 0px;
+}
+.nav-link-down {
+    color: #000;
+}
+.nav-link-down:hover {
+    color: #000;
 }
 
 form.sign-in-form,
@@ -286,9 +321,9 @@ transform: translateY(-50%);
 .service .px-4 .nav-user {
     display: none;
     position: absolute;
-    box-shadow: 0 1rem 1rem .5rem rgba(0, 0, 0, .5);
-    width: 12rem;
-    top: 180%;
+    box-shadow:  1px 1px 1px 1px rgba(0, 0, 0, .2);
+    width: 15rem;
+    top: 160%;
     list-style: none;
     border-radius: .2rem;
     left: -3.9rem;
@@ -300,23 +335,24 @@ transform: translateY(-50%);
 .service .px-4 .nav-user::after {
     position: absolute;
     content: '';
-
-    left: 0;
-    right: 0;
-    height: 1.5rem;
+    left: 27px;
+    width: 7rem;
+    cursor: pointer;
+    right: 0px;
+    height: 3rem;
     background: transparent;
-    top: -1.5rem;
+    top: -2.5rem;
 }
 
 .service .px-4 .nav-user::before {
     position: absolute;
-    background: #ffff;
+    background: transparent;
     cursor: pointer;
-    bottom: 64px;
+    bottom: 87px;
     content: '';
-    left: 42px;
-    width: 4rem;
-    height: 2rem;
+    left: 22px;
+    width: 8rem;
+    height: 2.5rem;
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 
@@ -326,6 +362,7 @@ transform: translateY(-50%);
 
 .service .px-4 .nav-user .nav-user-down li.nav-item a.nav-link {
     font-size: 1.5rem;
+    color: #000;
     line-height: 2.5rem;
 }
 
@@ -347,7 +384,7 @@ body {
 :root {
     --while-color: #fff;
     --text-color: #000;
-    --main-color: #EF5B0C;
+    --main-color: #c6ab7c;
 }
 
 ::selection {
@@ -361,7 +398,7 @@ input {
 }
 
 header {
-    background: rgba(4, 9, 30, .5);
+    background: #ffff;
     position: fixed;
     top: 0;
     display: block;
@@ -372,10 +409,12 @@ header {
 }
 
 header.shadow {
-    background-color: var(--while-color);
+    background-color: #ccc;
+    color: #fff;
     box-shadow: .2rem .4rem 2rem rgba(15 54 55 / 10%);
     transition: .4s linear;
 }
+
 
 body {
     background-color: #f7f7f7;

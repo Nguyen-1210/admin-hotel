@@ -1,3 +1,7 @@
+<?php
+// session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,11 +25,17 @@
 
 <body>
     <?php
-    session_start();
+    // session_destroy(0);
+    ob_start();
+    if (isset($_SESSION['username'])) {
+        header("Location: index.php");
+    }
+
     include '../model/pdo.php';
     include './components/header.php';
     include '../model/products.php';
     include '../model/types.php';
+    include '../model/users.php';
     require './global.php';
     ?>
     <?php
@@ -34,6 +44,7 @@
         $_SESSION['myCard'] = null;
     }
     // session_destroy();
+    $show_admin = loadall_admin();
     $show_types = show_types();
     $list_pro_top8 = loadall_product_top8();
     if (isset($_GET['act'])) {
@@ -43,7 +54,7 @@
             case 'service':
                 include "./service.php";
                 break;
-            
+
             case 'contact-us':
                 include "./contact-us.php";
                 break;
@@ -56,6 +67,22 @@
                 $listproducts = loadall_product_home();
                 include "./product.php";
                 break;
+            case 'product':
+                if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
+                    $kyw = $_POST['kyw'];
+                } else {
+                    $kyw = "";
+                }
+                if (isset($_GET['idtypes']) && ($_GET['idtypes'] > 0)) {
+                    $id_type = $_GET['idtypes'];
+                } else {
+                    $id_type = 0;
+                }
+                $list_product = loadall_products($kyw, $id_type);
+                $name_types = load_ten_dm($id_type);
+                include './product_types.php';
+                break;
+
             case '_detalis':
                 if (isset($_GET['idsp']) && ($_GET['idsp'] > 0)) {
                     $id = $_GET['idsp'];
@@ -73,40 +100,101 @@
                     $number = $_POST['number'];
                     $total_money = $number * $price;
 
-
                     $array = [
                         'id' => $id,
                         'name' => $name,
                         'img' => $img,
-                        'price' =>  $price,
+                        'price' => $price,
                         'number' => $number,
                         'total_money' => $total_money,
                     ];
-                    
-                    $count  = 0;
-                    if($_SESSION['myCard'] != null){
-                        foreach($_SESSION['myCard'] as $key => $card){
-                            if($card['id'] == $id){
+
+                    $count = 0;
+                    if ($_SESSION['myCard'] != null) {
+                        foreach ($_SESSION['myCard'] as $key => $card) {
+                            if ($card['id'] == $id) {
                                 $_SESSION['myCard'][$key]['number'] += $number;
-                                $count ++;
+                                $count++;
                             }
                         }
-                        if($count == 0){
-                            $_SESSION['myCard'][] = $array;    
+                        if ($count == 0) {
+                            $_SESSION['myCard'][] = $array;
                         }
-                    }else{
+                    } else {
                         $_SESSION['myCard'][] = $array;
                     }
-                    
                 }
                 include "./components/_card.php";
                 break;
+//                 case 'delete':
+// if(isset($_GET['idcart'])){
+//     array_splice($_SESSION['myCard'], $_GET['idcart'],1);
+// }
+// else {
+//     $_SESSION['myCard'] = [];
+// }
+// header('Location: index.php?act=addCard');
+//                     break;
 
             case 'addBill':
                 include "./checkout.php";
                 break;
-                case 'comfirm_bill':
-                 
+
+            case 'comfirm_bill':
+                break;
+
+            case 'register':
+                include './register.php';
+                break;
+            case 'comfirm_account':
+                if (isset($_POST['dangky']) && ($_POST['dangky'])) {
+                    $email = $_POST['email'];
+                    $username = $_POST['username'];
+                    $password = $_POST['password'];
+                    $checku = strlen($username);
+                    $checkp = strlen($password);
+
+                    $regex = "/([a-z0-9_]+|[a-z0-9_]+\.[a-z0-9_]+)@(([a-z0-9]|[a-z0-9]+\.[a-z0-9]+)+\.([a-z]{2,4}))/i";
+
+                    if (!preg_match($regex, $email)) {
+                        $thongbao = ' <p style=" font-size: 12px; color: #F23A3A " >Lỗi không đúng định dạng mail.</p>';
+                    } else if ($checku < 5) {
+                        $thongbao = ' <p style=" font-size: 12px; color: #F23A3A " >Lỗi! Username ít nhất 5 ký tự.</p>';
+                    } else if ($checkp <= 5) {
+                        $thongbao = ' <p style=" font-size: 12px; color: #F23A3A" >Lỗi! Mật khẩu ít nhất 6 ký tự.</p>';
+                    } else {
+                        insert_taikhoan($email, $username, $password);
+                        $thongbao = ' <p style=" font-size: 12px; color: #44C662" >Đã đăng ký thành công. Đăng nhập để trải nghiệm chức năng</p>
+<meta http-equiv="refresh" content="5;url = http://localhost/website-furniture/user/index.php?act=login">';
+                    }
+                    echo "mới";
+                }
+                include './register.php';
+                break;
+            case 'login':
+                include './login.php';
+                break;
+            case 'comfirm_login':
+                if (isset($_POST['comfirm_login']) && $_POST['comfirm_login']) {
+                    $username = $_POST['username'];
+                    $password = $_POST['password'];
+                    $checkuser = checkuser($username, $password);
+                    if (is_array($checkuser)) {
+                        $_SESSION['username'] = $checkuser;
+                        $thongbao = ' <p style=" font-size: 12px; color: #44C662" >Đăng nhập thành công.</p>
+<meta http-equiv="refresh" content="3;url = http://localhost/website-furniture/user/index.php">';
+                    } else {
+                        $thongbao = ' <p style=" font-size: 12px; color: #F23A3A " >Lỗi! Sai mật khẩu hoặc tên đăng nhập.</p>';
+                    }
+                }
+                include './login.php';
+                break;
+            case 'logout':
+                session_unset();
+                header('Location: index.php');
+                break;
+                case 'edit_account':
+                    if(isset($_POST['edit_account']))
                     break;
 
             default:
@@ -117,7 +205,7 @@
         // content
         include './components/content.php';
     }
-include './components/footer.php';
+    include './components/footer.php';
 
     ?>
 </body>

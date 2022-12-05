@@ -28,7 +28,7 @@ function loadall_products($kyw="", $id_type=0){
         $sql.=" and name like '%".$kyw."%'";
     }
     if($id_type > 0){
-        $sql.=" and iddm='".$id_type."'";
+        $sql.=" and id_type='".$id_type."'";
     }
     $sql.=" order by id asc";
     $listproducts = pdo_query($sql);
@@ -41,9 +41,9 @@ function loadone_product($id){
     return $products;
 }
 
-function load_ten_dm($iddm){
-    if($iddm > 0){
-    $sql = "select * from danhmuc where id=".$iddm;
+function load_ten_dm($id_type){
+    if($id_type > 0){
+    $sql = "select * from types where id=".$id_type;
     $dm = pdo_query_one($sql);
     extract($dm);
     return $name;

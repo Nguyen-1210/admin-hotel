@@ -5,6 +5,12 @@ function loadone_bill($id){
     $bills = pdo_query_one($sql);
     return $bills;
 }
+
+/**
+ * @param @iduser,....
+ * @return $id
+ * Hafm ny dđể ch co so du lieu bang hoa don (bill)
+ */
 function insert_bill($iduser, $name, $email, $address, $tel, $pay, $day ,$total){
     $sql = "insert into billd(user_id,name, email, address, tell, pay, day, total) values ('$iduser', '$name', '$email', '$address', '$tel', '$pay', '$day' , '$total')";
     return pdo_execute_return_lastInsertId($sql); 
@@ -62,5 +68,14 @@ function update_bills($id, $name, $email, $address, $tell, $status){
     pdo_execute($sql);
 }
 
+function insert_bill_detail($id_bill, $id_product, $qty, $price){
+    $sql = "";
+    if(pdo_execute($sql)){
+        return true;
+    }
+    return false;
+}
 
-?>
+function load_bill_detail_by_bill_id($id){
+
+}

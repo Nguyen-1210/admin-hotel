@@ -10,22 +10,19 @@
                   <div class="col-4 ">
                       <h6>Thông tin liên hệ</h6>
                       <ul class="footer-links">
-                          <li><a href="http://scanfcode.com/category/c-language/">288 Nguyễn Văn Linh, Phường An Khánh, Quận Ninh Kiều, TP.Cần Thơ, Việt Nam </a></li>
-                          <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
-                          <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
-                          <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
-                          <li><a href="http://scanfcode.com/category/android/">Android</a></li>
-                          <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+                          <li><a href=""><i class="fa-solid fa-location-dot me-3"></i>288 Nguyễn Văn Linh, Phường An Khánh, Quận Ninh Kiều, TP.Cần Thơ, Việt Nam </a></li>
+                          <li><a href=""><i class="fa-solid fa-envelope me-3"></i> noithatnguyenhoa@gmail.com</a></li>
+                          <li><a href=""><i class="fa-solid fa-phone me-3"></i> 0328487011 - 0837129785</a></li>
+                         
                       </ul>
                   </div>
                   <div class="col-3">
-                      <h6>Quick Links</h6>
+                      <h6>Giới thiệu</h6>
                       <ul class="footer-links">
-                          <li><a href="http://scanfcode.com/about/">About Us</a></li>
-                          <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
-                          <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
-                          <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
-                          <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+                          <li><a href="http://scanfcode.com/about/">Về chúng tôi</a></li>
+                          <li><a href="http://scanfcode.com/contact/">Bài viết</a></li>
+                          <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Hỗ trợ</a></li>
+                     
                       </ul>
                   </div>
               </div>
@@ -36,14 +33,14 @@
                   <div class="col-md-8 col-sm-6 col-xs-12">
                       <p class="copyright-text">Copyright &copy;
 
-                          2017 All Rights Reserved by <a href="#">Scanfcode</a>. </p>
+                          2022 BẢN QUYỀN CỦA NỘI THẤT  <a href="#">N-FURNITURE-H</a> </p>
                   </div>
                   <div class="col-md-4 col-sm-6 col-xs-12">
                       <ul class="social-icons">
                           <li><a class="facebook" href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                          <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                          <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-                          <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                          <li><a class="twitter" href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                          <li><a class="dribbble" href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
+                          <li><a class="linkedin" href="#"><i class="fa-brands fa-linkedin"></i></a></li>
                       </ul>
                   </div>
               </div>
@@ -80,7 +77,7 @@
           }
 
           .site-footer a:hover {
-              color: #3366cc;
+              color: #c6ab7c;
               text-decoration: none;
           }
 
@@ -100,7 +97,7 @@
           .footer-links a:active,
           .footer-links a:focus,
           .footer-links a:hover {
-              color: #3366cc;
+              color: #c6ab7c;
               text-decoration: none;
           }
 
@@ -119,7 +116,7 @@
               margin-left: 6px;
               margin-right: 0;
               border-radius: 100%;
-              background-color: #33353d
+              background-color: #fff;
           }
 
           .copyright-text {
