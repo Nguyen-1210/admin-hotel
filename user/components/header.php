@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="./css/header.css">
+
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <div class="banner-custom" id="home">
     <header class="pt-3">
@@ -30,9 +31,21 @@
                         <li class="nav-item nav-item-foot-line ">
                             <a class="nav-link " href="index.php?act=_product">Sản phẩm</a>
                             <i class="fa-solid fa-caret-down"></i>
-                            <ul class="nav-down">
-                                <li class="nav-item-down"><a href="" class="nav-link-down">Danh mục sản phẩm</a></li>
-                            </ul>
+                            <?php
+                            $name_type = loadall_types();
+                            if (!empty($name_type)) {
+                            ?>
+                                <ul class="nav-down">
+                                    <?php
+                                    foreach ($name_type as $types) {
+                                        extract($types);
+                                    ?>
+                                        <li class="nav-item-down"><a href="" class="nav-link-down"><?= $name ?></a></li>
+                                    <?php
+                                    }
+                                    ?>
+                                </ul>
+                            <?php } ?>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?act=service">Dịch vụ</a>
@@ -61,8 +74,7 @@
                     ob_start();
                     session_start();
                     if (isset($_SESSION['username'])) {
-                        extract($_SESSION['username']);
-
+                        // extract($_SESSION['username']);
                     ?>
                         <div class="px-4 user">
                             <a href="#" class="account"><i class="fa-solid fa-user"></i>
