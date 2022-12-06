@@ -51,10 +51,6 @@
                     <i class="fa-solid fa-comments"></i>
                         <span class="link-name">Bình luận</span>
                     </a></li>
-                <li><a href="#">
-                    <i class="fa-solid fa-file-signature"></i>
-                        <span class="link-name">Đánh giá</span>
-                    </a></li>
                 <li><a href="index.php?act=list_bills">
                     <i class="fa-solid fa-receipt"></i>
                         <span class="link-name">Đơn hàng</span>

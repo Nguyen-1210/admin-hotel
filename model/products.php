@@ -10,14 +10,14 @@ function delete_products($id){
     pdo_execute($sql);
 }
 
-function loadall_product_top10(){
-    $sql = "select * from products where 1 order by luotxem desc limit 0,10";
+function loadall_product_top8(){
+    $sql = "SELECT *,types.name AS 'namehh', products.name AS 'namepro' FROM products INNER JOIN types ON products.id_type = types.id WHERE products.view>0 order by products.view desc LIMIT 0,04";
     $listproducts = pdo_query($sql);
     return $listproducts;
 }
 
 function loadall_product_home(){
-    $sql = "select * from products where 1 order by id desc limit 0,12";
+    $sql = "SELECT *,types.name AS 'namehh', products.name AS 'namepro', products.id AS 'id_pro' FROM products INNER JOIN types ON products.id_type = types.id ";
     $listproducts = pdo_query($sql);
     return $listproducts;
 }
@@ -28,7 +28,7 @@ function loadall_products($kyw="", $id_type=0){
         $sql.=" and name like '%".$kyw."%'";
     }
     if($id_type > 0){
-        $sql.=" and iddm='".$id_type."'";
+        $sql.=" and id_type='".$id_type."'";
     }
     $sql.=" order by id asc";
     $listproducts = pdo_query($sql);
@@ -36,14 +36,14 @@ function loadall_products($kyw="", $id_type=0){
 }
 
 function loadone_product($id){
-    $sql = "select * from products where id=".$id;
+    $sql = "SELECT *,types.name AS 'namehh', products.name AS 'namepro', products.id AS 'id_pro' FROM products INNER JOIN types ON products.id_type = types.id WHERE products.id =".$id;
     $products = pdo_query_one($sql);
     return $products;
 }
 
-function load_ten_dm($iddm){
-    if($iddm > 0){
-    $sql = "select * from danhmuc where id=".$iddm;
+function load_ten_dm($id_type){
+    if($id_type > 0){
+    $sql = "select * from types where id=".$id_type;
     $dm = pdo_query_one($sql);
     extract($dm);
     return $name;
@@ -71,4 +71,12 @@ function update_product($id, $id_type, $name, $price, $description, $discount, $
     pdo_execute($sql);
 }
 
-?>
+/**
+ * @param $id
+ * @return string
+*/
+function get_product_name_by_id($id){
+    $sql  = "select name from products where id = ".$id;
+    $data =pdo_query_one($sql); 
+    return $data['name']??'';
+}

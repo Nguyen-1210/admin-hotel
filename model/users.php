@@ -14,6 +14,11 @@ function loadall_accounts(){
     $listtaikhoan = pdo_query($sql);
     return $listtaikhoan;
 }
+function loadall_admin(){
+    $sql = "select * from account_admin order by id desc";
+    $listtaikhoan = pdo_query($sql);
+    return $listtaikhoan;
+}
 
 function loadone_accounts($id){
     $sql = "select * from accounts where id=".$id;
@@ -21,13 +26,13 @@ function loadone_accounts($id){
     return $tk;
 }
 
-function insert_taikhoan($email, $user, $pass, $name){
-    $sql = "insert into taikhoan(email,name,user,pass) values ('$email','$user','$pass','$name')";
+function insert_taikhoan($email, $username, $password){
+    $sql = "insert into accounts(email,username,password) values ('$email','$username','$password')";
     pdo_execute($sql);
 }
 
-function checkuser($user, $pass){
-    $sql = "select * from taikhoan where user='".$user."'AND pass= '".$pass."'" ;
+function checkuser($username, $password){
+    $sql = "select * from accounts where username='".$username."'AND password= '".$password."'" ;
     $tk = pdo_query_one($sql);
     return $tk;
 }
@@ -43,4 +48,8 @@ function update_accounts($id, $password){
     pdo_execute($sql);
 }
 
-?>
+function get_cart_data_by_user_id($id){
+    $sql = "SELECT * from carts where user_id = ".$id;
+
+    pdo_execute($sql);
+}
