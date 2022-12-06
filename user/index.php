@@ -32,11 +32,11 @@
     }
 
     include '../model/pdo.php';
-    include './components/header.php';
     include '../model/products.php';
     include '../model/types.php';
     include '../model/users.php';
     include '../model/bills.php';
+    include './components/header.php';
 
     require './global.php';
     ?>
@@ -66,6 +66,7 @@
                 break;
                 // list
             case '_product':
+      
                 $listproducts = loadall_product_home();
                 include "./product.php";
                 break;

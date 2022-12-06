@@ -32,7 +32,7 @@
                                         <!-- bắt đầu một slide -->
                                         <a href="index.php">
 
-                                                <img src="images/slide1.jpg" alt="">
+                                                <img src="images/banner2.jpg" alt="">
 
                                         </a>
                                         <a href="index.php">
