@@ -11,6 +11,7 @@ include "../model/users.php";
 include "../model/chart.php";
 include "../model/comments.php";
 include "../model/bills.php";
+include "../model/blog.php";
 include "menu.php";
 
 if (isset($_GET['act'])) {
@@ -180,9 +181,7 @@ if (isset($_GET['act'])) {
             break;
 
         case 'edit_bills':
-
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-
                 $id = $_GET['id'];
                 $listbills = loadone_bill($id);
                 var_dump($listbills);
@@ -206,10 +205,71 @@ if (isset($_GET['act'])) {
             $listbills = loadall_bill();
             include "./donhang/list.php";
             break;
+            case 'list_blog':
+                $listblog = loadall_blog();
+                include './blog/list.php';
+                break;
+                case 'add_blog':
+                    if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                        $name = $_POST['name_blog'];
+                        $description = $_POST['content'];
+                        $img = $_FILES['img']['name'];
+                        $extension = pathinfo($img, PATHINFO_ALL);
+                        $randomo = rand(0, 1000000);
+                        $rename = 'Upload' .  date("Y-m-d") . $randomo;
+                        $img = $rename . '.' . $extension;
+                        $target_dir = "../upload/";
+                        $date =  date('d-m-Y');     
+                        move_uploaded_file($_FILES["img"]["tmp_name"], $target_dir . $img);
+                        insert_blog($name, $img, $description,$date);
+                        header("location: ./index.php?act=list_blog");
+                    }
+                    include './blog/add.php';
+                    break;
+                    case 'delete_blog':
+                        if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                            delete_blog($_GET['id']);
+                        }
+                        $listblog = loadall_blog();
+                        include "./blog/list.php";
+                        break;
+                        case 'edit_blog':
+                            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                                $blog = loadone_blog($_GET['id']);
+                            }
+                            $listblog = loadall_blog();
+                            include "./blog/edit.php";
+                            break;
+                            case 'update_blog':
+                                if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                                    $id = $_POST['id'];
+                               
+                                    $name = $_POST['name_blog'];
+                                    
+                                    $description = $_POST['des_blog'];
+                                 
+                                    $img = $_FILES['img']['name'];
+                                    $date =  date('d-m-Y');
+                                    $target_dir = "../upload/";
+                                    $target_file = $target_dir . basename($_FILES["img"]["name"]);
+                                    if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
+                                        // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+                                    } else {
+                                        // echo "Sorry, there was an error uploading your file.";
+                                    }
+                    
+                                    update_blog($id, $name, $img, $description, $date);
+                                    $thongbao = "Cập nhật Thành Công";
+                                }
+                                $listblog = loadall_blog();
+                         
+                                include "./blog/list.php";
+                                break;
         case 'chart':
             $listthongke = chart();
             include './thongke/chart.php';
             break;
+            
 
         default:
             # code...

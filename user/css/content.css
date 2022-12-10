@@ -2,6 +2,11 @@
 
 @charset "UTF-8";
 
+:root {
+    --main-color: #c6ab7c;
+}
+
+
 .alert {
     background-color: #fff;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, .02), 0 1px 4px #cfdee5;
@@ -578,9 +583,13 @@ a {
     content: "";
     display: block;
     height: 2px;
-    background-color: #ff4c79;
+    background-color: var(--main-color);
     position: absolute;
     bottom: 0;
+    width: 100%;
+    left: -49%;
+  
+    transform: translateX(50%);
     z-index: -1
 }
 
@@ -1663,7 +1672,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-origin {
 }
 
 .slider--with-dots .owl-carousel button.owl-dot.active span {
-    background-color: #ff4c79
+    background-color:  var(--main-color);
 }
 
 .slider--with-arrows .owl-carousel .owl-nav button.owl-next,

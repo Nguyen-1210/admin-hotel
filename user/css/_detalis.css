@@ -73,16 +73,29 @@ h2.decor-header {
     text-transform: none;
     padding-bottom: 5px;
 }
+span.decor-header {
+    font-family: inherit;
+    font-size: 30px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: -.04em;
+    width: 100%;
+    line-height: 1.2;
+    text-transform: none;
+    padding-bottom: 5px;
+}
+
 
 .decor-header {
     position: relative;
+   
     z-index: 0;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     margin: 0
 }
 
-h2.decor-header:after {
+span.decor-header:after {
     width: 50%;
 }
 
