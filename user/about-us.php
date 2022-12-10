@@ -15,7 +15,9 @@
                                 <div class="col">
                                     <ol class="page__header-breadcrumbs breadcrumb">
                                     </ol>
-                                    <h2 class="   decor-header decor-header--align--center text-center" >Về chúng tôi</h2>
+                                    <h2 class="  decor-header--align--center text-center" >
+                                    <span class="decor-header">   Về chúng tôi</span>
+                                 </h2>
                                 </div>
                             </div>
                         </div>
@@ -28,17 +30,17 @@
                                 <div class="block-gallery__body">
                                     <ul class="block-gallery__images">
                                         <li class="block-gallery__item"><img
-                                                srcset="images/gallery/gallery1.jpg, images/gallery/gallery1%402x.jpg 2x"
-                                                src="images/gallery/gallery1.jpg" alt=""></li>
+                                              
+                                                src="images/about/gallery1@2x.jpg" alt=""></li>
                                         <li class="block-gallery__item"><img
-                                                srcset="images/gallery/gallery2.jpg, images/gallery/gallery2%402x.jpg 2x"
-                                                src="images/gallery/gallery2.jpg" alt=""></li>
+                                             
+                                                src="images/about/gallery2@2x.jpg" alt=""></li>
                                         <li class="block-gallery__item"><img
-                                                srcset="images/gallery/gallery3.jpg, images/gallery/gallery3%402x.jpg 2x"
-                                                src="images/gallery/gallery3.jpg" alt=""></li>
+                                               
+                                                src="images/about/gallery3@2x.jpg" alt=""></li>
                                         <li class="block-gallery__item"><img
-                                                srcset="images/gallery/gallery4.jpg, images/gallery/gallery4%402x.jpg 2x"
-                                                src="images/gallery/gallery4.jpg" alt=""></li>
+                                              
+                                                src="images/about/gallery4@2x.jpg" alt=""></li>
                                     </ul>
                                     <div class="block-gallery__aboutus">
                                         <h3 class="block-gallery__aboutus-header decor-header">NỘI THẤT NGUYÊN HÒA</h3>
@@ -54,7 +56,9 @@
                         <div class="block block-teammates">
                             <div class="container container--max--xl">
                                 <div class="block__title">
-                                    <h2 class="decor-header decor-header--align--center text-center">Đội Ngũ Của Chúng Tôi</h2>
+                                    <h2 class="decor-header--align--center text-center">
+                                    <span class="decor-header"> Đội Ngũ Của Chúng Tôi</span>    
+                                   </h2>
                                 </div>
                                 <div class="block-teammates__list">
                                     <?php
@@ -65,7 +69,6 @@
 ?>
                                     <div class="block-teammates__item card"><img style=" height: 300px;"
                                                 class="block-teammates__image"
-                                                
                                                 src="<?= $imga ?>" alt="">
                                         <div class="block-teammates__info">
                                             <div class="block-teammates__name"><?=  $username ?></div>
@@ -99,13 +102,14 @@
                                     </p>
                                   
                                 </div>
-                            </div>
                         </div><!-- block-teammates / end -->
                         <!-- block-testimonials -->
                         <div class="block block-testimonials block--dark block-testimonials--dark">
                             <div class="block__container container container--max--xl">
                                 <div class="block__title">
-                                    <h2 class="decor-header decor-header--align--center text-center">Các Tiêu Chí</h2>
+                                    <h2 class="decor-header--align--center text-center">
+                                    <span class="decor-header">   Các Tiêu Chí</span>    
+                                 </h2>
                                 </div>
                                 <div class="slider slider--dark slider--with-dots">
                                     <div class="owl-carousel">

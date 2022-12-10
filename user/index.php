@@ -35,6 +35,7 @@
     include '../model/products.php';
     include '../model/types.php';
     include '../model/users.php';
+    include '../model/blog.php';
     include '../model/bills.php';
     include './components/header.php';
 
@@ -46,6 +47,7 @@
         $_SESSION['myCard'] = null;
     }
     // session_destroy();
+    $list_blog = loadall_blog();
     $show_admin = loadall_admin();
     $show_types = show_types();
     $list_pro_top8 = loadall_product_top8();

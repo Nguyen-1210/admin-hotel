@@ -55,10 +55,15 @@
                     <i class="fa-solid fa-receipt"></i>
                         <span class="link-name">Đơn hàng</span>
                     </a></li>
+                    <li><a href="index.php?act=list_blog">
+                    <i class="fa-sharp fa-solid fa-file-lines"></i>
+                        <span class="link-name">Bài viết</span>
+                    </a></li>
                 <li><a href="index.php?act=chart">
                     <i class="fa-solid fa-chart-simple"></i>
                         <span class="link-name">Thống kê</span>
                     </a></li>
+                    
             </ul>
 
             <ul class="logout-mode">
