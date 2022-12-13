@@ -126,7 +126,7 @@
                             <div class="block-collections__item block-collections__item--end">
                                 <div class="block-collections__image"><a href="">
                                         <picture>
-                                        <img src="images/collection/collection2-lg@2x.jpg" alt="">
+                                            <img src="images/collection/collection2-lg@2x.jpg" alt="">
                                         </picture>
                                     </a></div>
                                 <div class="block-collections__info block-collections__info--bottom-end">
@@ -147,15 +147,14 @@
                         </h2>
                     </div>
                     <div class="categories-list">
-
                         <?php
-
                         foreach ($show_types as $show) {
                             extract($show);
+                            $img = $img_path . $img_type;
                             $linkdm = "index.php?act=product&idtypes=" . $id_type;
                             echo '<div class="card category-card"><a href="' . $linkdm . '">
-                                        <div class="category-card__image"><img
-                                                src="images/product2-1.jpg" alt=""></div>
+                                        <div class="category-card__image"><img style="width: 200px; height: 150px;"
+                                        src="' . $img . '" alt=""></div>
                                         <div class="category-card__name">' . $namhh . '</div>
                                         <div class="category-card__products">' . $tonghh . ' Sản Phẩm</div>
                                     </a>

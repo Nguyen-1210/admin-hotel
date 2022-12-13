@@ -74,6 +74,10 @@ body.dark {
     background: (--panel-color);
     border-radius: 5px;
 }
+select{
+  border: 2px solid var(--moon-color);
+    border-radius: 5px;
+}
 
 .form-import {
     position: absolute;

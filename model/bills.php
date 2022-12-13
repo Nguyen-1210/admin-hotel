@@ -13,7 +13,12 @@ function loadone_bill($id){
  */
 function insert_bill($iduser, $name, $email, $address, $tell, $pay, $day ,$total){
     $sql = "insert into bills(user_id,name, email, address, tell, pay, day, total) values ('$iduser', '$name', '$email', '$address', '$tell', '$pay', '$day' , '$total')";
-    return pdo_execute_return_lastInsertId($sql); 
+    $id = pdo_execute_return_lastInsertId($sql); 
+    if($id > 0){
+        return $id;
+    }else{
+        return 0;
+    }
 }
 
 function loadall_bill($kyw="", $id_user=0){
@@ -75,10 +80,9 @@ function update_bills($id, $name, $email, $address, $tell, $status){
 * @param $price
 * @return bool
 */
-function insert_bill_detail($id_bill, $id_product, $qty, $price){
-    $sql = "insert into bill_detail(id_bill,id_product, qty, price) value('$id_bill','$id_product','$qty','$price')";
-
-
+function insert_bill_detail($bill_id, $id_product, $qty, $price){
+    $sql = "insert into bill_detail(id_bill,id_product, qty, price) value('$bill_id','$id_product','$qty','$price')";
+   
     if(pdo_execute($sql)){
         return true;
     }

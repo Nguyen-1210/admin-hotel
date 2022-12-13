@@ -22,6 +22,7 @@ function drawChart() {
         $i = 1;
         
         foreach ($listthongke as $thongke) {
+         
             extract($thongke);
 
             if($i == $tongdm) $dauphay = ""; else $dauphay = ",";

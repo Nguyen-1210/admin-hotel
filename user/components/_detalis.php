@@ -1,14 +1,17 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="css/_detalis.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
 <link rel="stylesheet" href="css/content.css">
 <?php
+
 
 extract($onspd);
 
 ?>
 
 
-<div class="block mt-5">
+<div class=" mb-5   block mt-5">
     <div class="page__header" style="margin-bottom: 0px;">
 
         <div class="container container--max--xl" style="margin-top: 50px;">
@@ -45,7 +48,10 @@ extract($onspd);
                     <div class="product__sku">Mã sản phẩm: <?= $id_pro ?></div>
                 </div>
                 <div class="product__name">
-                    <h2 class="decor-header"><?= $namepro ?></h2>
+                    
+                    <h2 class=" decor-header--align--center text-left">
+                            <span class="decor-header"><?= $namepro ?></span>
+                        </h2>
                 </div>
                 <div class="product__description"><?= $description ?>
                 </div>
@@ -183,4 +189,63 @@ extract($onspd);
             </div>
         </div>
     </div>
+</div>
+<div class="container">
+<div class="be-comment-block">
+
+	<h1 class="comments-title">Comments </h1>
+    <?php
+    if(!empty($listcomments)) {
+
+ 
+foreach($listcomments as $comment) {
+    $loadone_accounts = loadone_accounts($comment['id_user']);
+    extract($comment);
+
+    if($id_product == $_GET['idsp'])
+    {
+    echo ' 
+
+
+        <div class="be-comment">
+            <div class="be-img-comment">	
+                <a href="#">
+                    <img src="./images/about/143086968_2856368904622192_1959732218791162458_n.png" alt="" class="be-ava-comment">
+                </a>
+            </div>
+            <div class="be-comment-content">
+                
+                    <span class="be-comment-name">
+                        <a href="blog-detail-2.html">'.$loadone_accounts['username'].'</a>
+                        </span>
+                    <span class="be-comment-time">
+                        <i class="fa fa-clock-o"></i>
+                    '.$day.'
+                    </span>
+
+                <p class="be-comment-text">
+            '. $comment .' 
+                </p>
+            </div>
+        </div>
+        ';
+    }
+
+    else {
+        echo '';
+    }
+}
+}
+?>
+	<form class="form-block" action="index.php?act=insert_comment">
+		<div class="row">
+			<div class="col-xs-12">									
+				<div class="form-group">
+					<textarea class="form-input" required="" placeholder="Nội dung bình luận"></textarea>
+				</div>
+			</div>
+	<input type="button" value="Bình luận" class="btn btn-primary col-2 ">
+		</div>
+	</form>
+</div>
 </div>

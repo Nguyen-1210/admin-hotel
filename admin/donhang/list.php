@@ -13,7 +13,6 @@
       <tr>
         <th>MÃ ĐƠN HÀNG</th>
         <th>KHÁCH HÀNG</th>
-      
         <th>GIÁ TRỊ ĐƠN HÀNG</th>
         <th>TÌNH TRẠNG ĐƠN HÀNG</th>
         <th>NGÀY ĐẶT HÀNG</th>
@@ -46,7 +45,7 @@ foreach($listbills as $bills){
   
    <td>
    <span class="discription">
-   '.$bills['total'].'
+   '. number_format($bills['total'] ?? 0).'VND
    </span>
    </td> 
    <td>

@@ -79,14 +79,16 @@
                                             <div class="product-card__badge product-card__badge--style--sale">'.$dis.'</div>
                                         </div>
 
-                                        <div class="product-card__image"><a href="'.$linksp.'"><img src="'.$imga.'" alt=""></a>
+                                        <div class="product-card__image"><a href="'.$linksp.'"><img style="height: 200px;
+                                        width: 100%;
+                                        object-fit: cover;" src="'.$imga.'" alt=""></a>
                                         </div>
                                         <div class="product-card__info">
                                             <div class="product-card__name"><a href="product.html">' . $name . '</a></div>
 
                                             <div class="product-card__prices-list">
-                                                <div class="product-card__price"><span class="product-card__price-new" '.$style.'>' . $price_new . '</span>
-                                                    <span class="product-card__price-old">' . $price . '</span>
+                                                <div class="product-card__price"><span class="product-card__price-new" '.$style.'>' .  number_format($price_new ?? 0) . 'VND</span>
+                                                    <span class="product-card__price-old">' .  number_format($price  ?? 0) . 'VND</span>
                                                 </div>
                                             </div>
                                         
@@ -109,56 +111,7 @@
                                     }
 
                                     ?>
-                                    <div class="products-list__item">
-                                        <div class="product-card product-card--layout--grid">
-
-                                            <div class="product-card__image"><a href="index.php?act=_detalis"><img src="images/product2-1.jpg" alt=""></a>
-                                            </div>
-                                            <div class="product-card__info">
-                                                <div class="product-card__category"><a href="">Chandeliers</a></div>
-                                                <div class="product-card__name"><a href="index.php?act=_detalis">Aluminum Chandelier</a></div>
-
-                                                <div class="product-card__prices-list">
-                                                    <div class="product-card__price">$249.00</div>
-                                                </div>
-                                                <form class="product-card__buttons" >
-                                                    <a href="">
-                                                        <div class="product-card__buttons-list">
-                                                            <input class="btn btn-primary product-card__addtocart" type="button" value="Add To Cart"></input>
-                                                        </div>
-                                                       
-                                                    </a>
-                                                </form>
-                                       
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- sale product -->
-                                    <div class="products-list__item">
-                                        <div class="product-card product-card--layout--grid">
-                                            <div class="product-card__badges-list">
-                                                <div class="product-card__badge product-card__badge--style--sale">
-                                                    Sale</div>
-                                            </div>
-
-                                            <div class="product-card__image"><a href="product.html"><img src="images/product2-1.jpg" alt=""></a>
-                                            </div>
-                                            <div class="product-card__info">
-                                                <div class="product-card__category"><a href="">Lamps</a>
-                                                </div>
-                                                <div class="product-card__name"><a href="product.html">Bedside Lamp</a></div>
-
-                                                <div class="product-card__prices-list">
-                                                    <div class="product-card__price"><span class="product-card__price-new">$321.54</span>
-                                                        <span class="product-card__price-old">$419.00</span>
-                                                    </div>
-                                                </div>
-                                                <div class="product-card__buttons">
-                                                    <div class="product-card__buttons-list"><button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                   
                                     <!-- new product -->
                                     <div class="products-list__item">
                                         <div class="product-card product-card--layout--grid">

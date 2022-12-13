@@ -21,8 +21,15 @@ if (isset($_GET['act'])) {
         case 'add_types':
             if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                 $tenloai = $_POST['tenloai'];
+                $img = $_FILES['img']['name'];
+                $extension = pathinfo($img, PATHINFO_ALL);
+                $randomo = rand(0, 1000000);
+                $rename = 'Upload' . date('Ymd') . $randomo;
+                $img = $rename . '.' . $extension;
+                $target_dir = "../upload/";
+                move_uploaded_file($_FILES["img"]["tmp_name"], $target_dir . $img);
+                insert_types($tenloai, $img);
 
-                insert_types($tenloai);
                 header("location: ./index.php?act=list_types");
             }
             include "./danhmuc/add.php";
@@ -36,6 +43,7 @@ if (isset($_GET['act'])) {
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 $dm = loadone_types($_GET['id']);
             }
+            $listdanhmuc = loadall_types();
             include "./danhmuc/edit.php";
             break;
         case 'delete_types':
@@ -50,7 +58,14 @@ if (isset($_GET['act'])) {
             if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
                 $name = $_POST['tenloai'];
                 $id = $_POST['id'];
-                update_types($id, $name);
+                $img = $_FILES['img']['name'];
+                $extension = pathinfo($img, PATHINFO_ALL);
+                $randomo = rand(0, 1000000);
+                $rename = 'Upload' . date('Ymd') . $randomo;
+                $img = $rename . '.' . $extension;
+                $target_dir = "../upload/";
+                move_uploaded_file($_FILES["img"]["tmp_name"], $target_dir . $img);
+                update_types($id, $name, $img);
             }
             $listdanhmuc = loadall_types();
             include "./danhmuc/list.php";
@@ -184,9 +199,9 @@ if (isset($_GET['act'])) {
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 $id = $_GET['id'];
                 $listbills = loadone_bill($id);
-                var_dump($listbills);
+               
                 $bill_detail = load_bill_detail_by_bill_id($id);
-                var_dump($bill_detail);
+               
             }
             include "./donhang/edit.php";
             break;

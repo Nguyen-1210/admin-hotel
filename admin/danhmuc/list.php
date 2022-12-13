@@ -18,7 +18,7 @@
                 <th></th>
                 <th>MÃ LOẠI</th>
                 <th>TÊN LOẠI</th>
-               
+                <th>ẢNH</th>
                 <th>CHỨC NĂNG</th>
             </tr>
         </thead>
@@ -28,11 +28,18 @@
                 extract($danhmuc);
                 $suadm = "index.php?act=edit_types&id=" . $id;
                 $xoadm = "index.php?act=delete_types&id=" . $id;
+                $img_path = "../upload/" . $img;
+                if (is_file($img_path)) {
+                    $img = "<img src='" . $img_path . "' height='80'>";
+                } else {
+                    $img = "NO Photo";
+                }
                 $show = '
                                 <tr>
-                                <td><strong><input type="checkbox" name="" id=""></strong></td>
+                                <td><strong><input type="checkbox" name="check" id=""></strong></td>
                                 <td>' . $id . '</td>
                                 <td>' . $name . '</td>
+                                <td>' . $img . '</td>
                                 <td> <a href="' . $suadm . '"> <i class="fa-solid fa-pen-to-square btn-list"></i></a>
                                  ';
                 if (can_delete($id)) {
