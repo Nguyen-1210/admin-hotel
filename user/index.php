@@ -37,6 +37,7 @@
     include '../model/users.php';
     include '../model/blog.php';
     include '../model/bills.php';
+    include '../model/comments.php';
     include './components/header.php';
 
     require './global.php';
@@ -68,7 +69,6 @@
                 break;
                 // list
             case '_product':
-      
                 $listproducts = loadall_product_home();
                 include "./product.php";
                 break;
@@ -91,7 +91,9 @@
             case '_detalis':
                 if (isset($_GET['idsp']) && ($_GET['idsp'] > 0)) {
                     $id = $_GET['idsp'];
+                    $id_product = $_GET['idsp'];
                     $onspd = loadone_product($id);
+                    $listcomments = loadall_comments(0);
                     extract($onspd);
                     include './components/_detalis.php';
                 }
@@ -148,6 +150,9 @@
 
             case 'comfirm_bill':
                 if (isset($_POST['comfirm_bill']) && ($_POST['comfirm_bill'])) {
+                    // if(isset($_SESSION['username'])) $iduser = $_SESSION['username']['id'];
+                    // else $id = 0;
+
                     $name = $_POST['name'] ?? '';
                     $address = $_POST['address'];
                     $email = $_POST['email'];
@@ -166,18 +171,20 @@
                         $day,
                         $total
                     );
-                    if (!empty($_SESSION['myCard'])) {
-                        foreach ($_SESSION['myCard'] as $key => $card) {
-
-                            insert_bill_detail(
-                                $bill_id,
-                                $_SESSION['myCard'][$key]['id'],
-                                $_SESSION['myCard'][$key]['number'],
-                                $_SESSION['myCard'][$key]['price']
-                            );
+                    if($bill_id  != 0 ){
+                        if (!empty($_SESSION['myCard'])) {
+                            foreach ($_SESSION['myCard'] as $key => $card) {
+                                insert_bill_detail(
+                                    $bill_id,
+                                    $_SESSION['myCard'][$key]['id'],
+                                    $_SESSION['myCard'][$key]['number'],
+                                    $_SESSION['myCard'][$key]['price']
+                                );
+                            }
                         }
-                    }
+                    }                    
                 }
+                unset($_SESSION['myCard']);
                 break;
 
             case 'register':

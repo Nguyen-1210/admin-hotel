@@ -45,7 +45,7 @@ foreach($listcomments as $comments){
    <td> 
    
    <div class="import-btn">
-   <!-- chinh danh danh muc  -->
+   
    <a href="'.$delete_comments.'"><i class="fa-sharp fa-solid fa-trash  btn-list"></i></a>
 
  </div>

@@ -1,8 +1,8 @@
 <?php
 
-function insert_types($tenloai)
+function insert_types($tenloai,$img)
 {
-    $sql = "insert into types(name) values ('$tenloai')";
+    $sql = "insert into types(name,img) values ('$tenloai','$img')";
     pdo_execute($sql);
 }
 
@@ -26,10 +26,10 @@ function loadone_types($id)
     return $dm;
 }
 
-function update_types($id, $name)
+function update_types($id, $name, $img)
 {
 
-    $sql = "update types set name='" . $name . "' where id=" . $id;
+    $sql = "update types set name='" . $name . "', img='".$img."' where id=" . $id;
     pdo_execute($sql);
 }
 
@@ -46,7 +46,7 @@ function can_delete($id)
 
 function show_types()
 {
-    $sql = " SELECT *,COUNT(products.id) AS 'tonghh', types.name AS 'namhh' FROM types LEFT JOIN products ON types.id = products.id_type GROUP BY products.id_type";
+    $sql = " SELECT *,types.img AS 'img_type',COUNT(products.id) AS 'tonghh', types.name AS 'namhh' FROM types LEFT JOIN products ON types.id = products.id_type GROUP BY products.id_type";
     $listdanhmuc = pdo_query($sql);
     return $listdanhmuc;
 }

@@ -58,7 +58,7 @@ if (is_file($img_path)) {
                     <i></i>
                 </div>
                 <div class="import-list">
-                    <input type="text" required="required" name="price_product" id="giahh" value="<?= $price ?>">
+                    <input type="text" required="required" name="price_product" id="giahh" value="<?=  number_format($price ??0 )?>VND">
                     <span class="import-text"> Giá</span>
                     <i></i>
                 </div>
@@ -81,7 +81,7 @@ if (is_file($img_path)) {
                     <!-- <i></i> -->
                 </div>
                 <div class="import-list">
-                    <input type="text" required="required" name="dis_product" id="giamgiahh" value="<?= $discount?>">
+                    <input type="text" required="required" name="dis_product" id="giamgiahh" value="<?=  number_format($discount ?? 0)?>VND">
                     <span class="import-text"> Giảm giá</span>
                     <i></i>
                 </div>

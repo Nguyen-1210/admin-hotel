@@ -43,11 +43,11 @@ foreach($listproducts as $products){
   
     <td>'.$id.'</td>
     <td>'.$name.'</td>
-    <td>'.$price.'</td>
+    <td>'. number_format($price ?? 0).'VND</td>
     <td>'.$img.'</td>
     <td><span class="description">'.$description.'</span></td>
     <td>'.$view.'</td>
-    <td>'.$discount.'</td>
+    <td>'. number_format($discount ?? 0).'VND</td>
     
 
     <td>

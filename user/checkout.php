@@ -80,14 +80,15 @@
                                         </thead>
                                         <tbody class="checkout__totals-products">
                                             <?php
-                                            $tong  =  25000;
-                                          
+                                            $tong1  =  25000;
+                                          $tong2= 0;
                                             foreach ($_SESSION['myCard'] as $bill) {
                                                 // $bill += $bill['price'] * $bill['number'];
 
                                                 $total_money = $bill['total_money'] ?? '';
                                                 $price = $bill['price'];
-                                                $tong += $bill['price'] * $bill['number'];
+                                                $tong1 += $bill['price'] * $bill['number'];
+                                                $tong2 += $bill['price'] * $bill['number'];
                                             ?>
                                                 <tr>
                                                     <td><?= $bill['name'] ?></td>
@@ -103,7 +104,7 @@
                                             <tr>
                                                 <th>Tổng Tiền</th>
                                                 <td></td>
-                                                <td><?= number_format($tong ?? 0) ?> VND</td>
+                                                <td><?= number_format($tong2 ?? 0) ?> VND</td>
                                             </tr>
                                             <tr>
                                                 <th>Phí Vận Chuyển</th>
@@ -115,9 +116,9 @@
                                             <tr>
                                                 <th>Tổng Cộng</th>
                                                 <td></td>
-                                                <td><?= number_format($tong ) ?? 0 ?>VND</td>
+                                                <td><?= number_format($tong1 ) ?? 0 ?>VND</td>
                                             </tr>
-                                            <input type="hidden" name="total" value="<?= ($tong ) ?? 0 ?>">
+                                            <input type="hidden" name="total" value="<?= ($tong1 ) ?? 0 ?>">
                                         </tfoot>
                                     </table>
                                     <div class="payment-methods">
