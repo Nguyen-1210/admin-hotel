@@ -53,7 +53,7 @@
                             foreach ($list_pro_top8 as $product) {
                                 extract($product);
                                 $linksp = "index.php?act=productct&idsp=" . $id;
-                                $imga = $img_path . $img;
+                                $imga = $img_path . $imgpro;
                                 if ($discount == 0) {
                                     $dis = "";
                                     $price_new = $price;
@@ -179,7 +179,7 @@
                             $img = $img_path . $img_type;
                             $linkdm = "index.php?act=product&idtypes=" . $id_type_of_product;
                             echo '<div class="card category-card"><a href="' . $linkdm . '">
-                                        <div class="category-card__image"><img style="width: 200px; height: 150px;"
+                                        <div class="category-card__image"><img style="width: 100%; height: 150px;"
                                         src="' . $img . '" alt=""></div>
                                         <div class="category-card__name">' . $namhh . '</div>
                                         <div class="category-card__products">' . $tonghh . ' Sản Phẩm</div>

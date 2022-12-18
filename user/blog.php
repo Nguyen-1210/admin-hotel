@@ -34,7 +34,7 @@ extract($loadone_blog);
                                 <div class="col-12 " style="z-index: 1;">
                                     <div class="block">
                                         <article class="card post">
-                                            <header class="post__header">
+                                            <div class="post__header">
                                                
                                                 <h2 class="post__title"><?= $name ?></h2>
                                                 <div class="post__meta"><span
@@ -42,7 +42,7 @@ extract($loadone_blog);
                                                             class="far fa-clock"></i>&nbsp;   <?= $date ?>
                                                     </span>
                                                 </div>
-                                            </header>
+                                            </div>
                                             <div class="post__featured d-flex justify-content-center align-items-center"><img 
                                                  style= "width: 600px; height: 500px;"
                                                     src="<?= $imga = $img_path . $img ?>" alt=""></div>

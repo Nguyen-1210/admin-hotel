@@ -55,10 +55,10 @@ extract($onspd);
                 </div>
                 <div class="product__description"><?= $description ?>
                 </div>
-                <div class="product__price"><span class="product__price-new"><?= $price_new = $price - $discount ?></span>
+                <div class="product__price"><span class="product__price-new"><?= number_format($price_new = $price - $discount) ?> VND</span>
                 <?php
 if($discount != 0 ) {
-echo '  <span class="product__price-old">'. $price .'</span>';
+echo '  <span class="product__price-old">'. number_format($price) .' VND</span>';
 }
 
 
@@ -151,7 +151,7 @@ echo '  <span class="product__price-old">'. $price .'</span>';
                                     <input type="hidden" name="id" value="<?= $id_pro ?>">
                                     <input type="hidden" name="name" value="<?= $namepro ?>">
                                     <input type="hidden" name="img" value="<?= $imga ?>">
-                                    <input type="hidden" name="price" value="<?= $price_new ?>">
+                                    <input type="hidden" name="price" value="<?=number_format($price_new ) ?> VND">
                                     <input type="submit" class="btn btn-primary btn-lg" name="addCard" value="Thêm vào giỏ hàng">
                                 </form>
 
