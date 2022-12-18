@@ -52,8 +52,8 @@
                             <?php
                             foreach ($list_pro_top8 as $product) {
                                 extract($product);
-                                $linksp = "index.php?act=productct&idsp=" . $id;
-                                $imga = $img_path . $img;
+                                $linksp = "index.php?act=_detalis&idsp=" . $idpro;
+                                $imga = $img_path . $imgpro;
                                 if ($discount == 0) {
                                     $dis = "";
                                     $price_new = $price;

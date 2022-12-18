@@ -74,6 +74,7 @@
                 <div class="service col-2 justify-content-center d-flex align-items-center">
                     <!-- user -->
                     <?php
+                   
                    session_start();
                    error_reporting(0);
                     if (isset($_SESSION['username'])) {

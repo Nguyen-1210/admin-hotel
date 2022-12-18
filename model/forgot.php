@@ -36,10 +36,8 @@ function is_code_correct($code)
 {
     global $server;
     $code = addslashes($code);
-
     $expire = time();
     $email = addslashes($_SESSION['forgot']['email']);
-
     $query = "select * from codes where code = '$code' && email = '$email' order by id desc limit 1";
     $result = mysqli_query($server, $query);
     if ($result) {
@@ -48,14 +46,20 @@ function is_code_correct($code)
             if ($row['expire'] > $expire) {
                 return "Mã đúng";
             } else {
-                return "Mã đã hết hạn";
-                include '../user/index.php?act=forgot_otp';
+              
+                return '  <p style=" font-size: 15px; color: #F23A3A " >Mã đã hết hạn</p>';
             }
         } else {
-            return "Mã không chính xác";
-            include '../user/index.php?act=forgot_otp';
+       
+            return '     <p style=" font-size: 15px; color: #F23A3A " >Mã không chính xác</p>';
+           
         }
     }
-    return "Mã không chính xác";
-    include '../user/index.php?act=forgot_otp';
+    return '     <p style=" font-size: 15px; color: #F23A3A " >Mã không chính xác</p>';
+}
+function save_password($password){
+    global $server;
+    $email = addslashes($_SESSION['forgot']['email']);
+    $query = "update accounts set password = '$password' where email = '$email' limit 1";
+    mysqli_query($server,$query);
 }

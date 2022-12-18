@@ -88,7 +88,7 @@
                                                                     <div class="form-control-number__sub"></div>
                                                                 </div>
                                                             </td>
-                                                            <td class="cart__column cart__column--total" data-title="Total"><?= number_format($card['number'] * $total_money) ?></td>
+                                                            <td class="cart__column cart__column--total" data-title="Total"><?= number_format($card['number'] * $card['price']) ?></td>
                                                             <td class="cart__column"><a href="index.php?act=delete&idcart=<?= $i ?>"><i class="fa-solid fa-trash"></i></a></td>
                                                         </tr>
 

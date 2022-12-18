@@ -12,7 +12,11 @@
         <!-- page__header -->
         <!-- page__body -->
         <div class="page__body">
+<?php
+ob_start();
+// session_start();
 
+?>
             <div class="container container--max--xl d-flex justify-content-center  ">
                 <div class="card " style="width: 40%">
                     <div class=" card__header">
@@ -30,15 +34,17 @@
                         </form>
                         
                     </div>
-                    <h5 class=" form-label" style="text-transform: none;
-            margin: 0px 10px 10px 10px;">
-                        <?php
-                        if (isset($thongbao) && ($thongbao != "")) {
-                            echo $thongbao;
-                        }
-
-                        ?>
-                    </h5>
+                        <h5 class=" form-label" style="text-transform: none;
+                margin: 0px 10px 10px 10px;">
+                            <?php
+                            if (isset($thongbao) && ($thongbao != "")) {
+                               
+                                echo $thongbao;
+                            }
+                           
+                            ?>
+                       
+                        </h5>
                 </div>
             </div>
         </div>

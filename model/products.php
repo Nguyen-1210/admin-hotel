@@ -11,7 +11,7 @@ function delete_products($id){
 }
 
 function loadall_product_top8(){
-    $sql = "SELECT *,types.name AS 'namehh', products.name AS 'namepro' FROM products INNER JOIN types ON products.id_type = types.id WHERE products.view>0 order by products.view desc LIMIT 0,04";
+    $sql = "SELECT *,types.name AS 'namehh',products.id AS 'idpro', products.name AS 'namepro', products.img AS 'imgpro' FROM products INNER JOIN types ON products.id_type = types.id WHERE products.view>0 order by products.view desc LIMIT 0,04";
     $listproducts = pdo_query($sql);
     return $listproducts;
 }

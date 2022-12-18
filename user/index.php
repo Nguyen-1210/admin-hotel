@@ -1,5 +1,5 @@
 <?php
-// session_start();
+
 
 ?>
 <!DOCTYPE html>
@@ -25,8 +25,9 @@
 
 <body>
     <?php
-    // session_destroy(0);
     ob_start();
+    // session_start();
+    // session_destroy();
     if (isset($_SESSION['username'])) {
         header("Location: index.php");
     }
@@ -92,7 +93,7 @@
                 break;
 
             case 'search':
-                if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
+                if (isset($_POST['kyw']) && ($_POST['kyw'] != "" >0)) {
                     $kyw = $_POST['kyw'];
                 } else {
                     $kyw = "";
@@ -103,7 +104,6 @@
                     $id_type = 0;
                 }
                 $list_search = load_search($kyw);
-
                 include './search.php';
                 break;
 
@@ -202,8 +202,7 @@
                             }
                         }
                     }
-                    // header('Location: ./index.php?act=his_bill&id='.$id_user);
-                    // include './index.php?act=his_bill';
+                   
                 }
 
                 unset($_SESSION['myCard']);
@@ -322,38 +321,54 @@
                         $thongbao = '<p style=" font-size: 12px; color: #F23A3A " >Không tìm thấy email.</p>';
                         include './forgot.php';
                     } else {
-                        $thongbao = ' <p style=" font-size: 12px; color: #44C662" >Mã xác minh đã được gửi đến địa chỉ email"' . $email . '"Vui lòng xác minh.</p>';
-                        include './forgot_otp.php';
+                        $thongbao = ' <p style=" font-size: 12px; color: #44C662" >Mã xác minh đã được gửi đến email " ' . $email . ' " Vui lòng xác minh kiểm tra lại.</p>';
                         send_email($email);
                         $_SESSION['forgot']['email'] = $email;
-                        header("Location:index.php?act=forgot_otp");
-                        die;
+                        include './forgot_otp.php';
+                       
                     }
                 }
                 break;
-            case 'forgot_otp':
-                include './forgot_otp.php';
-                break;
-            case 'comfirm_pass':
-              
-                if (isset($_POST['comfirm_pass']) && ($_POST['comfirm_pass'])) {
-                    $code = $_POST['code'];
-                    $result = is_code_correct($code);
-                    if ($result == "Mã đúng") {
-                        $_SESSION['forgot']['code'] = $code;
-                        header("Location: index.php?act=update_pass");
-                        die;
-                    } else {
-                        $thongbao[] = $result;
-             
-                     
-                    }
-                }
-                include './login.php';
-                break;
+                case 'comfirm_pass':
 
+                    if (isset($_POST['comfirm_pass']) && ($_POST['comfirm_pass'])) {
+                        $code = $_POST['code'];
+                      
+                        $result = is_code_correct($code);
+                        
+                        if ($result == "Mã đúng") {
+                            $_SESSION['forgot']['code'] = $code;
+                            header("Location: index.php?act=update_pass");
+                            
+                        }
+                        else{
+                            $thongbao = $result;
+                            include './forgot_otp.php';
+                        }
+                    }
+                    break;
+                    case 'forgot_otp':
+                        include './forgot_otp.php';
+                        break;
             case 'update_pass':
-                include './login.php';
+                if(isset($_POST['update_pass']) && ($_POST['update_pass'])){
+                    $password = $_POST['password'];
+				$password2 = $_POST['password2'];
+				if($password !== $password2){
+					$error[] = "Mã không khớp";
+				}elseif(!isset($_SESSION['forgot']['email']) || !isset($_SESSION['forgot']['code'])){
+					header("Location:forgot.php");
+					die;
+				}else{
+					save_password($password);
+					if(isset($_SESSION['forgot'])){
+						unset($_SESSION['forgot']);
+					}
+					header("Location: login.php");
+					die;
+				}
+                }
+                include './forgot_pass.php';
                 break;
 
             default:

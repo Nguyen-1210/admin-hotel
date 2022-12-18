@@ -55,10 +55,10 @@ extract($onspd);
                 </div>
                 <div class="product__description"><?= $description ?>
                 </div>
-                <div class="product__price"><span class="product__price-new"><?= $price_new = $price - $discount ?></span>
+                <div class="product__price"><span class="product__price-new"><?= number_format($price_new = $price - $discount ??0 )?> VND</span>
                 <?php
 if($discount != 0 ) {
-echo '  <span class="product__price-old">'. $price .'</span>';
+echo '  <span class="product__price-old">'. number_format($price ?? 0 ) .' VND</span>';
 }
 
 
