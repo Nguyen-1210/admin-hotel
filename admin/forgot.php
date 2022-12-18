@@ -110,6 +110,7 @@ Hãy nhập mã xác nhận để cập nhật lại mật khẩu.
 		}
 		return false;
 	}
+	
 	function is_code_correct($code){
 		global $server;
 		$code = addslashes($code);
@@ -123,10 +124,10 @@ Hãy nhập mã xác nhận để cập nhật lại mật khẩu.
 			{
 				$row = mysqli_fetch_assoc($result);
 				if($row['expire'] > $expire){
-
 					return "Mã đúng";
 				}else{
 					return "Mã đã hết hạn";
+					
 				}
 			}else{
 				return "Mã không chính xác";
@@ -135,15 +136,14 @@ Hãy nhập mã xác nhận để cập nhật lại mật khẩu.
 		return "Mã không chính xác";
 	}
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Forgot - PASSWORD</title>
+	<title>ADMIN FORGOT- PASSWORD</title>
+    <link rel="shortcut icon" href="../admin/images/favicon.png" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="./css/form.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>

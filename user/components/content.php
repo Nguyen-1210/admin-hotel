@@ -56,7 +56,7 @@
                                 $imga = $img_path . $img;
                                 if ($discount == 0) {
                                     $dis = "";
-                                    $price_new = "";
+                                    $price_new = $price;
                                 } else {
                                     // $dis =$discount;
                                     $dis = "Giảm giá";
@@ -64,11 +64,36 @@
                                 }
 
                                 echo '<div class="product-card product-card--layout--grid">
-                                            <div class="product-card__badges-list">
-                                                <div class="product-card__badge product-card__badge--style--sale">' . $dis . '
-                                                </div>
-                                            </div>
+                                ';
+                                if($discount != 0){
+                                    echo '
+                                    <div class="product-card__badges-list">
+                                        <div class="product-card__badge product-card__badge--style--sale">' . $dis . '
+                                        </div>
+                                    </div>
+                                    <div class="product-card__image"><a href="' . $linksp . '">
+                                    <img src="' . $imga . '" alt=""></a></div>
+                                <div class="product-card__info">
+                                    <div class="product-card__category"><a href="">' . $namehh . '</a></div>
+                                    <div class="product-card__name"><a href="product.html">' . $namepro . '</a>
+                                    </div>
+                                    <div class="product-card__rating">
+                                    <div class="product-card__prices-list">
+                                        <div class="product-card__price"><span
+                                                class="product-card__price-new">' . number_format($price_new?? 0) . 'VND</span> <span
+                                                class="product-card__price-old">' . number_format($price ?? 0) . 'VND</span></div>
+                                    </div>
+                                    <div class="product-card__buttons">
+                                        <div class="product-card__buttons-list"><button
+                                                class="btn btn-primary product-card__addtocart"
+                                                type="button" >Thêm vào giỏ hàng</button></div>
+                                    </div>
+                                </div>
+                            </div>
 
+                        </div> ';
+                                }else { 
+                                    echo '
                                             <div class="product-card__image"><a href="' . $linksp . '">
                                                 <img src="' . $imga . '" alt=""></a></div>
                                             <div class="product-card__info">
@@ -78,8 +103,7 @@
                                                 <div class="product-card__rating">
                                                 <div class="product-card__prices-list">
                                                     <div class="product-card__price"><span
-                                                            class="product-card__price-new">' . $price_new . '</span> <span
-                                                            class="product-card__price-old">' . $price . '</span></div>
+                                                            class="product-card__price-new">' . number_format($price_new?? 0) . ' VND</span></div>
                                                 </div>
                                                 <div class="product-card__buttons">
                                                     <div class="product-card__buttons-list"><button
@@ -91,6 +115,7 @@
 
                                     </div>';
                             }
+                        }
 
                             ?>
 
@@ -148,10 +173,11 @@
                     </div>
                     <div class="categories-list">
                         <?php
+                        
                         foreach ($show_types as $show) {
                             extract($show);
                             $img = $img_path . $img_type;
-                            $linkdm = "index.php?act=product&idtypes=" . $id_type;
+                            $linkdm = "index.php?act=product&idtypes=" . $id_type_of_product;
                             echo '<div class="card category-card"><a href="' . $linkdm . '">
                                         <div class="category-card__image"><img style="width: 200px; height: 150px;"
                                         src="' . $img . '" alt=""></div>
@@ -160,7 +186,6 @@
                                     </a>
                                      </div>';
                         }
-
                         ?>
 
                     </div>
@@ -181,7 +206,7 @@
                                 $link_blog = "index.php?act=link_blog&id=" . $id;
                                 $img_path = "../upload/" . $img;
                                 if (is_file($img_path)) {
-                                    $img = "<img src='" . $img_path . "' height='200'>";
+                                    $img = "<img src='" . $img_path . "' height='250' width='250'>";
                                 } else {
                                     $img = "NO Photo";
                                 }
@@ -192,7 +217,8 @@
         <div class="post-card__date">' . $date . '</div>
         <div class="post-card__name"><span class="post-card__name-link"
                 >' . $name . '</span></div>
-        <div class="post-card__description">' . $description . '</div><a href="post.html"
+        <div class="post-card__description">' . $description . '</div><a href="'.$link_blog.'"
+        
             class="btn btn-primary post-card__read-more">Đọc bài viêt</a>
     </div>
 </div>

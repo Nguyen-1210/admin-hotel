@@ -34,11 +34,11 @@ extract($onspd);
                                         display: flex;">
                     <div class="product-gallery__carousel" style="width: 25%;">
                         <div class="" id="product-carousel">
-                            <a href="" class="product-gallery__carousel-item"><img class="product-gallery__carousel-image" src="<?= $imga = $img_path . $img; ?>" alt="" width="120px" height="120px"></a>
+                            <a href="" class="product-gallery__carousel-item"><img class="product-gallery__carousel-image" src="<?= $imga = $img_path . $imgpro; ?>" alt="" width="120px" height="120px"></a>
                         </div>
                     </div>
                     <div class="product-gallery__featured" style="width: 75%;">
-                        <div class="" id="product-image"><a href="#"><img style="width: 342px;height: 342px;" src="<?= $imga = $img_path . $img; ?>" alt=""> </a></div>
+                        <div class="" id="product-image"><a href="#"><img style="width: 342px;height: 342px;" src="<?= $imga = $img_path . $imgpro; ?>" alt=""> </a></div>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,14 @@ extract($onspd);
                 <div class="product__description"><?= $description ?>
                 </div>
                 <div class="product__price"><span class="product__price-new"><?= $price_new = $price - $discount ?></span>
-                    <span class="product__price-old"><?= $price ?></span>
+                <?php
+if($discount != 0 ) {
+echo '  <span class="product__price-old">'. $price .'</span>';
+}
+
+
+?>
+                  
                 </div>
                 <div class="product__options">
                     <div class="mb-3"><label class="form-label product__option-label">Số
@@ -248,4 +255,6 @@ foreach($listcomments as $comment) {
 		</div>
 	</form>
 </div>
-</div>
+</div> 
+
+

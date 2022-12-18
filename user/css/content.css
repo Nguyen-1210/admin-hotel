@@ -2695,10 +2695,6 @@ h6 {
     line-height: 17px
 }
 
-.post-card--layout--compact .post-card__description,
-.post-card--layout--compact .post-card__read-more {
-    display: none
-}
 
 .posts-list {
     display: -ms-flexbox;

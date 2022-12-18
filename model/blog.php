@@ -11,6 +11,11 @@ function loadall_blog($kyw="", $id=0){
     $listblog = pdo_query($sql);
     return $listblog;
 }
+function loadall_rand_blog(){
+    $sql = "select * from blog order by rand() limit 3";
+    $listblog = pdo_query($sql);
+    return $listblog;
+}
 
 function insert_blog($name, $img, $description,$date){
     $sql = "insert into blog(name,img,description,date) values ('$name','$img','$description',  '$date')";

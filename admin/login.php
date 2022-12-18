@@ -24,12 +24,13 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Animated Login Form</title>
+	
+	<title>ADMIN LOGIN</title>
+    <link rel="shortcut icon" href="../admin/images/favicon.png" type="image/x-icon">
+
 	<link rel="stylesheet" type="text/css" href="./css/form.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>

@@ -16,19 +16,24 @@
             <div class="container container--max--xl d-flex justify-content-center  ">
                 <div class="card " style="width: 40%">
                     <div class=" card__header">
-                        <h4 class="decor-header text-center">Đăng nhập</h4>
+                        <h4 class="decor-header text-center">Đặt lại mật khẩu</h4>
                     </div>
                     <div class="card__content">
-                        <form action="index.php?act=comfirm_login" method="POST">
-                            <div class="mb-3"><label class="form-label">Tên đăng nhập</label>
-                                <input type="text" class="form-control" placeholder="Enter email" name="username">
+                        <form action="index.php?act=update_pass" method="POST">
+                            <div class="mb-3"><label class="form-label">Nhập mật khẩu</label>
+                              
+                                <input id="password" placeholder="Nhập mật khẩu"  class="form-control" name="password"type="password"  required>	
                             </div>
-                            <div class="mb-3"><label class="form-label">Password</label> <input type="password" name="password" class="form-control" placeholder="Password">
+                            <div class="mb-3"><label class="form-label">Nhập lại mật khẩu</label>
+                             <input type="password" name="password2" class="form-control" placeholder="Nhập mật khẩu" required>
+                            
                             </div>
-                            <div class="mb-3 form-check d-flex justify-content-between">
-                                <a href="index.php?act=forgot"><h4  class="mt-2" style="color:  #44C662; font-size: 15px;">Quên mật khẩu ?</h4></a>
-                                <input type="submit" class="btn btn-primary" value="Đăng nhập" name="comfirm_login">
+                            <div class="mb-3 form-check d-flex justify-content-end">
+                               
+                                <input type="submit" class="btn btn-primary" value="Cập nhật" name="update_pass">
+                            </div>
                         </form>
+                        
                     </div>
                     <h5 class=" form-label" style="text-transform: none;
             margin: 0px 10px 10px 10px;">

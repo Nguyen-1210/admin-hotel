@@ -55,8 +55,10 @@ a {
     top: 40px;
     box-shadow:  1px 1px 1px 1px rgba(0, 0, 0, .2);
     border-radius: 5px;
+    border: 1px solid var(--main-color);
     padding: 5px;
     width: 170px;
+    z-index: 10;
     right: -20px;
     background-color: #fff;
 }
@@ -75,10 +77,20 @@ a {
 }
 .nav-item-down {
     list-style: none;
-    padding: 5px 0px;
+  
+    padding: 5px 5px;
 }
+
+.nav-item-down:nth-child(odd) {
+    border-bottom: 1px solid var(--main-color);
+}
+.nav-item-down {
+    border-bottom: 1px solid var(--main-color);
+}
+
 .nav-link-down {
     color: #000;
+    display: block;
 }
 .nav-link-down:hover {
     color: #000;
@@ -425,6 +437,9 @@ header {
 
 #navbar.sticky a {
     color: #fff;
+}
+#navbar.sticky a.nav-link-down {
+    color: #000000;
 }
 
 #navbar.sticky .user .nav-user .nav-user-down .nav-item .nav-link

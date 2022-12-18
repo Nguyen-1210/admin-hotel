@@ -22,9 +22,7 @@ function insert_bill($iduser, $name, $email, $address, $tell, $pay, $day ,$total
 }
 
 function loadall_bill($kyw="", $id_user=0){
-
     $sql = "select * from bills where 1";
-
     if($id_user > 0) $sql.=" AND iduser=".$id_user;
     if($kyw !="") $sql.=" AND id like '%".$kyw."%' ";
     $sql.=" order by id desc";
@@ -33,11 +31,11 @@ function loadall_bill($kyw="", $id_user=0){
 }
 
 function loadall_bill1($id_user){
-    $sql = "select * from bills where iduser=".$id_user;
+    $sql = "select * from bills where user_id=".$id_user;
     $listbills = pdo_query($sql);
     return $listbills;
-
 }
+
 function delete_bills($id){
     $sql = "delete from bills where id=".$id;
     pdo_execute($sql);

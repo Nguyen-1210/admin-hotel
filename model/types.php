@@ -46,7 +46,8 @@ function can_delete($id)
 
 function show_types()
 {
-    $sql = " SELECT *,types.img AS 'img_type',COUNT(products.id) AS 'tonghh', types.name AS 'namhh' FROM types LEFT JOIN products ON types.id = products.id_type GROUP BY products.id_type";
-    $listdanhmuc = pdo_query($sql);
-    return $listdanhmuc;
+    $sql = " SELECT *,types.img AS 'img_type', types.name AS 'namhh' ,types.id as 'id_type_of_product'  , COUNT(products.id) AS 'tonghh' FROM types LEFT JOIN products ON types.id = products.id_type GROUP BY types.id";
+
+   return pdo_query($sql);
+   
 }
