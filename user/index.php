@@ -355,7 +355,7 @@
                     $password = $_POST['password'];
 				$password2 = $_POST['password2'];
 				if($password !== $password2){
-					$error[] = "Mã không khớp";
+					$thongbaothongbao = "Mã không khớp";
 				}elseif(!isset($_SESSION['forgot']['email']) || !isset($_SESSION['forgot']['code'])){
 					header("Location:forgot.php");
 					die;
@@ -364,8 +364,7 @@
 					if(isset($_SESSION['forgot'])){
 						unset($_SESSION['forgot']);
 					}
-					header("Location: login.php");
-					die;
+				
 				}
                 }
                 include './forgot_pass.php';
