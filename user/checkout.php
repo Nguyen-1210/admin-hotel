@@ -30,9 +30,7 @@
             <div class="block">
                 <div class="container container--max--xl">
                     <div class="row g-custom-30">
-                        <div class="col-12 mb-2">
-                            <div class="alert alert-lg alert-primary">Phản Hồi Khách Hàng? <a href="">Nhấn Vào Để Đăng Nhập</a></div>
-                        </div>
+                       
                         <div class="col-12 col-lg-6 col-xl-7">
                             <div class="card mb-lg-0">
                                 <div class="card__header">
@@ -42,20 +40,21 @@
                                     <form action="index.php?act=comfirm_bill" method="post">
 
                                         <div class="mb-3 row g-3">
-                                            <div class="mb-3"><label for="name" class="from-label">Họ và Tên</label> <input type="text" class="form-control" name="name" id="name" placeholder="Họ và tên"></div>
+                                            <div class="mb-3"><label for="name" class="from-label">Họ và Tên</label> <input type="text" required="required" class="form-control" name="name" id="name" placeholder="Họ và tên"></div>
                                         </div>
                                         <!-- <div class="mb-3"><label for="checkout-company-name" class="from-label">Tên Công Ty <span class="text-muted">(Tùy Chọn)</span></label> <input type="text" class="form-control" id="checkout-company-name" placeholder="Có hoặc không">
                                         </div> -->
-                                        <div class="mb-3"><label for="checkout-street-address" class="from-label">Địa chỉ</label> <input type="text" class="form-control" name="address" id="checkout-street-address" placeholder="Số nhà - Tên đường ,...">
+                                        <div class="mb-3"><label for="checkout-street-address" class="from-label">Địa chỉ</label> <input type="text" required="required" class="form-control" name="address" id="checkout-street-address" placeholder="Số nhà - Tên đường ,...">
                                         </div>
                                         <!-- <div class="mb-3"><label for="checkout-date" class="from-label">Ngày Đặt Hàng</label> <input type="text" class="form-control" id="checkout-date"></div> -->
                                         <div class="mb-3 row g-3">
-                                            <div class="col-md-6"><label for="checkout-email" class="from-label">Email</label> <input type="email" class="form-control" name="email" id="checkout-email" placeholder="Địa Chỉ Email"></div>
-                                            <div class="col-md-6"><label for="checkout-phone" class="from-label">Số Điện Thoại</label> <input type="text" name="tell" class="form-control" id="checkout-phone" placeholder="012345678"></div>
+                                            <div class="col-md-6"><label for="checkout-email" class="from-label">Email</label> <input type="email" required="required" class="form-control" name="email" id="checkout-email" placeholder="Địa Chỉ Email"></div>
+                                            <div class="col-md-6"><label for="checkout-phone" class="from-label">Số Điện Thoại</label> <input type="text" required="required" name="tell" class="form-control" id="checkout-phone" placeholder="012345678"></div>
                                         </div>
                                         <div class="mb-3">
-                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="" id="checkout-create-account">
-                                                <label class="form-check-label" for="checkout-create-account">Đăng ký để mua hàng?</label>
+                                            <div class="form-check">
+                                                <!-- <input class="form-check-input" type="checkbox" value="" id="checkout-create-account"> -->
+                                                <!-- <label class="form-check-label" for="checkout-create-account">Đăng ký để mua hàng?</label> -->
                                             </div>
 
                                         </div>
@@ -147,9 +146,16 @@
                                                 </div>
                                             </li>
                                         </ul>
+                                        
                                     </div><input type="submit" class="btn btn-primary btn-lg" value="Đặt Hàng" name="comfirm_bill">
 
                                     </form>
+                                    <?php
+                        if (isset($a) && ($a != "")) {
+                            echo 'uiubk';
+                        }
+
+                        ?>
                                 </div>
                             </div>
                         </div>

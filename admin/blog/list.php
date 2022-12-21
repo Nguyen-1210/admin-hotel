@@ -14,7 +14,11 @@
             <table>
                 <thead>
                     <tr>
+<<<<<<< HEAD
                         <th></th>
+=======
+                     
+>>>>>>> dev/nguyen
                      
                         <th>ID BÀI VIẾT</th>
                         <th>TIÊU ĐỀ BÀI VIẾT</th>
@@ -40,7 +44,11 @@ foreach($listblog as $blog){
         $img = "NO Photo";
     }
     echo '                <tr>
+<<<<<<< HEAD
     <td><strong>Ẩn bài viết</strong></td>
+=======
+    
+>>>>>>> dev/nguyen
   
     <td>'.$id.'</td>
     <td>'.$name.'</td>

@@ -14,7 +14,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th></th>
+                        
                      
                         <th>ID HÀNG HÓA</th>
                         <th>TÊN HÀNG HÓA</th>
@@ -39,7 +39,7 @@ foreach($listproducts as $products){
         $img = "NO Photo";
     }
     echo '                <tr>
-    <td><strong>click button check</strong></td>
+    
   
     <td>'.$id.'</td>
     <td>'.$name.'</td>

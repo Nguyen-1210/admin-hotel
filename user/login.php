@@ -25,7 +25,8 @@
                             </div>
                             <div class="mb-3"><label class="form-label">Password</label> <input type="password" name="password" class="form-control" placeholder="Password">
                             </div>
-                            <div class="mb-3 form-check d-flex justify-content-end">
+                            <div class="mb-3 form-check d-flex justify-content-between">
+                                <a href="index.php?act=forgot"><h4  class="mt-2" style="color:  #44C662; font-size: 15px;">Quên mật khẩu ?</h4></a>
                                 <input type="submit" class="btn btn-primary" value="Đăng nhập" name="comfirm_login">
                         </form>
                     </div>

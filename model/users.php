@@ -48,6 +48,11 @@ function update_accounts($id, $password){
     pdo_execute($sql);
 }
 
+function update_user($id, $email,$name, $tell, $address){
+    $sql = "update accounts set  email='".$email."', name='".$name."',tell='".$tell."', address='".$address."' where id=".$id;
+    pdo_execute($sql);
+}
+
 function get_cart_data_by_user_id($id){
     $sql = "SELECT * from carts where user_id = ".$id;
 

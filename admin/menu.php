@@ -13,7 +13,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="./css/main.css">
-    <title>TRANG CHỦ</title>
+    <title>N-FURNITURE-H</title>
 </head>
 
 <body>
@@ -93,8 +93,7 @@
             <i class="uil uil-bars sidebar-toggle"></i>
             <div class="top-right" style="display: contents;">
                 <div class="search-box">
-                    <i class="uil uil-search"></i>
-                    <input type="text" placeholder="Search here...">
+                   
                 </div>
                 <div class="adm" style="
                 display: flex;

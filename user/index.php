@@ -1,5 +1,5 @@
 <?php
-// session_start();
+
 
 ?>
 <!DOCTYPE html>
@@ -25,19 +25,26 @@
 
 <body>
     <?php
-    // session_destroy(0);
     ob_start();
+    // session_start();
+    // session_destroy();
     if (isset($_SESSION['username'])) {
         header("Location: index.php");
     }
 
     include '../model/pdo.php';
     include '../model/products.php';
+    include '../model/support.php';
     include '../model/types.php';
     include '../model/users.php';
     include '../model/blog.php';
     include '../model/bills.php';
     include '../model/comments.php';
+<<<<<<< HEAD
+=======
+    include '../model/forgot.php';
+    include_once './email.php';
+>>>>>>> dev/nguyen
     include './components/header.php';
 
     require './global.php';
@@ -88,14 +95,34 @@
                 include './product_types.php';
                 break;
 
+            case 'search':
+                if (isset($_POST['kyw']) && ($_POST['kyw'] != "" > 0)) {
+                    $kyw = $_POST['kyw'];
+                } else {
+                    $kyw = "";
+                }
+                if (isset($_GET['idtypes']) && ($_GET['idtypes'] > 0)) {
+                    $id_type = $_GET['idtypes'];
+                } else {
+                    $id_type = 0;
+                }
+                $list_search = load_search($kyw);
+                include './search.php';
+                break;
+
             case '_detalis':
                 if (isset($_GET['idsp']) && ($_GET['idsp'] > 0)) {
                     $id = $_GET['idsp'];
                     $id_product = $_GET['idsp'];
                     $onspd = loadone_product($id);
                     $listcomments = loadall_comments(0);
+<<<<<<< HEAD
+=======
+                    $listproducts = loadall_rand_home();
+>>>>>>> dev/nguyen
                     extract($onspd);
                     include './components/_detalis.php';
+                    include './product_rand.php';
                 }
                 break;
             case 'addCard':
@@ -146,7 +173,8 @@
                     include "./checkout.php";
                 } else {
                     header('Location: index.php?act=addCard');
-                }break;
+                }
+                break;
 
             case 'comfirm_bill':
                 if (isset($_POST['comfirm_bill']) && ($_POST['comfirm_bill'])) {
@@ -164,14 +192,18 @@
                     $bill_id = insert_bill(
                         $_SESSION['username']['id'],
                         $name,
-                        $address,
                         $email,
+                        $address,
                         $tell,
                         $pay,
                         $day,
                         $total
                     );
+<<<<<<< HEAD
                     if($bill_id  != 0 ){
+=======
+                    if ($bill_id != 0) {
+>>>>>>> dev/nguyen
                         if (!empty($_SESSION['myCard'])) {
                             foreach ($_SESSION['myCard'] as $key => $card) {
                                 insert_bill_detail(
@@ -182,7 +214,26 @@
                                 );
                             }
                         }
+<<<<<<< HEAD
                     }                    
+=======
+                    }
+                    header('Location: index.php?act=addCard');
+                }
+
+                unset($_SESSION['myCard']);
+                break;
+            case 'his_bill':
+                if (isset($_GET['id']) && $_GET['id']) {
+                    $id_user = $_GET['id'];
+                    $id = $_GET['id'];
+                    $listbilluser =  loadall_bill1($id_user);
+                }
+                include './billuser.php';
+                break;
+            case 'billdetail';
+                if (isset($_GET['id']) && $_GET['id']) {
+>>>>>>> dev/nguyen
                 }
                 unset($_SESSION['myCard']);
                 break;
@@ -238,9 +289,106 @@
                 header('Location: index.php');
                 break;
             case 'edit_account':
-                if (isset($_POST['edit_account'])) {
-                    break;
+                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                    $edit_account = loadone_accounts($_GET['id']);
                 }
+                include './update_account.php';
+                break;
+            case 'update_account':
+                if (isset($_POST['save']) && $_POST['save']) {
+                    $id = $_POST['id'];
+                    $email = $_POST['email'];
+                    $name = $_POST['name'];
+                    $tell = $_POST['tell'];
+                    $address = $_POST['address'];
+                    update_user($id, $email, $name, $tell, $address);
+                }
+                $edit_account = loadone_accounts($id);
+                include './update_account.php';
+                break;
+            case 'support';
+                if (isset($_POST['send']) && ($_POST['send'])) {
+                    $name = $_POST['name'];
+                    $email = $_POST['email'];
+                    $tell = $_POST['tell'];
+                    $description = $_POST['description'];
+                    insert_support($name, $email, $tell, $description);
+                }
+                include "./contact-us.php";
+                break;
+            case 'link_blog':
+                if (isset($_GET['id']) && $_GET['id']) {
+                    $loadone_blog = loadone_blog($_GET['id']);
+                }
+                $list_blog = loadall_rand_blog();
+                include './blog.php';
+                include './blog_rand.php';
+                break;
+            case 'forgot':
+                include './forgot.php';
+                break;
+            case 'comfirm_forgot':
+                if (isset($_POST['comfirm_forgot']) && ($_POST['comfirm_forgot'])) {
+                    $email = $_POST['email'];
+                    $regex = "/([a-z0-9_]+|[a-z0-9_]+\.[a-z0-9_]+)@(([a-z0-9]|[a-z0-9]+\.[a-z0-9]+)+\.([a-z]{2,4}))/i";
+                    if (!preg_match($regex, $email)) {
+                        $thongbao = ' <p style=" font-size: 12px; color: #F23A3A " >Lỗi không đúng định dạng mail.</p>';
+                        include './forgot.php';
+                    } else if (!valid_email($email)) {
+                        // không tìm thấy emial trên csdl
+                        $thongbao = '<p style=" font-size: 12px; color: #F23A3A " >Không tìm thấy email.</p>';
+                        include './forgot.php';
+                    } else {
+                        $thongbao = ' <p style=" font-size: 12px; color: #44C662" >Mã xác minh đã được gửi đến email " ' . $email . ' " Vui lòng xác minh kiểm tra lại.</p>';
+                        send_email($email);
+                        $_SESSION['forgot']['email'] = $email;
+                        include './forgot_otp.php';
+                    }
+                }
+                break;
+            case 'comfirm_pass':
+
+                if (isset($_POST['comfirm_pass']) && ($_POST['comfirm_pass'])) {
+                    $code = $_POST['code'];
+
+                    $result = is_code_correct($code);
+
+                    if ($result == "Mã đúng") {
+                        $_SESSION['forgot']['code'] = $code;
+                        header("Location: index.php?act=update_pass");
+                    } else {
+                        $thongbao = $result;
+                        include './forgot_otp.php';
+                    }
+                }
+                break;
+            case 'forgot_otp':
+                include './forgot_otp.php';
+                break;
+            case 'update_pass':
+                if (isset($_POST['update_pass']) && ($_POST['update_pass'])) {
+                    $password = $_POST['password'];
+                    $password2 = $_POST['password2'];
+                    if ($password !== $password2) {
+                        $thongbao = "Mã không khớp";
+                    } else {
+                        save_password($password);
+                        include './login.php';
+                    }
+                }
+                break;
+             
+            case 'insert_comment':
+                if (isset($_POST['comment']) && ($_POST['comment'])) {
+                    $id_user = $_SESSION['username']['id'];
+                    $id_product = $_POST['idpro'];
+                    $comment = $_POST['content'];
+                    $day = date('Y-m-d');
+                    $id = $_POST['idpro'];
+                    insert_comment($id_user, $id_product, $comment, $day);
+                    echo '<script>history.back(0)</script>';
+                }
+                break;
 
             default:
                 # code...
@@ -251,7 +399,6 @@
         include './components/content.php';
     }
     include './components/footer.php';
-
     ?>
 </body>
 

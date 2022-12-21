@@ -29,10 +29,8 @@
                         <div class="row g-custom-30">
                             <div class="col">
                                 <ol class="page__header-breadcrumbs breadcrumb">
-                                    <li class="breadcrumb-item"><a href="">Tên website</a></li>
-                                    <li class="breadcrumb-item"><a href="">Tên danh mục</a></li>
-                                    <li class="breadcrumb-item"><a href="">Tên sản phẩm</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Giỏ hàng</li>
+                                    
+                                    <li class="breadcrumb-item active" style="font-size: 15px;" aria-current="page">Giỏ hàng</li>
                                 </ol>
 
                             </div>
@@ -88,7 +86,11 @@
                                                                     <div class="form-control-number__sub"></div>
                                                                 </div>
                                                             </td>
+<<<<<<< HEAD
                                                             <td class="cart__column cart__column--total" data-title="Total"><?= number_format($card['number'] * $total_money) ?></td>
+=======
+                                                            <td class="cart__column cart__column--total" data-title="Total"><?= number_format($card['number'] * $card['price']) ?></td>
+>>>>>>> dev/nguyen
                                                             <td class="cart__column"><a href="index.php?act=delete&idcart=<?= $i ?>"><i class="fa-solid fa-trash"></i></a></td>
                                                         </tr>
 

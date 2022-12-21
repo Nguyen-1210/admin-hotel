@@ -11,13 +11,18 @@ function delete_products($id){
 }
 
 function loadall_product_top8(){
-    $sql = "SELECT *,types.name AS 'namehh', products.name AS 'namepro' FROM products INNER JOIN types ON products.id_type = types.id WHERE products.view>0 order by products.view desc LIMIT 0,04";
+    $sql = "SELECT *,types.name AS 'namehh',products.id AS 'idpro', products.name AS 'namepro', products.img AS 'imgpro' FROM products INNER JOIN types ON products.id_type = types.id WHERE products.view>0 order by products.view desc LIMIT 0,04";
     $listproducts = pdo_query($sql);
     return $listproducts;
 }
 
 function loadall_product_home(){
-    $sql = "SELECT *,types.name AS 'namehh', products.name AS 'namepro', products.id AS 'id_pro' FROM products INNER JOIN types ON products.id_type = types.id ";
+    $sql = "SELECT *,types.name AS 'namehh',products.img AS 'img_pro', products.name AS 'namepro', products.id AS 'id_pro' FROM products INNER JOIN types ON products.id_type = types.id ";
+    $listproducts = pdo_query($sql);
+    return $listproducts;
+}
+function loadall_rand_home(){
+    $sql = "SELECT *,types.name AS 'namehh',products.img AS 'img_pro', products.name AS 'namepro', products.id AS 'id_pro' FROM products INNER JOIN types ON products.id_type = types.id order by rand() limit 5";
     $listproducts = pdo_query($sql);
     return $listproducts;
 }
@@ -34,9 +39,18 @@ function loadall_products($kyw="", $id_type=0){
     $listproducts = pdo_query($sql);
     return $listproducts;
 }
+function load_search($kyw=""){
+    $sql = "select * from products where 1";
+    if($kyw!=""){
+        $sql.=" and name like '%".$kyw."%'";
+    }
+    $sql.=" order by id asc";
+    $listsearch = pdo_query($sql);
+    return $listsearch;
+}
 
 function loadone_product($id){
-    $sql = "SELECT *,types.name AS 'namehh', products.name AS 'namepro', products.id AS 'id_pro' FROM products INNER JOIN types ON products.id_type = types.id WHERE products.id =".$id;
+    $sql = "SELECT *,types.name AS 'namehh',products.img AS 'imgpro', products.name AS 'namepro', products.id AS 'id_pro' FROM products INNER JOIN types ON products.id_type = types.id WHERE products.id =".$id;
     $products = pdo_query_one($sql);
     return $products;
 }
@@ -60,13 +74,13 @@ function load_product_cungloai($id, $id_type){
     return $listproducts;
 }
 
-function update_product($id, $id_type, $name, $price, $description, $discount, $img){
+function update_product($id,  $name, $price, $description, $discount, $img){
     if($img!=""){
-        $sql = "update products set id_type='".$id_type."', name='".$name."', price='".$price."', description='".$description."', discount='".$discount."', img='".$img."' where id=".$id;
+        $sql = "update products set  name='".$name."', price='".$price."', description='".$description."', discount='".$discount."', img='".$img."' where id=".$id;
     }
     else
     {
-        $sql = "update products set id_type='".$id_type."', name='".$name."', price='".$price."', description='".$description."', discount='".$discount."' where id=".$id;
+        $sql = "update products set  name='".$name."', price='".$price."', description='".$description."', discount='".$discount."' where id=".$id;
     }
     pdo_execute($sql);
 }

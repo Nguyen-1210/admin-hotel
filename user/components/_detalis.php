@@ -5,8 +5,12 @@
 <link rel="stylesheet" href="css/content.css">
 <?php
 
+<<<<<<< HEAD
 
 extract($onspd);
+=======
+  extract($onspd);
+>>>>>>> dev/nguyen
 
 ?>
 
@@ -34,11 +38,11 @@ extract($onspd);
                                         display: flex;">
                     <div class="product-gallery__carousel" style="width: 25%;">
                         <div class="" id="product-carousel">
-                            <a href="" class="product-gallery__carousel-item"><img class="product-gallery__carousel-image" src="<?= $imga = $img_path . $img; ?>" alt="" width="120px" height="120px"></a>
+                            <a href="" class="product-gallery__carousel-item"><img class="product-gallery__carousel-image" src="<?= $imga = $img_path . $imgpro; ?>" alt="" width="120px" height="120px"></a>
                         </div>
                     </div>
                     <div class="product-gallery__featured" style="width: 75%;">
-                        <div class="" id="product-image"><a href="#"><img style="width: 342px;height: 342px;" src="<?= $imga = $img_path . $img; ?>" alt=""> </a></div>
+                        <div class="" id="product-image"><a href="#"><img style="width: 342px;height: 342px;" src="<?= $imga = $img_path . $imgpro; ?>" alt=""> </a></div>
                     </div>
                 </div>
             </div>
@@ -48,15 +52,29 @@ extract($onspd);
                     <div class="product__sku">Mã sản phẩm: <?= $id_pro ?></div>
                 </div>
                 <div class="product__name">
+<<<<<<< HEAD
                     
                     <h2 class=" decor-header--align--center text-left">
                             <span class="decor-header"><?= $namepro ?></span>
                         </h2>
+=======
+
+                    <h2 class=" decor-header--align--center text-left">
+                        <span class="decor-header"><?= $namepro ?></span>
+                    </h2>
+>>>>>>> dev/nguyen
                 </div>
                 <div class="product__description"><?= $description ?>
                 </div>
-                <div class="product__price"><span class="product__price-new"><?= $price_new = $price - $discount ?></span>
-                    <span class="product__price-old"><?= $price ?></span>
+                <div class="product__price"><span class="product__price-new"><?= number_format($price_new = $price - $discount ?? 0) ?> VND</span>
+                    <?php
+                    if ($discount != 0) {
+                        echo '  <span class="product__price-old">' . number_format($price ?? 0) . ' VND</span>';
+                    }
+
+
+                    ?>
+
                 </div>
                 <div class="product__options">
                     <div class="mb-3"><label class="form-label product__option-label">Số
@@ -190,6 +208,7 @@ extract($onspd);
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 <div class="container">
 <div class="be-comment-block">
 
@@ -205,6 +224,23 @@ foreach($listcomments as $comment) {
     if($id_product == $_GET['idsp'])
     {
     echo ' 
+=======
+
+<div class="container">
+    <div class="be-comment-block">
+
+        <h1 class="comments-title">Comments </h1>
+        <?php
+        if (!empty($listcomments)) {
+
+
+            foreach ($listcomments as $comment) {
+                $loadone_accounts = loadone_accounts($comment['id_user']);
+                extract($comment);
+
+                if ($id_product == $_GET['idsp']) {
+                    echo ' 
+>>>>>>> dev/nguyen
 
 
         <div class="be-comment">
@@ -216,6 +252,7 @@ foreach($listcomments as $comment) {
             <div class="be-comment-content">
                 
                     <span class="be-comment-name">
+<<<<<<< HEAD
                         <a href="blog-detail-2.html">'.$loadone_accounts['username'].'</a>
                         </span>
                     <span class="be-comment-time">
@@ -225,10 +262,22 @@ foreach($listcomments as $comment) {
 
                 <p class="be-comment-text">
             '. $comment .' 
+=======
+                        <a href="blog-detail-2.html">' . $loadone_accounts['username'] . '</a>
+                        </span>
+                    <span class="be-comment-time">
+                        <i class="fa fa-clock-o"></i>
+                    ' . $day . '
+                    </span>
+
+                <p class="be-comment-text">
+            ' . $comment . ' 
+>>>>>>> dev/nguyen
                 </p>
             </div>
         </div>
         ';
+<<<<<<< HEAD
     }
 
     else {
@@ -249,3 +298,25 @@ foreach($listcomments as $comment) {
 	</form>
 </div>
 </div>
+=======
+                } else {
+                    echo '';
+                }
+            }
+        }
+        ?>
+        <form class="form-block" action="index.php?act=insert_comment" method="POST">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                     <input type="text" placeholder="Nhập nội dung bình luận" name="content" style="height: 130px;
+    width: 100%;">
+                    </div>
+                </div>
+            <input type="hidden" name="idpro" value="<?= $id_pro ?>">
+                <input type="submit" value="Bình luận" class="btn btn-primary col-2 " name="comment">
+            </div>
+        </form>
+    </div>
+</div>
+>>>>>>> dev/nguyen

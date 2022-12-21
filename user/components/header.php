@@ -8,7 +8,11 @@
             <div class="row row-top">
                 <div class="col-10">
                     <!-- social media -->
+<<<<<<< HEAD
                     <a href="#" style="--clr: #129af6;" class="facebook mx-3"><i class="fa-brands fa-facebook"></i></a>
+=======
+                    <a href="https://www.facebook.com/profile.php?id=100064938350701" style="--clr: #129af6;" class="facebook mx-3"><i class="fa-brands fa-facebook"></i></a>
+>>>>>>> dev/nguyen
                     <a href="#" style="--clr: #46c1f6;" class="twitter mx-3"><i class="fa-brands fa-twitter"></i></a>
                     <a href="#" style="--clr: #e1306c;" class="instargam mx-3"><i class="fa-brands fa-square-instagram"></i></a>
                     <a href="#" style="--clr: #0a66c2;" lass="linkedin"><i class="fa-brands fa-linkedin"></i></a>
@@ -34,6 +38,7 @@
                             <a class="nav-link " href="index.php?act=_product">Sản phẩm</a>
                             <i class="fa-solid fa-caret-down"></i>
                             <?php
+<<<<<<< HEAD
                             $name_type = loadall_types();
                             if (!empty($name_type)) {
                             ?>
@@ -43,11 +48,27 @@
                                         extract($types);
                                     ?>
                                         <li class="nav-item-down"><a href="" class="nav-link-down"><?= $name ?></a></li>
+=======
+                            $name_type = show_types();
+?>
+                                <ul class="nav-down" style="padding: 0;">
+                                    <?php
+                                    foreach ($name_type as $types) {
+                                        extract($types);
+
+                                        $linkdm = "index.php?act=product&idtypes=" . $id_type_of_product;
+                                    ?>
+                                        <li class="nav-item-down"><a href="<?=$linkdm?>" class="nav-link-down"><?= $namhh?></a></li>
+>>>>>>> dev/nguyen
                                     <?php
                                     }
                                     ?>
                                 </ul>
+<<<<<<< HEAD
                             <?php } ?>
+=======
+                         
+>>>>>>> dev/nguyen
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?act=service">Dịch vụ</a>
@@ -63,8 +84,13 @@
                     <div class="col">
 
 
+<<<<<<< HEAD
                         <form class="d-flex" role="search" action="../../user/page/search.php" method="POST">
                             <input class="form-control" type="text" name="tukhoa" placeholder="Tìm kiếm sản phẩm">
+=======
+                        <form class="d-flex" role="search" action="index.php?act=search" method="POST">
+                            <input class="form-control" type="text" name="kyw" placeholder="Tìm kiếm sản phẩm">
+>>>>>>> dev/nguyen
                             <button class="btn px-2 " style="border: 1px solid rgba(0, 0, 0, .15); background: #Fff;" type="submit" name="timkiem"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
                     </div>
@@ -73,17 +99,28 @@
                 <div class="service col-2 justify-content-center d-flex align-items-center">
                     <!-- user -->
                     <?php
-                    ob_start();
-                    session_start();
+                   
+                   session_start();
+                   error_reporting(0);
                     if (isset($_SESSION['username'])) {
+<<<<<<< HEAD
                         // extract($_SESSION['username']);
+=======
+                        extract($_SESSION['username']);
+                        $link_account = "index.php?act=edit_account&id=".$_SESSION['username']['id'];
+                        $link_bill = "index.php?act=his_bill&id=".$_SESSION['username']['id'];
+                    
+>>>>>>> dev/nguyen
                     ?>
                         <div class="px-4 user">
                             <a href="#" class="account"><i class="fa-solid fa-user"></i>
                                 <div class="px4 nav-user">
                                     <ul class="nav-user-down p-0 m-0">
                                         <li class="nav-item p-2">
-                                            <a class="nav-link" href="index.php?act=edit_account">Tài khoản của tôi</a>
+                                            <a class="nav-link" href="<?= $link_account ?>">Tài khoản của tôi</a>
+                                        </li>
+                                        <li class="nav-item p-2">
+                                            <a class="nav-link" href="<?= $link_bill?>">Đơn mua</a>
                                         </li>
                                         <li class="nav-item p-2">
                                             <a class="nav-link" href="index.php?act=logout">Đăng xuất</a>

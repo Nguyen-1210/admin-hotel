@@ -114,7 +114,7 @@ if (isset($_GET['act'])) {
         case 'update_products':
             if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
                 $id = $_POST['id'];
-                $id_type = $_POST['id_type'];
+                // $id_type = $_POST['id_type'];
                 $name = $_POST['name_product'];
                 $price = $_POST['price_product'];
                 $description = $_POST['des_product'];
@@ -127,8 +127,7 @@ if (isset($_GET['act'])) {
                 } else {
                     // echo "Sorry, there was an error uploading your file.";
                 }
-
-                update_product($id, $id_type, $name, $price, $description, $discount, $img);
+                update_product($id, $name, $price, $description, $discount, $img);
                 $thongbao = "Cập nhật Thành Công";
             }
             $listdanhmuc = loadall_types();
