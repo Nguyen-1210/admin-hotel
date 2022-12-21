@@ -15,7 +15,7 @@
     <table>
         <thead>
             <tr>
-                <th></th>
+               
                 <th>MÃ LOẠI</th>
                 <th>TÊN LOẠI</th>
                 <th>ẢNH</th>
@@ -36,7 +36,7 @@
                 }
                 $show = '
                                 <tr>
-                                <td><strong><input type="checkbox" name="check" id=""></strong></td>
+                               
                                 <td>' . $id . '</td>
                                 <td>' . $name . '</td>
                                 <td>' . $img . '</td>

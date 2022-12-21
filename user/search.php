@@ -68,9 +68,8 @@
                                                 object-fit: cover;" src="'.$imga.'" alt=""></a>
                                                 </div>
                                                 <div class="product-card__info">
-                                                    <div class="product-card__category"><a href="">' . $namehh . '</a>
-                                                    </div>
-                                                    <div class="product-card__name"><a href="product.html">' . $namepro . '</a></div>
+                                                   
+                                                    <div class="product-card__name"><a href="'.$linksp.'">' . $name . '</a></div>
         
                                                     <div class="product-card__prices-list">
                                                         <div class="product-card__price"><span class="product-card__price-new" '.$style.'>' . number_format( $price_new ?? 0) . ' VND</span>
@@ -108,9 +107,8 @@
                                                     object-fit: cover;" src="'.$imga.'" alt=""></a>
                                                     </div>
                                                     <div class="product-card__info">
-                                                        <div class="product-card__category"><a href="">' . $namehh . '</a>
-                                                        </div>
-                                                        <div class="product-card__name"><a href="product.html">' . $namepro . '</a></div>
+                                                     
+                                                        <div class="product-card__name"><a href="product.html">' . $name . '</a></div>
             
                                                         <div class="product-card__prices-list">
                                                             <div class="product-card__price"><span class="product-card__price-new" '.$style.'>' . number_format( $price_new ?? 0) . ' VND</span>

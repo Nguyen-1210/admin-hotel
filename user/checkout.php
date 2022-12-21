@@ -30,9 +30,7 @@
             <div class="block">
                 <div class="container container--max--xl">
                     <div class="row g-custom-30">
-                        <div class="col-12 mb-2">
-                            <div class="alert alert-lg alert-primary">Phản Hồi Khách Hàng? <a href="">Nhấn Vào Để Đăng Nhập</a></div>
-                        </div>
+                       
                         <div class="col-12 col-lg-6 col-xl-7">
                             <div class="card mb-lg-0">
                                 <div class="card__header">
@@ -54,8 +52,9 @@
                                             <div class="col-md-6"><label for="checkout-phone" class="from-label">Số Điện Thoại</label> <input type="text" required="required" name="tell" class="form-control" id="checkout-phone" placeholder="012345678"></div>
                                         </div>
                                         <div class="mb-3">
-                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="" id="checkout-create-account">
-                                                <label class="form-check-label" for="checkout-create-account">Đăng ký để mua hàng?</label>
+                                            <div class="form-check">
+                                                <!-- <input class="form-check-input" type="checkbox" value="" id="checkout-create-account"> -->
+                                                <!-- <label class="form-check-label" for="checkout-create-account">Đăng ký để mua hàng?</label> -->
                                             </div>
 
                                         </div>

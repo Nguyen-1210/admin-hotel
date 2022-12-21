@@ -93,7 +93,7 @@
                 break;
 
             case 'search':
-                if (isset($_POST['kyw']) && ($_POST['kyw'] != "" >0)) {
+                if (isset($_POST['kyw']) && ($_POST['kyw'] != "" > 0)) {
                     $kyw = $_POST['kyw'];
                 } else {
                     $kyw = "";
@@ -202,7 +202,7 @@
                             }
                         }
                     }
-                   
+                    header('Location: index.php?act=addCard');
                 }
 
                 unset($_SESSION['myCard']);
@@ -325,49 +325,51 @@
                         send_email($email);
                         $_SESSION['forgot']['email'] = $email;
                         include './forgot_otp.php';
-                       
                     }
                 }
                 break;
-                case 'comfirm_pass':
+            case 'comfirm_pass':
 
-                    if (isset($_POST['comfirm_pass']) && ($_POST['comfirm_pass'])) {
-                        $code = $_POST['code'];
-                      
-                        $result = is_code_correct($code);
-                        
-                        if ($result == "Mã đúng") {
-                            $_SESSION['forgot']['code'] = $code;
-                            header("Location: index.php?act=update_pass");
-                            
-                        }
-                        else{
-                            $thongbao = $result;
-                            include './forgot_otp.php';
-                        }
-                    }
-                    break;
-                    case 'forgot_otp':
+                if (isset($_POST['comfirm_pass']) && ($_POST['comfirm_pass'])) {
+                    $code = $_POST['code'];
+
+                    $result = is_code_correct($code);
+
+                    if ($result == "Mã đúng") {
+                        $_SESSION['forgot']['code'] = $code;
+                        header("Location: index.php?act=update_pass");
+                    } else {
+                        $thongbao = $result;
                         include './forgot_otp.php';
-                        break;
-            case 'update_pass':
-                if(isset($_POST['update_pass']) && ($_POST['update_pass'])){
-                    $password = $_POST['password'];
-				$password2 = $_POST['password2'];
-				if($password !== $password2){
-					$thongbaothongbao = "Mã không khớp";
-				}elseif(!isset($_SESSION['forgot']['email']) || !isset($_SESSION['forgot']['code'])){
-					header("Location:forgot.php");
-					die;
-				}else{
-					save_password($password);
-					if(isset($_SESSION['forgot'])){
-						unset($_SESSION['forgot']);
-					}
-				
-				}
+                    }
                 }
-                include './forgot_pass.php';
+                break;
+            case 'forgot_otp':
+                include './forgot_otp.php';
+                break;
+            case 'update_pass':
+                if (isset($_POST['update_pass']) && ($_POST['update_pass'])) {
+                    $password = $_POST['password'];
+                    $password2 = $_POST['password2'];
+                    if ($password !== $password2) {
+                        $thongbao = "Mã không khớp";
+                    } else {
+                        save_password($password);
+                        include './login.php';
+                    }
+                }
+                break;
+             
+            case 'insert_comment':
+                if (isset($_POST['comment']) && ($_POST['comment'])) {
+                    $id_user = $_SESSION['username']['id'];
+                    $id_product = $_POST['idpro'];
+                    $comment = $_POST['content'];
+                    $day = date('Y-m-d');
+                    $id = $_POST['idpro'];
+                    insert_comment($id_user, $id_product, $comment, $day);
+                    echo '<script>history.back(0)</script>';
+                }
                 break;
 
             default:

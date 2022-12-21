@@ -39,21 +39,8 @@
                             <div class="products-view">
                                 <div class="products-view__options view-options">
 
-                                    <div class="view-options__legend">Hiện sản phẩm của số sản phẩm của danh mục</div>
-                                    <div class="view-options__divider"></div>
-                                    <div class="view-options__control"><label class="view-options__control-label" for="view-options-sort">Sắp xếp theo</label>
-                                        <div class="view-options__control-content ms-3" style="width: 126px;"><select class="form-select form-select-sm" name="" id="view-options-sort">
-                                                <option value="">Tự động</option>
-                                                <option value="">Theo tên từ A-Z</option>
-                                            </select></div>
-                                    </div>
-                                    <div class="view-options__control ms-3" style="width: 15%;"><label class="view-options__control-label" for="view-options-show">Hiện số sản phẩm</label>
-                                        <div class="view-options__control-content ms-3 w-25"><select class="form-select form-select-sm" name="" id="view-options-show">
-                                                <option value="">16</option>
-                                                <option value="">32</option>
-                                                <option value="">48</option>
-                                                <option value="">64</option>
-                                            </select></div>
+                                    <div class="view-options__legend">Sản phẩm của danh mục <?= $name_types ?></div>
+                                   
                                     </div>
                                 </div>
                                 <div class="products-view__list products-list products-list--layout--full-grid-5">

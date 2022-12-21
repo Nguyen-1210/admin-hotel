@@ -14,7 +14,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th></th>
+                     
                      
                         <th>ID BÀI VIẾT</th>
                         <th>TIÊU ĐỀ BÀI VIẾT</th>
@@ -40,7 +40,7 @@ foreach($listblog as $blog){
         $img = "NO Photo";
     }
     echo '                <tr>
-    <td><strong>Ẩn bài viết</strong></td>
+    
   
     <td>'.$id.'</td>
     <td>'.$name.'</td>

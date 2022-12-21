@@ -13,7 +13,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="./css/main.css">
-    <title>TRANG CHỦ</title>
+    <title>N-FURNITURE-H</title>
 </head>
 
 <body>

@@ -1,3 +1,5 @@
+
+<link rel="stylesheet" href="../admin/css/components/list.css">
 <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="vendor/owl-carousel/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="vendor/photoswipe/photoswipe.css">
@@ -45,7 +47,7 @@
         <div class="post-card__date">' . $date . '</div>
         <div class="post-card__name"><span class="post-card__name-link"
                 >' . $name . '</span></div>
-        <div class="post-card__description">' . $description . '</div><a href="'.$link_blog.'"
+        <div class="post-card__description"><span class="description">' . $description . '</span></div><a href="'.$link_blog.'"
         
             class="btn btn-primary post-card__read-more">Đọc bài viêt</a>
     </div>

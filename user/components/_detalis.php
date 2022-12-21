@@ -5,8 +5,7 @@
 <link rel="stylesheet" href="css/content.css">
 <?php
 
-
-extract($onspd);
+  extract($onspd);
 
 ?>
 
@@ -48,22 +47,22 @@ extract($onspd);
                     <div class="product__sku">Mã sản phẩm: <?= $id_pro ?></div>
                 </div>
                 <div class="product__name">
-                    
+
                     <h2 class=" decor-header--align--center text-left">
-                            <span class="decor-header"><?= $namepro ?></span>
-                        </h2>
+                        <span class="decor-header"><?= $namepro ?></span>
+                    </h2>
                 </div>
                 <div class="product__description"><?= $description ?>
                 </div>
-                <div class="product__price"><span class="product__price-new"><?= number_format($price_new = $price - $discount ??0 )?> VND</span>
-                <?php
-if($discount != 0 ) {
-echo '  <span class="product__price-old">'. number_format($price ?? 0 ) .' VND</span>';
-}
+                <div class="product__price"><span class="product__price-new"><?= number_format($price_new = $price - $discount ?? 0) ?> VND</span>
+                    <?php
+                    if ($discount != 0) {
+                        echo '  <span class="product__price-old">' . number_format($price ?? 0) . ' VND</span>';
+                    }
 
 
-?>
-                  
+                    ?>
+
                 </div>
                 <div class="product__options">
                     <div class="mb-3"><label class="form-label product__option-label">Số
@@ -197,21 +196,21 @@ echo '  <span class="product__price-old">'. number_format($price ?? 0 ) .' VND</
         </div>
     </div>
 </div>
+
 <div class="container">
-<div class="be-comment-block">
+    <div class="be-comment-block">
 
-	<h1 class="comments-title">Comments </h1>
-    <?php
-    if(!empty($listcomments)) {
+        <h1 class="comments-title">Comments </h1>
+        <?php
+        if (!empty($listcomments)) {
 
- 
-foreach($listcomments as $comment) {
-    $loadone_accounts = loadone_accounts($comment['id_user']);
-    extract($comment);
 
-    if($id_product == $_GET['idsp'])
-    {
-    echo ' 
+            foreach ($listcomments as $comment) {
+                $loadone_accounts = loadone_accounts($comment['id_user']);
+                extract($comment);
+
+                if ($id_product == $_GET['idsp']) {
+                    echo ' 
 
 
         <div class="be-comment">
@@ -223,38 +222,36 @@ foreach($listcomments as $comment) {
             <div class="be-comment-content">
                 
                     <span class="be-comment-name">
-                        <a href="blog-detail-2.html">'.$loadone_accounts['username'].'</a>
+                        <a href="blog-detail-2.html">' . $loadone_accounts['username'] . '</a>
                         </span>
                     <span class="be-comment-time">
                         <i class="fa fa-clock-o"></i>
-                    '.$day.'
+                    ' . $day . '
                     </span>
 
                 <p class="be-comment-text">
-            '. $comment .' 
+            ' . $comment . ' 
                 </p>
             </div>
         </div>
         ';
-    }
-
-    else {
-        echo '';
-    }
-}
-}
-?>
-	<form class="form-block" action="index.php?act=insert_comment">
-		<div class="row">
-			<div class="col-xs-12">									
-				<div class="form-group">
-					<textarea class="form-input" required="" placeholder="Nội dung bình luận"></textarea>
-				</div>
-			</div>
-	<input type="button" value="Bình luận" class="btn btn-primary col-2 ">
-		</div>
-	</form>
+                } else {
+                    echo '';
+                }
+            }
+        }
+        ?>
+        <form class="form-block" action="index.php?act=insert_comment" method="POST">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                     <input type="text" placeholder="Nhập nội dung bình luận" name="content" style="height: 130px;
+    width: 100%;">
+                    </div>
+                </div>
+            <input type="hidden" name="idpro" value="<?= $id_pro ?>">
+                <input type="submit" value="Bình luận" class="btn btn-primary col-2 " name="comment">
+            </div>
+        </form>
+    </div>
 </div>
-</div> 
-
-

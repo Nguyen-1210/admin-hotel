@@ -67,7 +67,7 @@
                                         $imga = $img_path . $img;
 
 ?>
-                                    <div class="block-teammates__item card"><img style=" height: 300px;"
+                                    <div class="block-teammates__item card "style="width: 300px;"><img style=" height: 300px;"
                                                 class="block-teammates__image"
                                                 src="<?= $imga ?>" alt="">
                                         <div class="block-teammates__info">

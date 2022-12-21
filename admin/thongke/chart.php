@@ -16,7 +16,7 @@ google.charts.setOnLoadCallback(drawChart);
 // Draw the chart and set the chart values
 function drawChart() {
   var data = google.visualization.arrayToDataTable([
-    ['Task', 'Doanh thu '],
+    ['Task', 'Sản phẩm '],
     <?php
         $tongdm = count($listthongke);
         $i = 1;

@@ -1,5 +1,9 @@
 <link rel="stylesheet" href="./css/components/list.css">
-
+<style>
+body {
+  overflow: hidden;
+}
+  </style>
 <div class="dash-content">
   <div class="title">
     <div style="display: flex;align-items: center;">
@@ -31,7 +35,7 @@ foreach($listtaikhoan as $taikhoan){
     '.$username.'
    </td> 
    <td>
-   '.$password.'
+   <input type="password" value="'.$password.'" disabled style="border:none; text-align:center;background: transparent;">
    </td> 
    <td>
     '.$name.'
